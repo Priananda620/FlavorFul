@@ -13,6 +13,9 @@
 </head>
 
 <body>
+    {{-- @auth --}}
+        @include('header')   
+    {{-- @endauth --}}
 
     @yield('content')
 

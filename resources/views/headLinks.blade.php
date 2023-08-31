@@ -16,6 +16,9 @@
 
 <link rel='stylesheet' type='text/css' media='screen' href='{{ asset('css/main.css') }}'>
 
+
 {{-- <script src='{{ asset('js/main.js') }}'></script>
 <script src='{{ asset('js/md5/md5.min.js')}}'></script> --}}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+
+<script src="{{ asset('js/main.js') }}"></script>

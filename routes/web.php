@@ -36,3 +36,7 @@ Route::get('/reset-password', function () {
 Route::get('/', function () {
     return view('landingPage');
 })->name('landingPage');
+
+Route::get('/test', function () {
+    return view('landing');
+})->name('landing');
