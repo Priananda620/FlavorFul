@@ -2,6 +2,8 @@
 <!DOCTYPE html>
 <html lang="en">
 
+{{-- dea --}}
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,7 +16,7 @@
 
 <body>
     {{-- @auth --}}
-        @include('header')   
+        @include('header')
     {{-- @endauth --}}
 
     @yield('content')
