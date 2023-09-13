@@ -40,3 +40,8 @@ Route::get('/', function () {
 Route::get('/test', function () {
     return view('landing');
 })->name('landing');
+
+
+Route::get('/home', function () {
+    return view('home');
+})->name('home');

@@ -1,12 +1,12 @@
 @extends('layout')
 @section('content')
-<div class="d-flex align-items-center mx-0">
+<div class="d-flex align-items-center mx-0 vh-100">
     <div class="flex-column flex-md-row h-100 w-100 d-flex">
         <div class="w-100 w-md-50 d-flex justify-content-center px-3 px-md-5 mt-5 mt-md-0 flex-column mx-md-5 py-5">
             <div class="mb-5">
                 <h2 style="color: var(--fresh-green); font-weight: bold;">{{ app()->config['app.name'] }}</h2>
             </div>
-            
+
             <h1 class="mb-2 fw-bold">Create Account</h1>
             <div class="login-container p-4 border rounded py-5 w-100 w-md-50" style="width: fit-content;">
                 {{-- <h2 class="text-center mb-4" style="color: var(--fresh-green); font-weight: bold;">{{ app()->config['app.name'] }}</h2> --}}
@@ -27,7 +27,7 @@
                         <label class="mb-2" for="confirm_password">Confirm Password:</label>
                         <input type="password" class="form-control" id="confirm_password" placeholder="Confirm Password" required="">
                     </div>
-                    
+
 
 
 
@@ -63,7 +63,7 @@
             </div>
         </div>
         <div class="w-100 w-md-50 mt-4 mt-md-0">
-            <div class="image-container position-sticky top-0 vh-100 w-100">
+            <div class="image-container position-sticky top-0 h-100 w-100">
 
             </div>
         </div>

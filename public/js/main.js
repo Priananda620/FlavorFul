@@ -21,22 +21,22 @@ $(document).ready(function () {
       previousScrollY = currentScrollY;
       return scrolledPixels;
     }
-    
+
 
     function updateParallax() {
         parallaxElements.forEach((element) => {
             if (isElementOnScreen(element)) {
                 const offset = window.scrollY;
                 let initialTranslateY = parseFloat(element.style.transform.replace('translateY(', '').replace('px)', '')) || 0;
-                
+
                 const scrollDirection = offset > element.lastScrollY ? 1 : -1;
                 element.lastScrollY = offset;
-      
+
                 initialTranslateY += scrollDirection * .6;
-      
+
                 element.style.transform = `translateY(${initialTranslateY}px)`;
               }
-      
+
         });
 
         // var scrolledPixels = window.scrollY;
@@ -53,4 +53,15 @@ $(document).ready(function () {
     console.log("Dsadsd")
 
 
+    $("#toggle-home-filter").on("click", ()=>{
+        if($("#home-filters").attr('propActive') === "false"){
+            $("#home-filters").addClass('h-filter-active')
+            $("#home-filters").removeClass('overflow-hidden')
+            $("#home-filters").attr('propActive', "true")
+        }else{
+            $("#home-filters").removeClass('h-filter-active')
+            $("#home-filters").addClass('overflow-hidden')
+            $("#home-filters").attr('propActive', "false")
+        }
+    })
 });
