@@ -250,22 +250,34 @@ a {
     width: 100% !important;
 }
 
-.filter-delete::after {
+.selected-recipe{
+    transition: .2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: pointer;
+}
+
+.selected-recipe::after {
     font-family: "Font Awesome 6 Free";
     content: "\f1f8";
     position: absolute;
     top: 50%;
+    /* left: 50%; */
     transform: translateY(-50%);
-    right: .5em;
+    right: 1em;
+    /* transform: translate(-50%, -50%); */
     font-size: 2em;
-    cursor: pointer;
+
     opacity: 0;
     transition: opacity .2s ease-out;
   }
 
-  .filter-delete:hover::after {
+  .selected-recipe:hover::after {
     opacity: 1;
   }
+
+  .selected-recipe:hover {
+    opacity: .5;
+  }
+
 
 
 
@@ -301,4 +313,8 @@ a {
     100% {
         opacity: 0.5;
     }
+}
+
+img {
+    object-fit: cover;
 }

@@ -16,10 +16,10 @@ $(document).ready(function () {
 
     // Function to get the scrolled distance from the top
     function getScrolledDistance() {
-      var currentScrollY = window.scrollY;
-      var scrolledPixels = currentScrollY - previousScrollY;
-      previousScrollY = currentScrollY;
-      return scrolledPixels;
+        var currentScrollY = window.scrollY;
+        var scrolledPixels = currentScrollY - previousScrollY;
+        previousScrollY = currentScrollY;
+        return scrolledPixels;
     }
 
 
@@ -35,7 +35,7 @@ $(document).ready(function () {
                 initialTranslateY += scrollDirection * .6;
 
                 element.style.transform = `translateY(${initialTranslateY}px)`;
-              }
+            }
 
         });
 
@@ -53,15 +53,58 @@ $(document).ready(function () {
     console.log("Dsadsd")
 
 
-    $("#toggle-home-filter").on("click", ()=>{
-        if($("#home-filters").attr('propActive') === "false"){
+    $("#toggle-home-filter").on("click", () => {
+        if ($("#home-filters").attr('propActive') === "false") {
             $("#home-filters").addClass('h-filter-active')
             $("#home-filters").removeClass('overflow-hidden')
             $("#home-filters").attr('propActive', "true")
-        }else{
+        } else {
             $("#home-filters").removeClass('h-filter-active')
             $("#home-filters").addClass('overflow-hidden')
             $("#home-filters").attr('propActive', "false")
         }
     })
+
+    $('#selected-recipe-container').on('click', '.selected-recipe', function () {
+        $(this).remove();
+        if ($(".selected-recipe").length == 0 && $('.empty-recipe').length == 0) {
+            console.log("empty")
+
+            const newElement = $('<span class="badge bg-secondary my-1 position-relative empty-recipe">Select an Ingredient</span>');
+
+            $('#selected-recipe-container').append(newElement);
+        }
+    });
+
+    $('#remove-whole-recipe').on('click', function () {
+        $('.selected-recipe').remove()
+
+        if ($(".selected-recipe").length == 0 && $('.empty-recipe').length == 0) {
+            console.log("empty")
+
+            const newElement = $('<span class="badge bg-secondary my-1 position-relative empty-recipe">Select an Ingredient</span>');
+
+            $('#selected-recipe-container').append(newElement);
+        }
+    })
+
+    $('#add-recipe-search').on('keyup', function (event) {
+        if (event.keyCode === 13) {
+          // Enter key was pressed
+
+          const removeEmpty = $('#selected-recipe-container .empty-recipe');
+          if(removeEmpty.length){
+            removeEmpty.remove()
+          }
+          const inputValue = $(this).val();
+          console.log(inputValue)
+
+
+          const newElement = $('<span class="badge bg-primary my-1 position-relative selected-recipe">'+inputValue+'</span>');
+
+          $('#selected-recipe-container').append(newElement);
+
+          // Optionally, you can perform other actions here
+        }
+      });
 });

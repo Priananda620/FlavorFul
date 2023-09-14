@@ -12,7 +12,7 @@
                     <div class="p-3 px-0">
                         <!-- Search input goes here -->
                         <div class="dropdown">
-                            <input type="text" class="form-control dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" placeholder="Search...">
+                            <input id="add-recipe-search" type="text" class="form-control dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" placeholder="Search...">
                             <ul class="dropdown-menu">
                               <!-- Dropdown items here -->
                               <li><a class="dropdown-item" href="#">Option 1</a></li>
@@ -24,12 +24,16 @@
                     <!-- Category Badges Filter -->
                     <div class="p-3 px-0">
                         <!-- Category badge content goes here -->
-                        <div class="d-flex flex-column">
-                            <h6>Selected</h6>
+                        <div class="d-flex flex-column" id="selected-recipe-container">
+
+                            <div class="d-inline-flex align-items-center">
+                                <h5 class="me-auto">Selected</h5>
+                                <i class="fa-solid fa-trash p-2 rounded cursor-pointer bg-info" id="remove-whole-recipe"></i>
+                            </div>
                             <!-- Category badges go here -->
-                            <span class="badge bg-primary my-1 filter-delete position-relative">Category 1</span>
-                            <span class="badge bg-primary my-1 filter-delete position-relative">Category 2</span>
-                            <span class="badge bg-primary my-1 filter-delete position-relative">Category 3</span>
+                            <span class="badge bg-primary my-1 position-relative selected-recipe">Category 1</span>
+                            <span class="badge bg-primary my-1 position-relative selected-recipe">Category 2</span>
+                            <span class="badge bg-primary my-1 position-relative selected-recipe">Category 3</span>
                             <!-- Add more categories as needed -->
                         </div>
                     </div>
@@ -124,7 +128,7 @@
                     <div class="card mb-3 rounded skeleton-card">
                         <div class="row g-0">
                             <div class="col-md-4">
-                                <div class="skeleton-image"></div>
+                                <div class="skeleton-image h-100"></div>
                             </div>
                             <div class="col-md-8">
                                 <div class="card-body d-flex flex-column justify-content-between h-100">
@@ -162,7 +166,7 @@
                         <div class="row g-0">
                             <div class="col-md-4">
                                 <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=1170&amp;q=80"
-                                    class="img-fluid rounded" alt="Image">
+                                    class="img-fluid rounded h-100" alt="Image">
                             </div>
                             <div class="col-md-8">
                                 <div class="card-body d-flex flex-column justify-content-between h-100">
@@ -213,165 +217,19 @@
                                             <div class="me-2">
                                                 <span class="badge bg-success rounded-pill">Badge 3</span>
                                             </div>
+                                            <div class="me-2">
+                                                <span class="badge bg-secondary rounded-pill">Badge 2</span>
+                                            </div>
+                                            <div class="me-2">
+                                                <span class="badge bg-success rounded-pill">Badge 3</span>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="card mb-3 rounded">
-                        <div class="row g-0">
-                            <div class="col-md-4">
-                                <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=1170&amp;q=80"
-                                    class="img-fluid rounded" alt="Image">
-                            </div>
-                            <div class="col-md-8">
-                                <div class="card-body d-flex flex-column justify-content-between h-100">
-                                    <h3 class="card-title fw-bold">Card Title</h3>
-                                    <div class="d-flex">
-                                        <div class="flex-grow-1">
-                                            <div class="d-flex flex-column">
-                                                <h5>Time</h5>
-                                                <p><i class="fa-regular fa-clock"></i>
-                                                    < 10mins </p>
-                                            </div>
-                                        </div>
-                                        <div class="flex-grow-1">
-                                            <div class="d-flex flex-column">
-                                                <h5>Calories</h5>
-                                                <p><i class="fa-solid fa-fire-flame-curved"></i>154 kcal/100g</p>
-                                            </div>
-                                        </div>
-                                        <div class="flex-grow-1">
-                                            <div class="d-flex flex-column">
-                                                <h5>Difficulty</h5>
-                                                <div class="recipe-stars w-fit-content">
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="far fa-star"></i>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="d-flex">
-                                        <div class="me-2">
-                                            <span class="badge bg-primary">Badge 1</span>
-                                        </div>
-                                        <div class="me-2">
-                                            <span class="badge bg-secondary">Badge 2</span>
-                                        </div>
-                                        <div class="me-2">
-                                            <span class="badge bg-success">Badge 3</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card mb-3 rounded">
-                        <div class="row g-0">
-                            <div class="col-md-4">
-                                <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=1170&amp;q=80"
-                                    class="img-fluid rounded" alt="Image">
-                            </div>
-                            <div class="col-md-8">
-                                <div class="card-body d-flex flex-column justify-content-between h-100">
-                                    <h3 class="card-title fw-bold">Card Title</h3>
-                                    <div class="d-flex">
-                                        <div class="flex-grow-1">
-                                            <div class="d-flex flex-column">
-                                                <h5>Time</h5>
-                                                <p><i class="fa-regular fa-clock"></i>
-                                                    < 10mins </p>
-                                            </div>
-                                        </div>
-                                        <div class="flex-grow-1">
-                                            <div class="d-flex flex-column">
-                                                <h5>Calories</h5>
-                                                <p><i class="fa-solid fa-fire-flame-curved"></i>154 kcal/100g</p>
-                                            </div>
-                                        </div>
-                                        <div class="flex-grow-1">
-                                            <div class="d-flex flex-column">
-                                                <h5>Difficulty</h5>
-                                                <div class="recipe-stars w-fit-content">
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="far fa-star"></i>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="d-flex">
-                                        <div class="me-2">
-                                            <span class="badge bg-primary">Badge 1</span>
-                                        </div>
-                                        <div class="me-2">
-                                            <span class="badge bg-secondary">Badge 2</span>
-                                        </div>
-                                        <div class="me-2">
-                                            <span class="badge bg-success">Badge 3</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card mb-3 rounded">
-                        <div class="row g-0">
-                            <div class="col-md-4">
-                                <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=1170&amp;q=80"
-                                    class="img-fluid rounded" alt="Image">
-                            </div>
-                            <div class="col-md-8">
-                                <div class="card-body d-flex flex-column justify-content-between h-100">
-                                    <h3 class="card-title fw-bold">Card Title</h3>
-                                    <div class="d-flex">
-                                        <div class="flex-grow-1">
-                                            <div class="d-flex flex-column">
-                                                <h5>Time</h5>
-                                                <p><i class="fa-regular fa-clock"></i>
-                                                    < 10mins </p>
-                                            </div>
-                                        </div>
-                                        <div class="flex-grow-1">
-                                            <div class="d-flex flex-column">
-                                                <h5>Calories</h5>
-                                                <p><i class="fa-solid fa-fire-flame-curved"></i>154 kcal/100g</p>
-                                            </div>
-                                        </div>
-                                        <div class="flex-grow-1">
-                                            <div class="d-flex flex-column">
-                                                <h5>Difficulty</h5>
-                                                <div class="recipe-stars w-fit-content">
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="far fa-star"></i>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="d-flex">
-                                        <div class="me-2">
-                                            <span class="badge bg-primary">Badge 1</span>
-                                        </div>
-                                        <div class="me-2">
-                                            <span class="badge bg-secondary">Badge 2</span>
-                                        </div>
-                                        <div class="me-2">
-                                            <span class="badge bg-success">Badge 3</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+
                     <!-- Add more cards as needed -->
                 </div>
             </div>
