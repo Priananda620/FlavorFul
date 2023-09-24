@@ -90,21 +90,103 @@ $(document).ready(function () {
 
     $('#add-recipe-search').on('keyup', function (event) {
         if (event.keyCode === 13) {
-          // Enter key was pressed
+            // Enter key was pressed
 
-          const removeEmpty = $('#selected-recipe-container .empty-recipe');
-          if(removeEmpty.length){
-            removeEmpty.remove()
-          }
-          const inputValue = $(this).val();
-          console.log(inputValue)
+            const removeEmpty = $('#selected-recipe-container .empty-recipe');
+            if (removeEmpty.length) {
+                removeEmpty.remove()
+            }
+            const inputValue = $(this).val();
+            console.log(inputValue)
 
 
-          const newElement = $('<span class="badge bg-primary my-1 position-relative selected-recipe">'+inputValue+'</span>');
+            const newElement = $('<span class="badge bg-primary my-1 position-relative selected-recipe">' + inputValue + '</span>');
 
-          $('#selected-recipe-container').append(newElement);
+            $('#selected-recipe-container').append(newElement);
 
-          // Optionally, you can perform other actions here
+            // Optionally, you can perform other actions here
         }
-      });
+    });
+
+
+
+    $("#avatar").click(function () {
+        $("#avatar-menu").toggle();
+    });
+
+
+    let selectedRating = 0;
+
+    // Click event handler for star buttons
+    $('#star-rating button').click(function () {
+        const rating = $(this).data('rating');
+
+        // Remove 'active' class from all buttons
+        $('#star-rating button').removeClass('active');
+
+        // Add 'active' class to the clicked button and all preceding buttons
+        $(this).addClass('active').prevAll().addClass('active');
+
+        // Update the selected rating
+        selectedRating = rating;
+
+        // Update the displayed rating
+        $('#selected-rating').text(selectedRating);
+    });
+
+
+    $(".toggle-popup-menu").on('click', function (e) {
+        console.log("fdsfdfds")
+        const menu_body = $('#popup-menu')
+
+        if(menu_body.hasClass('active')){
+            menu_body.removeClass("active")
+            setTimeout(function (){
+                menu_body.addClass("d-none")
+            }, 500);
+        }else{
+            menu_body.removeClass("d-none")
+            setTimeout(function (){
+                menu_body.addClass("active")
+            }, 50);
+
+
+        }
+    })
+
+    function onResizeActions(viewportWidth, viewportHeight) {
+        const headerMenu = $('#header-list-menu')
+        const headerSearch = $('.search-input')
+        const toggleMenu = $('.toggle-popup-menu')
+
+
+        if (viewportWidth < 720) {
+            headerMenu.addClass("d-none")
+            headerSearch.addClass("d-none")
+            toggleMenu.removeClass("d-none")
+        }else{
+            headerMenu.removeClass("d-none")
+            headerSearch.removeClass("d-none")
+            toggleMenu.addClass("d-none")
+        }
+    }
+    function handleResize() {
+        console.log("resize")
+
+        const viewportWidth2 = window.innerWidth || document.documentElement.clientWidth;
+        const viewportHeight2 = window.innerHeight || document.documentElement.clientHeight;
+
+        resizeTimeout = setTimeout(function () {
+
+
+            onResizeActions(viewportWidth2, viewportHeight2);
+        }, 100);
+    }
+
+    window.addEventListener('resize', handleResize);
+
+    const viewportWidth = window.innerWidth || document.documentElement.clientWidth;
+    const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+
+    onResizeActions(viewportWidth, viewportHeight)
 });

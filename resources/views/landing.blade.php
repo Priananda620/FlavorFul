@@ -6,9 +6,9 @@
     <div class="container">
       <div class="row justify-content-center align-items-center py-5">
         <div class="col-lg-6 text-center text-lg-start">
-          <h1 class="fw-bold">
+          <h1 class="fw-bold" style="font-size: 3em">
             Cooking<br>
-            With Your<br> 
+            With Your<br>
             Ingredients<br>
           </h1>
           <p class="lh-base my-3 text-muted me-lg-5 pe-lg-5 mt-4">
@@ -16,10 +16,7 @@
           </p>
           <div class="d-flex flex-column flex-sm-row justify-content-lg-start justify-content-center mt-5 mt-lg-0">
             <button class="btn btn-primary mb-2 mb-sm-0 me-sm-2 px-4">
-              SignUp
-            </button>
-            <button class="btn btn-outline-primary px-4">
-              Login
+              Get Started
             </button>
           </div>
         </div>
@@ -44,25 +41,25 @@
                             <div class="d-flex flex-column">
                               <span class="fw-bold fs-5 mb-2">John Doe</span>
                               <span class="text-light fs-6">Web Developer</span>
-                              
+
                             </div>
                             <i class="fa-solid fa-angle-up fa-angle-right ms-auto"></i>
                           </div>
                         </div>
-                        
+
                         <div class="row-md-4 my-3">
                           <div class="d-flex align-items-center">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Cat_August_2010-4.jpg/272px-Cat_August_2010-4.jpg" 
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Cat_August_2010-4.jpg/272px-Cat_August_2010-4.jpg"
                             alt="Avatar" class="rounded-circle avatar me-3">
                             <div class="d-flex flex-column">
                               <span class="fw-bold fs-5 mb-2">Jane Smith</span>
                               <span class="text-light fs-6">Graphic Designer</span>
-                              
+
                             </div>
                             <i class="fa-solid fa-angle-up fa-angle-right ms-auto"></i>
                           </div>
                         </div>
-                        
+
                         <!-- Add more col-md-4 blocks as needed -->
                     </div>
                 </div>
@@ -82,14 +79,14 @@
 
                             <div class="d-flex flex-column">
                               <span class="fw-bold fs-5 mb-2">John Doe</span>
-                              <span class="text-secondary fs-6">Web Developer</span>            
+                              <span class="text-secondary fs-6">Web Developer</span>
                             </div>
                           </div>
                         </div>
-                        
+
                         <div class="row-md-4 mb-4">
                           <div class="d-flex align-items-center">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Cat_August_2010-4.jpg/272px-Cat_August_2010-4.jpg" 
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Cat_August_2010-4.jpg/272px-Cat_August_2010-4.jpg"
                             alt="Avatar" class="rounded-circle avatar me-3">
                             <div class="d-flex flex-column">
                               <span class="fw-bold fs-5 mb-2">Jane Smith</span>
@@ -97,7 +94,7 @@
                             </div>
                           </div>
                         </div>
-                        
+
                         <!-- Add more col-md-4 blocks as needed -->
                     </div>
                 </div>
@@ -214,8 +211,8 @@
             </div>
 
 
-            
-    
+
+
             <!-- Add more recipe cards as needed -->
         </div>
     </div>
