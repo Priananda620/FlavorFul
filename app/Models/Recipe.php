@@ -19,4 +19,16 @@ class Recipe extends Model
         'title' => 'string',
         'popularity_score' => 'integer'
     ];
+
+    public function user(){
+        return $this->belongsTo(User::class);
+    }
+
+    public function comment(){
+        return $this->hasMany(Comment::class);
+    }
+
+    public function recipeLike(){
+        return $this->hasMany(RecipeLike::class);
+    }
 }

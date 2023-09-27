@@ -23,4 +23,16 @@ class Comment extends Model
         'rating'  => 'integer',
         'comment'  => 'string'
     ];
+
+    public function user(){
+        return $this->belongsTo(User::class);
+    }
+
+    public function recipe(){
+        return $this->belongsTo(Recipe::class);
+    }
+
+    public function commentLike(){
+        return $this->hasMany(CommentLike::class);
+    }
 }

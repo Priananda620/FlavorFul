@@ -44,4 +44,24 @@ class User extends Authenticatable
         'email' => 'string',
         'password' => 'string',
     ];
+
+    public function recipe(){
+        return $this->hasMany(Recipe::class);
+    }
+
+    public function savedRecipe(){
+        return $this->hasMany(SavedRecipe::class);
+    }
+
+    public function recipeLike(){
+        return $this->hasMany(RecipeLike::class);
+    }
+
+    public function comment(){
+        return $this->hasMany(Comment::class);
+    }
+
+    public function commentLike(){
+        return $this->hasMany(CommentLike::class);
+    }
 }

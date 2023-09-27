@@ -20,4 +20,12 @@ class CommentLike extends Model
         'comment_id' => 'integer',
         'like' => 'boolean'
     ];
+
+    public function user(){
+        return $this->belongsTo(User::class);
+    }
+
+    public function comment(){
+        return $this->belongsTo(Comment::class);
+    }
 }

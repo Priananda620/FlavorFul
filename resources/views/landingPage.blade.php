@@ -6,19 +6,19 @@
     <h1 class="welcome-message">Welcome back, User!</h1>
     <div class="row">
         <div class="col-md-4">
-            <div class="text-center">
+            <div class="text-center btn btn-primary w-100 h-100 text-white fw-bold py-3">
                 <i class="fas fa-utensils feature-icon"></i>
                 <p class="feature-text">Discover New Recipes</p>
             </div>
         </div>
         <div class="col-md-4">
-            <div class="text-center">
+            <div class="text-center btn btn-primary w-100 h-100 text-white fw-bold py-3">
                 <i class="fas fa-calendar-week feature-icon"></i>
                 <p class="feature-text">Plan Your Meals</p>
             </div>
         </div>
         <div class="col-md-4">
-            <div class="text-center">
+            <div class="text-center btn btn-primary w-100 h-100 text-white fw-bold py-3">
                 <i class="fas fa-chart-pie feature-icon"></i>
                 <p class="feature-text">Track Nutrition</p>
             </div>

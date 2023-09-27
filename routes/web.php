@@ -36,6 +36,10 @@ Route::get('/profile', function () {
     return view('profile');
 })->name('profile');
 
+Route::get('/landing', function () {
+    return view('landingPage');
+})->name('landingPage');
+
 Route::get('/home', function () {
     return view('home');
 })->name('home');
