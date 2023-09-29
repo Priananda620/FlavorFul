@@ -1,5 +1,10 @@
 
+var debounceTimer;
+var debounceDelay = 600; 
 $(document).ready(function () {
+
+
+
     const parallaxElements = document.querySelectorAll('.parallax');
 
     function isElementOnScreen(el) {
