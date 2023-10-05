@@ -323,6 +323,10 @@ img {
     object-fit: cover;
 }
 
+.card img{
+    max-height: 14rem;
+}
+
 .comment-avatar{
     width: 3em;
     height: 3em;

@@ -130,7 +130,7 @@
                                     </div>
                                 </div>
                                 <div class="row-md-6">
-                                    <div class="progress" style="height: 1em">
+                                    <div class="progress mt-2" style="height: 1em">
                                         <div class="progress-bar" style="width: 0%"> </div>
                                     </div>
                                 </div>

@@ -1,6 +1,6 @@
 
 var debounceTimer;
-var debounceDelay = 600; 
+var debounceDelay = 600;
 $(document).ready(function () {
 
 
@@ -45,13 +45,13 @@ $(document).ready(function () {
         });
 
         // var scrolledPixels = window.scrollY;
-        console.log("Scrolled pixels:", getScrolledDistance());
+        // console.log("Scrolled pixels:", getScrolledDistance());
 
 
     }
 
-    window.addEventListener('scroll', updateParallax);
-    window.addEventListener('resize', updateParallax);
+    // window.addEventListener('scroll', updateParallax);
+    // window.addEventListener('resize', updateParallax);
     updateParallax(); // Initial check
 
 
@@ -70,48 +70,29 @@ $(document).ready(function () {
         }
     })
 
-    $('#selected-recipe-container').on('click', '.selected-recipe', function () {
-        $(this).remove();
-        if ($(".selected-recipe").length == 0 && $('.empty-recipe').length == 0) {
-            console.log("empty")
+    // $('#selected-recipe-container').on('click', '.selected-recipe', function () {
 
-            const newElement = $('<span class="badge bg-secondary my-1 position-relative empty-recipe">Select an Ingredient</span>');
-
-            $('#selected-recipe-container').append(newElement);
-        }
-    });
-
-    $('#remove-whole-recipe').on('click', function () {
-        $('.selected-recipe').remove()
-
-        if ($(".selected-recipe").length == 0 && $('.empty-recipe').length == 0) {
-            console.log("empty")
-
-            const newElement = $('<span class="badge bg-secondary my-1 position-relative empty-recipe">Select an Ingredient</span>');
-
-            $('#selected-recipe-container').append(newElement);
-        }
-    })
-
-    $('#add-recipe-search').on('keyup', function (event) {
-        if (event.keyCode === 13) {
-            // Enter key was pressed
-
-            const removeEmpty = $('#selected-recipe-container .empty-recipe');
-            if (removeEmpty.length) {
-                removeEmpty.remove()
-            }
-            const inputValue = $(this).val();
-            console.log(inputValue)
+    // });
 
 
-            const newElement = $('<span class="badge bg-primary my-1 position-relative selected-recipe">' + inputValue + '</span>');
 
-            $('#selected-recipe-container').append(newElement);
+    // $('#add-recipe-search').on('keyup', function (event) {
+    //     if (event.keyCode === 13) {
 
-            // Optionally, you can perform other actions here
-        }
-    });
+    //         const removeEmpty = $('#selected-recipe-container .empty-recipe');
+    //         if (removeEmpty.length) {
+    //             removeEmpty.remove()
+    //         }
+    //         const inputValue = $(this).val();
+    //         console.log(inputValue)
+
+
+    //         const newElement = $('<span class="badge bg-primary my-1 position-relative selected-recipe">' + inputValue + '</span>');
+
+    //         $('#selected-recipe-container').append(newElement);
+
+    //     }
+    // });
 
 
 
@@ -176,7 +157,7 @@ $(document).ready(function () {
         }
     }
     function handleResize() {
-        console.log("resize")
+        // console.log("resize")
 
         const viewportWidth2 = window.innerWidth || document.documentElement.clientWidth;
         const viewportHeight2 = window.innerHeight || document.documentElement.clientHeight;
