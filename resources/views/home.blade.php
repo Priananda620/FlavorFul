@@ -31,12 +31,17 @@
                         <div class="d-flex flex-column" id="selected-recipe-container">
 
                             <div class="d-inline-flex align-items-center">
-                                <h5 class="me-auto">Selected</h5>
+                                <h5 class="me-auto my-0">Selected</h5>
                                 <i class="fa-solid fa-trash p-2 rounded cursor-pointer bg-info"
                                     id="remove-whole-recipe"></i>
                             </div>
                             <!-- Category badges go here -->
-                            <span class="badge bg-secondary my-1 position-relative empty-recipe">Select an Ingredient</span>
+                            <div class="d-flex flex-wrap gap-1 mt-3" id="selected-chips-wrapper">
+                                <span
+                                    class="badge bg-secondary my-1 position-relative rounded-pill empty-recipe w-100">Select
+                                    an Ingredient</span>
+                            </div>
+
                             <!-- Add more categories as needed -->
                         </div>
                     </div>
@@ -250,6 +255,8 @@
             var stopTouching = false
             var maxReached = false
 
+
+            parseGetIngrParameters()
 
             $(window).scroll(function() {
                 // Check if the 3rd last card is visible in the viewport
@@ -612,6 +619,66 @@
 
                 console.log(selectedIngredients);
 
+
+                const params = selectedIngredients.map(ingredient =>
+                    `${encodeURIComponent(ingredient.text)}=${encodeURIComponent(ingredient.edamamId)}`).join(
+                    '&');
+
+                // Get the current URL
+                const currentUrl = window.location.href;
+
+                // Remove existing 'ingr' parameter
+                const baseUrl = currentUrl.split('?')[0];
+
+                // Set the new URL with the updated parameters
+                const newUrl = baseUrl + '?' + params;
+
+                // Replace the current state with the new URL
+                window.history.replaceState({}, document.title, newUrl);
+
+                clearTimeout(debounceTimer);
+                debounceTimer = setTimeout(fetchNewRecipes, debounceDelay);
+            }
+
+            function parseGetIngrParameters() {
+                const urlParams = new URLSearchParams(window.location.search);
+                selectedIngredients = [];
+
+                for (const [key, value] of urlParams.entries()) {
+                    selectedIngredients.push({
+                        text: key, // Use the parameter key as the text
+                        edamamId: value, // Use the parameter value as the edamamId
+                    });
+                }
+                // updateSelectedRecipe();
+
+                console.log(selectedIngredients)
+
+
+                selectedIngredients.forEach(function(ingredient) {
+                    const text = ingredient.text; // Get the 'text' attribute
+                    const edamamId = ingredient.edamamId;
+
+                    // console.log(`Text: ${text}, EdamamId: ${edamamId}`);
+
+                    const template =
+                        '<button class="btn btn-outline-primary rounded-pill px-3 selected-recipe"></button>';
+                    const $element = $(template);
+
+                    const removeEmpty = $('#selected-recipe-container .empty-recipe');
+                    if (removeEmpty.length) {
+                        removeEmpty.remove()
+                    }
+
+                    $element.data('edamamId', edamamId);
+                    $element.text(text);
+
+                    $('#selected-recipe-container > #selected-chips-wrapper').append($element);
+                });
+
+
+
+
                 clearTimeout(debounceTimer);
                 debounceTimer = setTimeout(fetchNewRecipes, debounceDelay);
             }
@@ -623,10 +690,10 @@
                     console.log("empty")
 
                     const newElement = $(
-                        '<span class="badge bg-secondary my-1 position-relative empty-recipe">Select an Ingredient</span>'
+                        '<span class="badge bg-secondary my-1 rounded-pill position-relative empty-recipe w-100">Select an Ingredient</span>'
                     );
 
-                    $('#selected-recipe-container').append(newElement);
+                    $('#selected-recipe-container > #selected-chips-wrapper').append(newElement);
                 }
 
                 updateSelectedRecipe()
@@ -640,7 +707,7 @@
                     console.log("empty")
 
                     const newElement = $(
-                        '<span class="badge bg-secondary my-1 position-relative empty-recipe">Select an Ingredient</span>'
+                        '<span class="badge bg-secondary my-1 rounded-pill position-relative empty-recipe w-100">Select an Ingredient</span>'
                     );
 
                     $('#selected-recipe-container').append(newElement);
@@ -680,8 +747,10 @@
                 }
 
                 if (!(edamamIdExists || edamamTextExists)) {
+                    // const template =
+                    //     '<span class="badge bg-primary my-1 position-relative selected-recipe"></span>';
                     const template =
-                        '<span class="badge bg-primary my-1 position-relative selected-recipe"></span>';
+                        '<button class="btn btn-outline-primary rounded-pill px-3 selected-recipe"></button>';
                     const $element = $(template);
 
                     const removeEmpty = $('#selected-recipe-container .empty-recipe');
@@ -692,7 +761,7 @@
                     $element.data('edamamId', $(this).data('edamamId'));
                     $element.text($(this).html());
 
-                    $('#selected-recipe-container').append($element);
+                    $('#selected-recipe-container > #selected-chips-wrapper').append($element);
 
 
 

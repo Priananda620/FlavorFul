@@ -216,9 +216,10 @@ a {
 }
 
 .btn-outline-primary{
-    border-color: #25d348 !important;
-    border-width: 2px;
+    border-color: #bdffca !important;
+    border-width: 1.7px;
     color: green !important;
+    background-color: #7bfc9507 !important;
 }
 
 .btn-primary:hover{
@@ -226,7 +227,7 @@ a {
 }
 
 .btn-outline-primary:hover{
-    background-color: #52DE6F !important;
+    background-color: #7bfc95a0 !important;
     color: white !important;
 }
 
@@ -257,18 +258,21 @@ a {
 .selected-recipe{
     transition: .2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     cursor: pointer;
+    position: relative;
 }
 
 .selected-recipe::after {
-    font-family: "Font Awesome 6 Free";
+    font-family: "Font Awesome 6 Free" !important;
     content: "\f1f8";
+    font-weight: 700;
     position: absolute;
+    color: var(--sunset-orange) !important;
     top: 50%;
     /* left: 50%; */
     transform: translateY(-50%);
-    right: 1em;
+    right: 10px;
     /* transform: translate(-50%, -50%); */
-    font-size: 2em;
+    font-size: 1em;
 
     opacity: 0;
     transition: opacity .2s ease-out;
@@ -280,6 +284,7 @@ a {
 
   .selected-recipe:hover {
     opacity: .5;
+    padding-right: 2em !important;
   }
 
 
@@ -325,6 +330,10 @@ img {
 
 .card img{
     max-height: 14rem;
+}
+
+.card{
+    z-index: -1;
 }
 
 .comment-avatar{
