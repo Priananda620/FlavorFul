@@ -30,7 +30,7 @@
     </section>
 
     <section style="transform: translateY(-5em)">
-        <div class="container p-5 bg-light rounded">
+        <div class="container p-5 bg-white rounded shadow w-100 w-md-50">
             <div class="d-inline-flex justify-content-between align-items-center w-100">
                 <h2 class="fw-bold text-start m-0">Search By Ingredients</h2>
                 <div>

@@ -4,7 +4,7 @@
         <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=1170&amp;q=80"
             class="img-fluid h-100 w-100" alt="Image">
         <div class="position-absolute end-0 bottom-0 p-2 bg-light fs-1 d-inline-flex gap-2">
-            <div class="cursor-pointer">
+            <div class="cursor-pointer" id="showSaveModal">
                 <i class="fa-solid fa-bookmark"></i>
                 {{-- <i class="fa-regular fa-bookmark"></i> --}}
             </div>
@@ -201,7 +201,9 @@
                             <!-- Daily Value -->
                             <div class="col my-4">
                                 <div class="col-md-12">
-                                    <p class="text-secondary text-justify">* The % Daily Value (DV) tells you how much a nutrient in a serving of food contributes to a daily diet. 2,000 calories a day is used for a general nutrition advice.</p>
+                                    <p class="text-secondary text-justify">* The % Daily Value (DV) tells you how much a
+                                        nutrient in a serving of food contributes to a daily diet. 2,000 calories a day is
+                                        used for a general nutrition advice.</p>
                                 </div>
                             </div>
                         </div>
@@ -234,14 +236,15 @@
                     <div class="d-flex justify-content-center align-items-center mb-3">
                         <form class="w-100">
                             <div class="mb-3">
-                              {{-- <label for="exampleInputReview1" class="form-label">Write Your Review</label> --}}
-                              <input placeholder="Write Your Review..." type="review" class="form-control" id="exampleInputReview1" aria-describedby="reviewHelp">
-                              {{-- <div id="reviewHelp" class="form-text"></div> --}}
+                                {{-- <label for="exampleInputReview1" class="form-label">Write Your Review</label> --}}
+                                <input placeholder="Write Your Review..." type="review" class="form-control"
+                                    id="exampleInputReview1" aria-describedby="reviewHelp">
+                                {{-- <div id="reviewHelp" class="form-text"></div> --}}
                             </div>
 
 
                             <button type="submit" class="btn btn-primary">Submit</button>
-                          </form>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -264,70 +267,72 @@
                     {{-- ------------ --}}
                     <div class="card p-3 border-0">
                         <div class="d-flex justify-content-between align-items-center">
-                      <div class="user d-flex flex-row align-items-center">
-                        <img src="https://cdn.britannica.com/36/123536-050-95CB0C6E/Variety-fruits-vegetables.jpg" width="30" class="comment-avatar rounded-circle mr-2">
-                        <div class="ms-2 font-weight-bold">
-                            <span>james_olesenn</span>
-                            <div class="recipe-stars w-fit-content mt-2">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="far fa-star"></i>
+                            <div class="user d-flex flex-row align-items-center">
+                                <img src="https://cdn.britannica.com/36/123536-050-95CB0C6E/Variety-fruits-vegetables.jpg"
+                                    width="30" class="comment-avatar rounded-circle mr-2">
+                                <div class="ms-2 font-weight-bold">
+                                    <span>james_olesenn</span>
+                                    <div class="recipe-stars w-fit-content mt-2">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>2 days ago</div>
+                        </div>
+                        <div class="action d-flex justify-content-between mt-3 align-items-center">
+                            <div class="font-weight-bold">Hmm, This poster looks cool</div>
+                        </div>
+                        <div class="action d-flex justify-content-between mt-2 align-items-center">
+                            <div class="d-inline-flex gap-2 align-items-center">
+                                <div class="cursor-pointer">
+                                    <i class="fa-regular fa-heart fs-4"></i>
+                                    <i class="fa-solid fa-heart fs-4"></i>
+                                </div>
+                                <span>4 Likes</span>
+                            </div>
+                            <div class="icons align-items-center cursor-pointer fs-4">
+                                <i class="fa-solid fa-trash"></i>
                             </div>
                         </div>
-                      </div>
-                      <div>2 days ago</div>
-                      </div>
-                      <div class="action d-flex justify-content-between mt-3 align-items-center">
-                        <div class="font-weight-bold">Hmm, This poster looks cool</div>
-                      </div>
-                      <div class="action d-flex justify-content-between mt-2 align-items-center">
-                        <div class="d-inline-flex gap-2 align-items-center">
-                            <div class="cursor-pointer">
-                                <i class="fa-regular fa-heart fs-4"></i>
-                                <i class="fa-solid fa-heart fs-4"></i>
-                            </div>
-                            <span>4 Likes</span>
-                        </div>
-                        <div class="icons align-items-center cursor-pointer fs-4">
-                            <i class="fa-solid fa-trash"></i>
-                        </div>
-                      </div>
                     </div>
 
                     <div class="card p-3 border-0">
                         <div class="d-flex justify-content-between align-items-center">
-                      <div class="user d-flex flex-row align-items-center">
-                        <img src="https://cdn.britannica.com/36/123536-050-95CB0C6E/Variety-fruits-vegetables.jpg" width="30" class="comment-avatar rounded-circle mr-2">
-                        <div class="ms-2 font-weight-bold">
-                            <span>james_olesenn</span>
-                            <div class="recipe-stars w-fit-content mt-2">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="far fa-star"></i>
+                            <div class="user d-flex flex-row align-items-center">
+                                <img src="https://cdn.britannica.com/36/123536-050-95CB0C6E/Variety-fruits-vegetables.jpg"
+                                    width="30" class="comment-avatar rounded-circle mr-2">
+                                <div class="ms-2 font-weight-bold">
+                                    <span>james_olesenn</span>
+                                    <div class="recipe-stars w-fit-content mt-2">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>2 days ago</div>
+                        </div>
+                        <div class="action d-flex justify-content-between mt-3 align-items-center">
+                            <div class="font-weight-bold">Hmm, This poster looks cool</div>
+                        </div>
+                        <div class="action d-flex justify-content-between mt-2 align-items-center">
+                            <div class="d-inline-flex gap-2 align-items-center">
+                                <div class="cursor-pointer">
+                                    <i class="fa-regular fa-heart fs-4"></i>
+                                    <i class="fa-solid fa-heart fs-4"></i>
+                                </div>
+                                <span>4 Likes</span>
+                            </div>
+                            <div class="icons align-items-center cursor-pointer fs-4">
+                                <i class="fa-solid fa-trash"></i>
                             </div>
                         </div>
-                      </div>
-                      <div>2 days ago</div>
-                      </div>
-                      <div class="action d-flex justify-content-between mt-3 align-items-center">
-                        <div class="font-weight-bold">Hmm, This poster looks cool</div>
-                      </div>
-                      <div class="action d-flex justify-content-between mt-2 align-items-center">
-                        <div class="d-inline-flex gap-2 align-items-center">
-                            <div class="cursor-pointer">
-                                <i class="fa-regular fa-heart fs-4"></i>
-                                <i class="fa-solid fa-heart fs-4"></i>
-                            </div>
-                            <span>4 Likes</span>
-                        </div>
-                        <div class="icons align-items-center cursor-pointer fs-4">
-                            <i class="fa-solid fa-trash"></i>
-                        </div>
-                      </div>
                     </div>
                 </div>
             </div>
@@ -335,4 +340,32 @@
 
 
     </section>
+    <div class="modal" tabindex="-1" role="dialog" id="collectionModal">
+
+        <div class="w-100 h-100 position-absolute" style="backdrop-filter: blur(4px)">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Popup Modal</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- Content for your modal goes here -->
+                        <p>This is a popup modal example.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            $("#showSaveModal").click(function() {
+                $("#collectionModal").modal("show");
+            });
+        });
+    </script>
 @endsection

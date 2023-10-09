@@ -15,7 +15,8 @@
                             <input id="add-recipe-search" type="text" class="form-control dropdown-toggle"
                                 data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
                                 placeholder="Search...">
-                            <ul class="dropdown-menu overflow-auto" id="recipe-ingr-dropdown" style="max-height: 50vh">
+                            <ul class="dropdown-menu overflow-auto w-100" id="recipe-ingr-dropdown"
+                                style="max-height: 50vh">
                                 <!-- Dropdown items here -->
                                 {{-- <li><a class="dropdown-item" href="#">Option 1</a></li>
                                 <li><a class="dropdown-item" href="#">Option 2</a></li>
@@ -79,58 +80,92 @@
 
                     </div>
                 </div>
-                <div id="home-filters" class="d-flex flex-row justify-content-between transition-height overflow-hidden"
-                    propActive="false" style="height: 0px">
-                    <div class="dropdown w-100 me-1">
-                        <button class="btn btn-secondary rounded dropdown-toggle w-100" type="button"
-                            id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-                            Select Option
+
+                <div id="home-filters" class="hide-scrollbar1 hide-scrollbar2 transition-height h-filter-active pe-5"
+                    style="overflow-x: auto; white-space: nowrap; height: 0" propactive="true">
+                    <!-- Meal Type Dropdown -->
+                    <div class="d-inline-block w-50">
+                        <button class="w-100 btn btn-secondary rounded dropdown-toggle" type="button" id="mealTypeDropdown"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Category
                         </button>
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <li><a class="dropdown-item" href="#">Option 1</a></li>
-                            <li><a class="dropdown-item" href="#">Option 2</a></li>
-                            <li><a class="dropdown-item" href="#">Option 3</a></li>
-                            <!-- Add more options as needed -->
-                        </ul>
-                    </div>
-                    <div class="dropdown w-100 me-1">
-                        <button class="btn btn-secondary rounded dropdown-toggle w-100" type="button"
-                            id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-                            Select Option
-                        </button>
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <li><a class="dropdown-item" href="#">Option 1</a></li>
-                            <li><a class="dropdown-item" href="#">Option 2</a></li>
-                            <li><a class="dropdown-item" href="#">Option 3</a></li>
-                            <!-- Add more options as needed -->
-                        </ul>
-                    </div>
-                    <div class="dropdown w-100 me-1">
-                        <button class="btn btn-secondary rounded dropdown-toggle w-100" type="button"
-                            id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-                            Select Option
-                        </button>
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <li><a class="dropdown-item" href="#">Option 1</a></li>
-                            <li><a class="dropdown-item" href="#">Option 2</a></li>
-                            <li><a class="dropdown-item" href="#">Option 3</a></li>
-                            <!-- Add more options as needed -->
-                        </ul>
-                    </div>
-                    <div class="dropdown w-100">
-                        <button class="btn btn-secondary rounded dropdown-toggle w-100" type="button"
-                            id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-                            Select Option
-                        </button>
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <li><a class="dropdown-item" href="#">Option 1</a></li>
-                            <li><a class="dropdown-item" href="#">Option 2</a></li>
-                            <li><a class="dropdown-item" href="#">Option 3</a></li>
-                            <!-- Add more options as needed -->
+                        <ul class="dropdown-menu w-inherit overflow-scroll" style="max-height: 40vh"
+                            aria-labelledby="mealTypeDropdown">
+                            <li><a class="dropdown-item p-3 px-4" href="#">breakfast</a></li>
+                            <li><a class="dropdown-item p-3 px-4" href="#">brunch</a></li>
+                            <li><a class="dropdown-item p-3 px-4" href="#">lunch</a></li>
+                            <li><a class="dropdown-item p-3 px-4" href="#">dinner</a></li>
+                            <li><a class="dropdown-item p-3 px-4" href="#">snack</a></li>
+                            <li><a class="dropdown-item p-3 px-4" href="#">teatime</a></li>
                         </ul>
                     </div>
 
+                    <!-- Calorie Range Dropdown -->
+                    <div class="d-inline-block w-50">
+                        <button class="w-100 btn btn-secondary rounded dropdown-toggle" type="button"
+                            id="calorieRangeDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                            Calorie Range
+                        </button>
+                        <ul class="dropdown-menu w-inherit overflow-scroll" style="max-height: 40vh"
+                            aria-labelledby="calorieRangeDropdown">
+                            <li><a class="dropdown-item p-3 px-4" href="#">100 - 200 kcal</a></li>
+                            <li><a class="dropdown-item p-3 px-4" href="#">150 - 300 kcal</a></li>
+                            <li><a class="dropdown-item p-3 px-4" href="#">200 - 400 kcal</a></li>
+                            <li><a class="dropdown-item p-3 px-4" href="#">250 - 500 kcal</a></li>
+                            <li><a class="dropdown-item p-3 px-4" href="#">300 - 600 kcal</a></li>
+                            <!-- Add more calorie range options as needed -->
+                        </ul>
+                    </div>
+
+                    <!-- Health Dropdown -->
+                    <div class="d-inline-block w-50">
+                        <button class="w-100 btn btn-secondary rounded dropdown-toggle" type="button" id="healthDropdown"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Dietary Restriction
+                        </button>
+                        <ul class="dropdown-menu w-inherit overflow-scroll" style="max-height: 40vh"
+                            aria-labelledby="healthDropdown">
+                            <li><a class="dropdown-item p-3 px-4" href="#">alcohol-cocktail</a></li>
+                            <li><a class="dropdown-item p-3 px-4" href="#">alcohol-free</a></li>
+                            <li><a class="dropdown-item p-3 px-4" href="#">celery-free</a></li>
+                            <li><a class="dropdown-item p-3 px-4" href="#">crustacean-free</a></li>
+                            <li><a class="dropdown-item p-3 px-4" href="#">dairy-free</a></li>
+                            <li><a class="dropdown-item p-3 px-4" href="#">DASH</a></li>
+                            <li><a class="dropdown-item p-3 px-4" href="#">egg-free</a></li>
+                            <li><a class="dropdown-item p-3 px-4" href="#">fish-free</a></li>
+                            <li><a class="dropdown-item p-3 px-4" href="#">fodmap-free</a></li>
+                            <li><a class="dropdown-item p-3 px-4" href="#">gluten-free</a></li>
+                            <li><a class="dropdown-item p-3 px-4" href="#">immuno-supportive</a></li>
+                            <li><a class="dropdown-item p-3 px-4" href="#">keto-friendly</a></li>
+                            <li><a class="dropdown-item p-3 px-4" href="#">kidney-friendly</a></li>
+                            <li><a class="dropdown-item p-3 px-4" href="#">kosher</a></li>
+                            <li><a class="dropdown-item p-3 px-4" href="#">low-fat-abs</a></li>
+                            <li><a class="dropdown-item p-3 px-4" href="#">low-potassium</a></li>
+                            <li><a class="dropdown-item p-3 px-4" href="#">low-sugar</a></li>
+                            <li><a class="dropdown-item p-3 px-4" href="#">lupine-free</a></li>
+                            <li><a class="dropdown-item p-3 px-4" href="#">Mediterranean</a></li>
+                            <li><a class="dropdown-item p-3 px-4" href="#">mollusk-free</a></li>
+                            <li><a class="dropdown-item p-3 px-4" href="#">mustard-free</a></li>
+                            <li><a class="dropdown-item p-3 px-4" href="#">no-oil-added</a></li>
+                            <li><a class="dropdown-item p-3 px-4" href="#">paleo</a></li>
+                            <li><a class="dropdown-item p-3 px-4" href="#">peanut-free</a></li>
+                            <li><a class="dropdown-item p-3 px-4" href="#">pescatarian</a></li>
+                            <li><a class="dropdown-item p-3 px-4" href="#">pork-free</a></li>
+                            <li><a class="dropdown-item p-3 px-4" href="#">red-meat-free</a></li>
+                            <li><a class="dropdown-item p-3 px-4" href="#">sesame-free</a></li>
+                            <li><a class="dropdown-item p-3 px-4" href="#">shellfish-free</a></li>
+                            <li><a class="dropdown-item p-3 px-4" href="#">soy-free</a></li>
+                            <li><a class="dropdown-item p-3 px-4" href="#">sugar-conscious</a></li>
+                            <li><a class="dropdown-item p-3 px-4" href="#">sulfite-free</a></li>
+                            <li><a class="dropdown-item p-3 px-4" href="#">tree-nut-free</a></li>
+                            <li><a class="dropdown-item p-3 px-4" href="#">vegan</a></li>
+                            <li><a class="dropdown-item p-3 px-4" href="#">vegetarian</a></li>
+                            <li><a class="dropdown-item p-3 px-4" href="#">wheat-free</a></li>
+                            <!-- Add more health options as needed -->
+                        </ul>
+                    </div>
                 </div>
+
                 <div class="pt-4" id="recipeSearch-cardContainer">
                     <!-- Card items go here -->
                     {{-- <div class="card mb-3 rounded skeleton-card">
@@ -248,6 +283,30 @@
 
     <script>
         $(document).ready(function() {
+            $('#home-filters .dropdown-toggle').on('click', function() {
+                var dropdownMenu = $(this).next('.dropdown-menu');
+                var buttonWidth = $(this).outerWidth();
+                dropdownMenu.css('width', buttonWidth);
+            });
+
+            $('.dropdown-item').on('click', function() {
+                // Get the parent dropdown
+                const parentDropdown = $(this).closest('.dropdown-menu');
+
+                parentDropdown.data('selected', $(this).text())
+
+                // Remove the "active" class from all items within the parent dropdown
+                parentDropdown.find('.dropdown-item').removeClass('active');
+
+                // Add the "active" class to the clicked item
+                $(this).addClass('active');
+
+
+                clearTimeout(debounceTimer);
+                debounceTimer = setTimeout(fetchNewRecipes, debounceDelay);
+
+            });
+
             console.log("ejonergeo")
             var selectedIngredients = []
 
@@ -369,11 +428,18 @@
                         </div>
                     </div>`;
 
-                let mealType = 'breakfast'
-                let calorieRange = {
-                    min: 200, // Minimum calorie value
-                    max: 500, // Maximum calorie value
+                let mealType = $('[aria-labelledby="mealTypeDropdown"]').data('selected') ? $(
+                    '[aria-labelledby="mealTypeDropdown"]').data('selected') : null
+                const dataCalorieAttribute = $('[aria-labelledby="calorieRangeDropdown"]').data('selected');
+                const [min, max] = dataCalorieAttribute ? dataCalorieAttribute.trim().split('-').map(str =>
+                    parseInt(str
+                        .trim())) : [null, null];
+                const calorieRange = {
+                    min,
+                    max
                 };
+                let health = $('[aria-labelledby="healthDropdown"]').data('selected') ? $(
+                    '[aria-labelledby="healthDropdown"]').data('selected') : null
 
                 // [
                 //     "alcohol-cocktail",
@@ -451,9 +517,13 @@
                             requestData.mealType = mealType;
                         }
 
-                        if (calorieRange) {
+                        if (calorieRange.min !== null && calorieRange.max !== null) {
                             // Add the calories property with the min-max range
                             requestData.calories = `${calorieRange.min}-${calorieRange.max}`;
+                        }
+
+                        if (health) {
+                            requestData.health = health
                         }
 
                         return requestData;
