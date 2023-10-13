@@ -11,12 +11,14 @@ class SavedRecipe extends Model
 
     protected $fillable = [
         'recipe_id',
-        'user_id'
+        'user_id',
+        'collection_id'
     ];
 
     protected $casts = [
         'recipe_id' => 'integer',
-        'user_id' => 'integer'
+        'user_id' => 'integer',
+        'collection_id' => 'integer'
     ];
 
 
@@ -26,5 +28,9 @@ class SavedRecipe extends Model
 
     public function recipe(){
         return $this->belongsTo(Recipe::class);
+    }
+
+    public function collection(){
+        return $this->belongsTo(Collection::class);
     }
 }

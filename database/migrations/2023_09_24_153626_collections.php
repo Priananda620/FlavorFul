@@ -13,9 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('saved_recipes', function (Blueprint $table) {
+        Schema::create('collections', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('recipe_id')->constrained();
+            $table->string('name')->unique();
             $table->foreignId('user_id')->constrained();
             $table->timestamps();
         });

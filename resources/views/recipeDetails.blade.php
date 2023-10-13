@@ -216,7 +216,7 @@
 
         <div class="container mt-5 ">
             <div class="row d-flex justify-content-center">
-                <div class="col-md-8 p-4 shadow rounded">
+                <div class="col-md-10 p-4 shadow rounded">
                     <div class="headings d-flex justify-content-between align-items-center mb-3">
                         <h5 class="fw-bold">Leave a Review</h5>
                     </div>
@@ -252,7 +252,7 @@
 
         <div class="container mt-5 ">
             <div class="row d-flex justify-content-center ">
-                <div class="col-md-8 shadow rounded p-4">
+                <div class="col-md-10 shadow rounded p-4">
                     <div class="headings d-flex justify-content-between align-items-center mb-3">
                         <h5 class="fw-bold">Comments</h5>
                         {{-- <div class="buttons">
@@ -340,25 +340,127 @@
 
 
     </section>
-    <div class="modal" tabindex="-1" role="dialog" id="collectionModal">
+    <div class="modal fade" tabindex="-1" role="dialog" id="collectionModal" style="backdrop-filter: blur(4px)">
+        <div role="document" style="" class="modal-dialog vw-100 vh-100 m-0 mw-100">
+            <div class="p-0 position-absolute top-50 start-50 translate-middle container-sm modal-content">
+                {{-- <div class="modal-header">
+                    <h5 class="modal-title">Popup Modal</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Content for your modal goes here -->
+                    <p>This is a popup modal example.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div> --}}
 
-        <div class="w-100 h-100 position-absolute" style="backdrop-filter: blur(4px)">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">Popup Modal</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <div class="col">
+                    <div class="row bg-light p-5 rounded-top">
+                        <div class=" d-inline-flex w-100">
+                            <div>
+                                <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=1170&amp;q=80"
+                                    class="img-fluid rounded" style="width: 10em;max-width: 10em;height: 10em;" alt="Image">
+                            </div>
+                            <div class="d-flex flex-column justify-content-center mx-4">
+                                <div class="fw-bold fs-2 mb-3">
+                                    Saved
+                                </div>
+                                <p>
+                                    Recipe TitleRecipe TitleRecipe TitleRecipe TitleRecipe TitleRecipe TitleRecipe
+                                    TitleRecipe Title
+                                </p>
+                            </div>
+                            <div class="d-flex align-items-center">
+                                <i class="fa-solid fa-bookmark fs-2"></i>
+                            </div>
+                        </div>
+
                     </div>
-                    <div class="modal-body">
-                        <!-- Content for your modal goes here -->
-                        <p>This is a popup modal example.</p>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <div class="row bg-white p-5 pt-1 rounded-bottom" style="max-height: 30vh; overflow: hidden; overflow-y: scroll">
+                        <div class="d-inline-flex w-100 justify-content-between p-0 fw-bold pt-4 pb-2 align-items-center bg-white" style="position: sticky;top: -1rem;">
+                            <div class="h-fit-content">
+                                Saved Collection
+                            </div>
+                            <div type="button" class="btn btn-primary btn-sm h-fit-content cursor-pointer">New Collection</div>
+                        </div>
+                        <div class="d-inline-flex w-100 justify-content-between p-0 py-2 align-items-center">
+                            <div class="d-flex flex-row align-items-center">
+                                <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=1170&amp;q=80"
+                                    class="img-fluid rounded" style="width: 5em; height: 5em" alt="Image">
+                                <div class="mx-3 fw-bold">Name Collection</div>
+                            </div>
+                            <div>
+                                <div class="h-fit-content"><i class="fa-solid fa-plus fs-3 cursor-pointer"></i></div>
+                                <div class="h-fit-content"><i class="fa-solid fa-circle-notch fa-spin fs-2"></i></div>
+                                <div class="h-fit-content"><i class="fa-regular fa-circle-check fs-2"></i></div>
+                            </div>
+                        </div>
+                        <div class="d-inline-flex w-100 justify-content-between p-0 py-2 align-items-center">
+                            <div class="d-flex flex-row align-items-center">
+                                <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=1170&amp;q=80"
+                                    class="img-fluid rounded" style="width: 5em; height: 5em" alt="Image">
+                                <div class="mx-3 fw-bold">Name Collection</div>
+                            </div>
+                            <div class="h-fit-content"><i class="fa-solid fa-plus fs-3 cursor-pointer"></i></div>
+                        </div>
+                        <div class="d-inline-flex w-100 justify-content-between p-0 py-2 align-items-center">
+                            <div class="d-flex flex-row align-items-center">
+                                <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=1170&amp;q=80"
+                                    class="img-fluid rounded" style="width: 5em; height: 5em" alt="Image">
+                                <div class="mx-3 fw-bold">Name Collection</div>
+                            </div>
+                            <div class="h-fit-content"><i class="fa-solid fa-plus fs-3 cursor-pointer"></i></div>
+                        </div>
+                        <div class="d-inline-flex w-100 justify-content-between p-0 py-2 align-items-center">
+                            <div class="d-flex flex-row align-items-center">
+                                <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=1170&amp;q=80"
+                                    class="img-fluid rounded" style="width: 5em; height: 5em" alt="Image">
+                                <div class="mx-3 fw-bold">Name Collection</div>
+                            </div>
+                            <div class="h-fit-content"><i class="fa-solid fa-plus fs-3 cursor-pointer"></i></div>
+                        </div>
+                        <div class="d-inline-flex w-100 justify-content-between p-0 py-2 align-items-center">
+                            <div class="d-flex flex-row align-items-center">
+                                <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=1170&amp;q=80"
+                                    class="img-fluid rounded" style="width: 5em; height: 5em" alt="Image">
+                                <div class="mx-3 fw-bold">Name Collection</div>
+                            </div>
+                            <div class="h-fit-content"><i class="fa-solid fa-plus fs-3 cursor-pointer"></i></div>
+                        </div>
+                        <div class="d-inline-flex w-100 justify-content-between p-0 py-2 align-items-center">
+                            <div class="d-flex flex-row align-items-center">
+                                <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=1170&amp;q=80"
+                                    class="img-fluid rounded" style="width: 5em; height: 5em" alt="Image">
+                                <div class="mx-3 fw-bold">Name Collection</div>
+                            </div>
+                            <div class="h-fit-content"><i class="fa-solid fa-plus fs-3 cursor-pointer"></i></div>
+                        </div>
+                        <div class="d-inline-flex w-100 justify-content-between p-0 py-2 align-items-center">
+                            <div class="d-flex flex-row align-items-center">
+                                <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=1170&amp;q=80"
+                                    class="img-fluid rounded" style="width: 5em; height: 5em" alt="Image">
+                                <div class="mx-3 fw-bold">Name Collection</div>
+                            </div>
+                            <div class="h-fit-content"><i class="fa-solid fa-plus fs-3 cursor-pointer"></i></div>
+                        </div>
+                        <div class="d-inline-flex w-100 justify-content-between p-0 py-2 align-items-center">
+                            <div class="d-flex flex-row align-items-center">
+                                <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=1170&amp;q=80"
+                                    class="img-fluid rounded" style="width: 5em; height: 5em" alt="Image">
+                                <div class="mx-3 fw-bold">Name Collection</div>
+                            </div>
+                            <div class="h-fit-content"><i class="fa-solid fa-plus fs-3 cursor-pointer"></i></div>
+                        </div>
+
                     </div>
                 </div>
+
             </div>
         </div>
+        {{-- <div class="w-100 h-100 position-absolute" >
+            
+        </div> --}}
     </div>
 
     <script>

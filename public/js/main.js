@@ -146,7 +146,7 @@ $(document).ready(function () {
         const toggleMenu = $('.toggle-popup-menu')
 
 
-        if (viewportWidth < 720) {
+        if (viewportWidth < 770) {
             headerMenu.addClass("d-none")
             headerSearch.addClass("d-none")
             toggleMenu.removeClass("d-none")

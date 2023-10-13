@@ -341,6 +341,42 @@
                         <div class="row p-3 rounded">
                             <!-- Left child container -->
 
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col p-4">
+                                        <div class="d-flex flex-row">
+                                            <img class="w-50 rounded-top-left border-end border-2 border-bottom" src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=170&amp;q=80" alt="Image 2">
+                                            <img class="w-50 rounded-top-right border-start border-2 border-bottom" src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=170&amp;q=80" alt="Image 2">
+                                        </div>
+                                        <div class="d-flex flex-row">
+                                            <img class="w-50 rounded-bottom-left border-end border-2 border-top" src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=170&amp;q=80" alt="Image 2">
+                                            <img class="w-50 rounded-bottom-right border-start border-2 border-top" src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=170&amp;q=80" alt="Image 2">
+                                        </div>
+                                        <div class="fs-4 fw-bold mt-3">Food</div>
+                                    </div>
+                                    <div class="col p-4">
+                                        <div class="image-2-grid">
+                                            <img class="w-100 rounded" src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=170&amp;q=80" alt="Image 2">
+                                        </div>
+                                        <div class="fs-4 fw-bold mt-3">Food</div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col p-4">
+                                        <div class="image-2-grid">
+                                            <img class="w-100 rounded" src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=170&amp;q=80" alt="Image 3">
+                                        </div>
+                                        <div class="fs-4 fw-bold mt-3">Food</div>
+                                    </div>
+                                    <div class="col p-4">
+                                        <div class="image-2-grid">
+                                            <img class="w-100 rounded"src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=170&amp;q=80" alt="Image 4">
+                                        </div>
+                                        <div class="fs-4 fw-bold mt-3">Food</div>
+                                    </div>
+                                </div>
+                            </div>
+
                             <div class="d-flex flex-row align-items-center mb-3">
                                 <div class="input-group">
                                     <input type="text" class="form-control" placeholder="Search Your Saved Recipe..."
@@ -370,7 +406,8 @@
                                                     <div class="skeleton-image h-100"></div>
                                                 </div>
                                                 <div class="row-md-8">
-                                                    <div class="card-body d-flex flex-column justify-content-between h-100">
+                                                    <div
+                                                        class="card-body d-flex flex-column justify-content-between h-100">
                                                         <div class="skeleton-title"></div>
                                                         <div class="d-flex">
                                                             <div class="flex-grow-1">
@@ -382,7 +419,8 @@
                                                             <div class="flex-grow-1">
                                                                 <div class="skeleton-info"></div>
                                                             </div>
-                                                        </div><div class="d-flex">
+                                                        </div>
+                                                        <div class="d-flex">
                                                             <div class="flex-grow-1 me-2">
                                                                 <div class="skeleton-info rounded-pill py-3"></div>
                                                             </div>
@@ -407,7 +445,8 @@
                                                         class="img-fluid rounded h-100" alt="Image">
                                                 </div>
                                                 <div class="row-md-8">
-                                                    <div class="card-body d-flex flex-column justify-content-between h-100">
+                                                    <div
+                                                        class="card-body d-flex flex-column justify-content-between h-100">
                                                         <h3 class="card-title fw-bold">Card Title</h3>
                                                         <div class="d-flex flex-row my-3">
                                                             <div class="flex-grow-1">
@@ -443,24 +482,28 @@
                                                                         class="badge bg-secondary rounded-pill">Nut-Sensistive</span>
                                                                 </div>
                                                                 <div class="me-2">
-                                                                    <span class="badge bg-success rounded-pill">Badge 3</span>
+                                                                    <span class="badge bg-success rounded-pill">Badge
+                                                                        3</span>
                                                                 </div>
                                                                 <div class="me-2">
-                                                                    <span class="badge bg-primary rounded-pill">Badge 1</span>
-                                                                </div>
-                                                                <div class="me-2">
-                                                                    <span class="badge bg-secondary rounded-pill">Badge
-                                                                        2</span>
-                                                                </div>
-                                                                <div class="me-2">
-                                                                    <span class="badge bg-success rounded-pill">Badge 3</span>
+                                                                    <span class="badge bg-primary rounded-pill">Badge
+                                                                        1</span>
                                                                 </div>
                                                                 <div class="me-2">
                                                                     <span class="badge bg-secondary rounded-pill">Badge
                                                                         2</span>
                                                                 </div>
                                                                 <div class="me-2">
-                                                                    <span class="badge bg-success rounded-pill">Badge 3</span>
+                                                                    <span class="badge bg-success rounded-pill">Badge
+                                                                        3</span>
+                                                                </div>
+                                                                <div class="me-2">
+                                                                    <span class="badge bg-secondary rounded-pill">Badge
+                                                                        2</span>
+                                                                </div>
+                                                                <div class="me-2">
+                                                                    <span class="badge bg-success rounded-pill">Badge
+                                                                        3</span>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -477,7 +520,8 @@
                                                         class="img-fluid rounded h-100" alt="Image">
                                                 </div>
                                                 <div class="row-md-8">
-                                                    <div class="card-body d-flex flex-column justify-content-between h-100">
+                                                    <div
+                                                        class="card-body d-flex flex-column justify-content-between h-100">
                                                         <h3 class="card-title fw-bold">Card Title</h3>
                                                         <div class="d-flex flex-row my-3">
                                                             <div class="flex-grow-1">
@@ -513,24 +557,28 @@
                                                                         class="badge bg-secondary rounded-pill">Nut-Sensistive</span>
                                                                 </div>
                                                                 <div class="me-2">
-                                                                    <span class="badge bg-success rounded-pill">Badge 3</span>
+                                                                    <span class="badge bg-success rounded-pill">Badge
+                                                                        3</span>
                                                                 </div>
                                                                 <div class="me-2">
-                                                                    <span class="badge bg-primary rounded-pill">Badge 1</span>
-                                                                </div>
-                                                                <div class="me-2">
-                                                                    <span class="badge bg-secondary rounded-pill">Badge
-                                                                        2</span>
-                                                                </div>
-                                                                <div class="me-2">
-                                                                    <span class="badge bg-success rounded-pill">Badge 3</span>
+                                                                    <span class="badge bg-primary rounded-pill">Badge
+                                                                        1</span>
                                                                 </div>
                                                                 <div class="me-2">
                                                                     <span class="badge bg-secondary rounded-pill">Badge
                                                                         2</span>
                                                                 </div>
                                                                 <div class="me-2">
-                                                                    <span class="badge bg-success rounded-pill">Badge 3</span>
+                                                                    <span class="badge bg-success rounded-pill">Badge
+                                                                        3</span>
+                                                                </div>
+                                                                <div class="me-2">
+                                                                    <span class="badge bg-secondary rounded-pill">Badge
+                                                                        2</span>
+                                                                </div>
+                                                                <div class="me-2">
+                                                                    <span class="badge bg-success rounded-pill">Badge
+                                                                        3</span>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -547,7 +595,8 @@
                                                         class="img-fluid rounded h-100" alt="Image">
                                                 </div>
                                                 <div class="row-md-8">
-                                                    <div class="card-body d-flex flex-column justify-content-between h-100">
+                                                    <div
+                                                        class="card-body d-flex flex-column justify-content-between h-100">
                                                         <h3 class="card-title fw-bold">Card Title</h3>
                                                         <div class="d-flex flex-row my-3">
                                                             <div class="flex-grow-1">
@@ -583,24 +632,28 @@
                                                                         class="badge bg-secondary rounded-pill">Nut-Sensistive</span>
                                                                 </div>
                                                                 <div class="me-2">
-                                                                    <span class="badge bg-success rounded-pill">Badge 3</span>
+                                                                    <span class="badge bg-success rounded-pill">Badge
+                                                                        3</span>
                                                                 </div>
                                                                 <div class="me-2">
-                                                                    <span class="badge bg-primary rounded-pill">Badge 1</span>
-                                                                </div>
-                                                                <div class="me-2">
-                                                                    <span class="badge bg-secondary rounded-pill">Badge
-                                                                        2</span>
-                                                                </div>
-                                                                <div class="me-2">
-                                                                    <span class="badge bg-success rounded-pill">Badge 3</span>
+                                                                    <span class="badge bg-primary rounded-pill">Badge
+                                                                        1</span>
                                                                 </div>
                                                                 <div class="me-2">
                                                                     <span class="badge bg-secondary rounded-pill">Badge
                                                                         2</span>
                                                                 </div>
                                                                 <div class="me-2">
-                                                                    <span class="badge bg-success rounded-pill">Badge 3</span>
+                                                                    <span class="badge bg-success rounded-pill">Badge
+                                                                        3</span>
+                                                                </div>
+                                                                <div class="me-2">
+                                                                    <span class="badge bg-secondary rounded-pill">Badge
+                                                                        2</span>
+                                                                </div>
+                                                                <div class="me-2">
+                                                                    <span class="badge bg-success rounded-pill">Badge
+                                                                        3</span>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -617,7 +670,8 @@
                                                         class="img-fluid rounded h-100" alt="Image">
                                                 </div>
                                                 <div class="row-md-8">
-                                                    <div class="card-body d-flex flex-column justify-content-between h-100">
+                                                    <div
+                                                        class="card-body d-flex flex-column justify-content-between h-100">
                                                         <h3 class="card-title fw-bold">Card Title</h3>
                                                         <div class="d-flex flex-row my-3">
                                                             <div class="flex-grow-1">
@@ -653,24 +707,28 @@
                                                                         class="badge bg-secondary rounded-pill">Nut-Sensistive</span>
                                                                 </div>
                                                                 <div class="me-2">
-                                                                    <span class="badge bg-success rounded-pill">Badge 3</span>
+                                                                    <span class="badge bg-success rounded-pill">Badge
+                                                                        3</span>
                                                                 </div>
                                                                 <div class="me-2">
-                                                                    <span class="badge bg-primary rounded-pill">Badge 1</span>
-                                                                </div>
-                                                                <div class="me-2">
-                                                                    <span class="badge bg-secondary rounded-pill">Badge
-                                                                        2</span>
-                                                                </div>
-                                                                <div class="me-2">
-                                                                    <span class="badge bg-success rounded-pill">Badge 3</span>
+                                                                    <span class="badge bg-primary rounded-pill">Badge
+                                                                        1</span>
                                                                 </div>
                                                                 <div class="me-2">
                                                                     <span class="badge bg-secondary rounded-pill">Badge
                                                                         2</span>
                                                                 </div>
                                                                 <div class="me-2">
-                                                                    <span class="badge bg-success rounded-pill">Badge 3</span>
+                                                                    <span class="badge bg-success rounded-pill">Badge
+                                                                        3</span>
+                                                                </div>
+                                                                <div class="me-2">
+                                                                    <span class="badge bg-secondary rounded-pill">Badge
+                                                                        2</span>
+                                                                </div>
+                                                                <div class="me-2">
+                                                                    <span class="badge bg-success rounded-pill">Badge
+                                                                        3</span>
                                                                 </div>
                                                             </div>
                                                         </div>

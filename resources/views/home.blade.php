@@ -384,10 +384,10 @@
                     </div>`;
                 const cardTemp = `<div class="card mb-3 rounded">
                         <div class="row g-0">
-                            <div class="col-md-4">
+                            <div class="col-md-5 d-flex align-items-center">
                                 <img src="{imageUrl}" class="img-fluid rounded h-100 w-100" alt="{recipeTitle2}">
                             </div>
-                            <div class="col-md-8">
+                            <div class="col-md-7">
                                 <div class="card-body d-flex flex-column justify-content-between h-100">
                                     <h3 class="card-title fw-bold">{recipeTitle}</h3>
                                     <div class="d-flex">
