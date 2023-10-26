@@ -15,9 +15,9 @@
             Find recipes according to your available ingredients on our website!
           </p>
           <div class="d-flex flex-column flex-sm-row justify-content-lg-start justify-content-center mt-5 mt-lg-0">
-            <button class="btn btn-primary mb-2 mb-sm-0 me-sm-2 px-4">
+            <a class="btn btn-primary mb-2 mb-sm-0 me-sm-2 px-4 text-white" href="{{url('/landing')}}">
               Get Started
-            </button>
+            </a>
           </div>
         </div>
         <div class="col-lg-6 text-center mt-5 mt-lg-0">

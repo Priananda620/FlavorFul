@@ -1,9 +1,48 @@
 
 var debounceTimer;
 var debounceDelay = 600;
+
+var totalAlertActive = 0
+
+function delay(ms) {
+    return new Promise(resolve => {
+        setTimeout(resolve, ms);
+    });
+}
+
+async function pushAlert(message, type = "secondary") {
+    ++totalAlertActive
+
+    const $alertDiv = $(`
+    <div class="alert alert-${type} w-100 shadow fade" role="alert">
+        ${message}
+    </div>
+  `);
+
+    $(".alert-target").prepend($alertDiv);
+
+    setTimeout(() => {
+        $alertDiv.addClass("show");
+    }, 500);
+
+    const $alert = $(".alert-target .alert:last");
+
+    // Automatically remove the alert after 3 seconds
+    await delay(3000)
+    $alertDiv.removeClass("show");
+    $alertDiv.addClass("hide");
+
+    // After the alert disappears, remove it from the DOM
+    await delay(500)
+    $alertDiv.remove();
+}
+
+
+
+
+
 $(document).ready(function () {
-
-
+    $(".loading-overlay").attr("style", "display: none !important");
 
     const parallaxElements = document.querySelectorAll('.parallax');
 
@@ -26,6 +65,9 @@ $(document).ready(function () {
         previousScrollY = currentScrollY;
         return scrolledPixels;
     }
+
+
+
 
 
     function updateParallax() {
@@ -125,14 +167,14 @@ $(document).ready(function () {
         console.log("fdsfdfds")
         const menu_body = $('#popup-menu')
 
-        if(menu_body.hasClass('active')){
+        if (menu_body.hasClass('active')) {
             menu_body.removeClass("active")
-            setTimeout(function (){
+            setTimeout(function () {
                 menu_body.addClass("d-none")
             }, 500);
-        }else{
+        } else {
             menu_body.removeClass("d-none")
-            setTimeout(function (){
+            setTimeout(function () {
                 menu_body.addClass("active")
             }, 50);
 
@@ -150,7 +192,7 @@ $(document).ready(function () {
             headerMenu.addClass("d-none")
             headerSearch.addClass("d-none")
             toggleMenu.removeClass("d-none")
-        }else{
+        } else {
             headerMenu.removeClass("d-none")
             headerSearch.removeClass("d-none")
             toggleMenu.addClass("d-none")
@@ -175,4 +217,21 @@ $(document).ready(function () {
     const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
 
     onResizeActions(viewportWidth, viewportHeight)
+
+
+    $('body').on('mousedown', '.rippleEffect', function (e) {
+        var ripple = $('<div class="ripple"></div>');
+        var offset = $(this).offset();
+        var x = e.pageX - offset.left;
+        var y = e.pageY - offset.top;
+
+        ripple.css({ top: y, left: x });
+        $(this).append(ripple);
+
+        ripple.on('animationend', function () {
+            ripple.remove();
+        });
+
+        console.log('ripple');
+    });
 });

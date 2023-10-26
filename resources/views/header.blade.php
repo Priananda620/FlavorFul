@@ -36,7 +36,7 @@
                         </div>
 
                     </div>
-                    <ul class="h-100 px-lg-5 text-decoration-none list-unstyled d-flex flex-column align-items-center justify-content-center">
+                    <ul class="w-100 w-md-75 w-lg-50 mx-auto h-100 px-lg-5 text-decoration-none list-unstyled d-flex flex-column align-items-center justify-content-center">
                         <li class="p-1 my-3 w-100">
                             <a class="btn btn-outline-warning border border-4 text-white px-5 py-2 w-100 fw-bold fs-1">Home</a>
                         </li>
@@ -71,6 +71,7 @@
 
             @auth()
                 <div class="position-relative cursor-pointer">
+                    {{-- {{auth()->user()->username}} --}}
                     <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=1170&amp;q=80"
                         alt="User Avatar" class="rounded-circle ms-3" width="50" height="50" id="avatar">
                     <div class="position-absolute end-0 rounded" id="avatar-menu"
@@ -85,12 +86,12 @@
                 </div>
             @else
                 <div class="ms-3">
-                    <button class="btn btn-outline-primary rounded-pill px-3">
+                    <a class="btn btn-outline-primary rounded-pill px-3" href="{{url('/login')}}">
                         Login
-                    </button>
-                    <button class="btn btn-primary rounded-pill px-3">
+                    </a>
+                    <a class="btn btn-primary rounded-pill px-3" href="{{url('/register')}}">
                         Sign Up
-                    </button>
+                    </a>
                 </div>
             @endauth
 

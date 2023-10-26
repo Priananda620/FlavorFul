@@ -54,8 +54,8 @@
                     <h1 class="fw-bold">
                         Recipes
                     </h1>
-                    <div id="toggle-home-filter" class="btn btn-info d-inline-flex">
-                        <div class="me-5">
+                    <div id="toggle-home-filter" class="rippleEffect btn bg-info d-inline-flex">
+                        <div class=" me-5">
                             Filter
                         </div>
                         <div class="">
@@ -283,6 +283,14 @@
 
     <script>
         $(document).ready(function() {
+
+            // Add a click event handler to the button
+            // $(".card[recipeId]:not([recipeId=''])").on('click', function() {
+            $('body').on('click', '.card[recipeId]:not([recipeId=""])', function(e) {
+                window.location.href = 'recipe-details/'+$(this).attr('recipeId');
+                console.log("CLICK");
+            });
+
             $('#home-filters .dropdown-toggle').on('click', function() {
                 var dropdownMenu = $(this).next('.dropdown-menu');
                 var buttonWidth = $(this).outerWidth();
@@ -382,7 +390,7 @@
                             </div>
                         </div>
                     </div>`;
-                const cardTemp = `<div class="card mb-3 rounded">
+                const cardTemp = `<div class="rippleEffect card mb-3 rounded" recipeId="{recipeId}">
                         <div class="row g-0">
                             <div class="col-md-5 d-flex align-items-center">
                                 <img src="{imageUrl}" class="img-fluid rounded h-100 w-100" alt="{recipeTitle2}">
@@ -552,6 +560,16 @@
                             let calories = Math.round(Math.round(recipe.calories) / serving);
                             let cautions = recipe.cautions;
 
+                            let uri = recipe.uri;
+                            const parts = uri.split("#recipe_");
+                            let recipeId
+
+                            if (parts.length === 2) {
+                                recipeId = parts[1];
+                            } else {
+                                recipeId = "Pattern not found in the URL";
+                            }
+
                             // Printing the extracted data for each recipe
                             console.log("Recipe Title:", recipeTitle);
                             console.log("Recipe Image:", recipeImage);
@@ -574,8 +592,12 @@
                             temp = temp.replace('{totalTime}', totalTime)
                             temp = temp.replace('{totalCalories}', calories)
                             temp = temp.replace('{cautions}', cautionHTML)
+                            temp = temp.replace('{recipeId}', recipeId)
 
-                            cardContainer.append(temp)
+                            const $temp2 = $(temp)
+                            $temp2.data('recipeId', recipeId)
+
+                            cardContainer.append($temp2)
                         }
 
                         if (data.hits.length === 0 && reload) {

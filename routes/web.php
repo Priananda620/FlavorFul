@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\RecipeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,6 +20,8 @@ Route::middleware(['guest'])->group(function () {
         return view('login');
     })->name('login');
 
+    Route::post('/login',  [AuthController::class, 'loginWeb'])->name('loginWeb');
+
     Route::get('/register', function () {
         return view('register');
     })->name('register');
@@ -32,34 +36,23 @@ Route::middleware(['guest'])->group(function () {
     })->name('resetPassword');
 });
 
-Route::get('/profile', function () {
-    return view('profile');
-})->name('profile');
-
-Route::get('/landing', function () {
-    return view('landingPage');
-})->name('landingPage');
-
-Route::get('/home', function () {
-    return view('home');
-})->name('home');
-
-Route::get('/recipeDetails', function () {
-    return view('recipeDetails');
-})->name('recipeDetails');
-
 Route::middleware(['loggedIn'])->group(function () {
 
     Route::get('/test', function () {
         return view('landing');
     })->name('landing');
 
+    Route::get('/profile', function () {
+        return view('profile');
+    })->name('profile');
+    
 
-
-
-
-
-
+    
+    Route::get('/home', function () {
+        return view('home');
+    })->name('home');
+    
+    Route::get('/recipe-details/{recipeId}', [RecipeController::class, 'getRecipeDetails'])->name('recipeDetails');
 
 
     Route::get('/popular', function () {
@@ -74,3 +67,6 @@ Route::get('/', function () {
     return view('landing');
 })->name('landing');
 
+Route::get('/landing', function () {
+    return view('landingPage');
+})->name('landingPage');

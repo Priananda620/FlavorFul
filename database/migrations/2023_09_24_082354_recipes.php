@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('recipes', function (Blueprint $table) {
             $table->id();
+            $table->text('edamamId')->unique();
             $table->string('title')->unique();
             $table->integer('popularity_score');
             $table->timestamps();

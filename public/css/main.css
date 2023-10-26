@@ -219,8 +219,19 @@ a {
     background-color: var(--bs-body-color) !important;
 }
 
+.bg-info {
+    background-color: var(--sunset-orange) !important;
+    color: white !important;
+}
+
+.btn-info {
+    background-color: var(--sunset-orange) !important;
+    border-color: var(--sunset-orange) !important;
+    color: white !important;
+}
+
 .btn-outline-primary {
-    border-color: grey !important;
+    border-color: var(--fresh-green) !important;
     border-width: 1.7px;
     color: var(--neutral-gray) !important;
     background-color: #f2f4eb !important;
@@ -270,7 +281,7 @@ a {
     position: relative;
 }
 
-.image-2-grid{
+.image-2-grid {
     /* width: 200px;
     height: 200px;
     margin: 0;
@@ -465,36 +476,12 @@ img {
 
 
 
-.w-lg-20 {
-    width: 20% !important;
-}
-
-.w-lg-30 {
-    width: 30% !important;
-}
-
-.w-lg-40 {
-    width: 40% !important;
-}
-
-.w-lg-50 {
-    width: 50% !important;
-}
-
-.w-lg-70 {
-    width: 70% !important;
-}
-
-.w-lg-80 {
-    width: 80% !important;
-}
-
-.w-lg-100 {
-    width: 100% !important;
-}
 
 /* Apply the classes at different breakpoints */
 @media (min-width: 576px) {
+    .w-sm-unset {
+        width: unset !important;
+    }
 
     /* Small screens (sm) */
     .w-sm-20 {
@@ -528,6 +515,10 @@ img {
 
 @media (min-width: 768px) {
 
+    .w-md-unset {
+        width: unset !important;
+    }
+
     /* Medium screens (md) */
     .w-md-20 {
         width: 20% !important;
@@ -558,6 +549,143 @@ img {
     }
 }
 
+@media (min-width: 992px) {
+    .w-lg-unset {
+        width: unset !important;
+    }
+
+    .w-lg-20 {
+        width: 20% !important;
+    }
+
+    .w-lg-30 {
+        width: 30% !important;
+    }
+
+    .w-lg-40 {
+        width: 40% !important;
+    }
+
+    .w-lg-50 {
+        width: 50% !important;
+    }
+
+    .w-lg-70 {
+        width: 70% !important;
+    }
+
+    .w-lg-80 {
+        width: 80% !important;
+    }
+
+    .w-lg-100 {
+        width: 100% !important;
+    }
+
+
+}
+
+
+
+/* Apply the classes at different breakpoints */
+@media (min-width: 576px) {
+
+    /* Small screens (sm) */
+    .h-sm-20 {
+        height: 20% !important;
+    }
+
+    .h-sm-30 {
+        height: 30% !important;
+    }
+
+    .h-sm-40 {
+        height: 40% !important;
+    }
+
+    .h-sm-50 {
+        height: 50% !important;
+    }
+
+    .h-sm-70 {
+        height: 70% !important;
+    }
+
+    .h-sm-80 {
+        height: 80% !important;
+    }
+
+    .h-sm-100 {
+        height: 100% !important;
+    }
+}
+
+@media (min-width: 768px) {
+
+    /* Medium screens (md) */
+    .h-md-20 {
+        height: 20% !important;
+    }
+
+    .h-md-30 {
+        height: 30% !important;
+    }
+
+    .h-md-40 {
+        height: 40% !important;
+    }
+
+    .h-md-50 {
+        height: 50% !important;
+    }
+
+    .h-md-70 {
+        height: 70% !important;
+    }
+
+    .h-md-80 {
+        height: 80% !important;
+    }
+
+    .h-md-100 {
+        height: 100% !important;
+    }
+}
+
+@media (min-width: 992px) {
+
+    /* Large screens (lg) */
+    .h-lg-20 {
+        height: 20% !important;
+    }
+
+    .h-lg-30 {
+        height: 30% !important;
+    }
+
+    .h-lg-40 {
+        height: 40% !important;
+    }
+
+    .h-lg-50 {
+        height: 50% !important;
+    }
+
+    .h-lg-70 {
+        height: 70% !important;
+    }
+
+    .h-lg-80 {
+        height: 80% !important;
+    }
+
+    .h-lg-100 {
+        height: 100% !important;
+    }
+}
+
+
+
 .modal {
     opacity: 0;
     transform: translateY(-1em) !important;
@@ -577,19 +705,19 @@ img {
     /* Adjust the radius as needed */
 }
 
-.rounded-top-left{
+.rounded-top-left {
     border-top-left-radius: .75rem !important;
 }
 
-.rounded-top-right{
+.rounded-top-right {
     border-top-right-radius: .75rem !important;
 }
 
-.rounded-bottom-left{
+.rounded-bottom-left {
     border-bottom-left-radius: .75rem !important;
 }
 
-.rounded-bottom-right{
+.rounded-bottom-right {
     border-bottom-right-radius: .75rem !important;
 }
 
@@ -616,4 +744,83 @@ img {
     #collectionModal .container-sm {
         max-width: 720px !important;
     }
+}
+
+
+.card[recipeId]:not([recipeId='']) {
+    cursor: pointer !important;
+}
+
+.rippleEffect::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: opacity 0.3s;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0;
+    transition: opacity .3s ease-out;
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.rippleEffect > *{
+    z-index: 1;
+}
+
+.rippleEffect:hover::before {
+    opacity: 1;
+    border: 2px solid rgba(128, 128, 128, 0.295);
+    border-radius: inherit;
+}
+
+.rippleEffect {
+    position: relative !important;
+    overflow: hidden !important;
+    flex-shrink: 0 !important;
+}
+
+.ripple {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    animation-name: ripple;
+    animation-duration: .8s;
+    opacity: 0;
+    border-radius: 100%;
+}
+
+.card .img-fluid {
+    background-color: ghostwhite;
+}
+
+@keyframes ripple {
+
+    0% {
+        opacity: .4;
+        transform: scale(-1);
+        background: #000;
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(110);
+        background: #000;
+    }
+}
+
+#ingredient-suggestion > div.ingr-selected{
+    position: relative;
+}
+
+#ingredient-suggestion > div.ingr-selected::after{
+    position: absolute;
+    top: 0;
+    right: 5px;
+    font-family: "Font Awesome 6 Free" !important;
+    content: "\f111";
+    font-weight: 700;
+    color: var(--fresh-green);
 }

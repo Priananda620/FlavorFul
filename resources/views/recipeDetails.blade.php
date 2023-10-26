@@ -1,20 +1,19 @@
 @extends('layout')
 @section('content')
     <section style="height: 30em;" class="position-relative">
-        <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=1170&amp;q=80"
-            class="img-fluid h-100 w-100" alt="Image">
+        <img src="{{ $recipeData['image'] }}" class="img-fluid h-100 w-100" alt="Image">
         <div class="position-absolute end-0 bottom-0 p-2 bg-light fs-1 d-inline-flex gap-2">
-            <div class="cursor-pointer" id="showSaveModal">
-                <i class="fa-solid fa-bookmark"></i>
-                {{-- <i class="fa-regular fa-bookmark"></i> --}}
+            <div class="cursor-pointer mx-2" id="showSaveModal">
+                {{-- <i class="fa-solid fa-bookmark"></i> --}}
+                <i class="fa-regular fa-bookmark"></i>
             </div>
 
-            <div class="cursor-pointer">
-                <i class="fa-solid fa-heart"></i>
-                {{-- <i class="fa-regular fa-heart"></i> --}}
+            <div class="cursor-pointer mx-2">
+                {{-- <i class="fa-solid fa-heart"></i> --}}
+                <i class="fa-regular fa-heart"></i>
             </div>
 
-            <div class="cursor-pointer">
+            <div class="cursor-pointer mx-2">
                 <i class="fa-solid fa-share-nodes"></i>
             </div>
         </div>
@@ -26,7 +25,7 @@
                 <div class="col-md-7">
                     <h1 class="bg-white p-2 fw-bold rounded shadow"
                         style="transform: translateY(-1em);width: fit-content;max-width: 14em;">
-                        Pan Seared Garlic Butter Chicken Recipe
+                        {{ $recipeData['label'] }}
                     </h1>
 
                     <div class="d-inline-flex mb-3">
@@ -51,32 +50,40 @@
 
                     <div>
                         <ul class="list-unstyled">
-                            <li class="d-flex align-items-center my-3">
-                                <div class="rounded-circle bg-primary text-white p-2 me-2 bullet-number text-center">1</div>
-                                <div style="width: 70%;">chicken eggplant2
-                                    eggplantchicken
-                                    cumlesschicken eggplant</div>
-                            </li>
-                            <li class="d-flex align-items-center my-3">
-                                <div class="rounded-circle bg-primary text-white p-2 me-2 bullet-number text-center">2</div>
-                                <div style="width: 70%;">chicken</div>
-                            </li>
-                            <li class="d-flex align-items-center my-3">
-                                <div class="rounded-circle bg-primary text-white p-2 me-2 bullet-number text-center">3</div>
-                                <div style="width: 70%;">chicken</div>
-                            </li>
-                            <li class="d-flex align-items-center my-3">
-                                <div class="rounded-circle bg-primary text-white p-2 me-2 bullet-number text-center">1</div>
-                                <div style="width: 70%;">chicken</div>
-                            </li>
-                            <li class="d-flex align-items-center my-3">
-                                <div class="rounded-circle bg-primary text-white p-2 me-2 bullet-number text-center">2</div>
-                                <div style="width: 70%;">chicken</div>
-                            </li>
-                            <li class="d-flex align-items-center my-3">
-                                <div class="rounded-circle bg-primary text-white p-2 me-2 bullet-number text-center">3</div>
-                                <div style="width: 70%;">chicken</div>
-                            </li>
+                            @php
+                                foreach ($recipeData['ingredients'] as $index => $ingredient) {
+                                    $text = $ingredient['text'];
+                                    // $quantity = $ingredient['quantity'];
+                                    // $measure = $ingredient['measure'];
+                                    // $food = $ingredient['food'];
+                                    // $weight = $ingredient['weight'];
+                                    // $foodCategory = $ingredient['foodCategory'];
+                                    // $foodId = $ingredient['foodId'];
+                                    // $image = $ingredient['image'];
+
+                                    // echo "Ingredient Text: $text<br>";
+                                    // echo "Quantity: $quantity<br>";
+                                    // echo "Measure: $measure<br>";
+                                    // echo "Food: $food<br>";
+                                    // echo "Weight: $weight<br>";
+                                    // echo "Food Category: $foodCategory<br>";
+                                    // echo "Food ID: $foodId<br>";
+                                    // echo "Image URL: $image<br>";
+
+                                    $ingredientHtml =
+                                        '<li class="d-flex align-items-center my-3">
+                                            <div class="rounded-circle bg-primary text-white p-2 me-2 bullet-number text-center">' .
+                                        ++$index .
+                                        '</div>
+                                            <div style="width: 70%;">' .
+                                        $text .
+                                        '</div>
+                                        </li>';
+
+                                    echo $ingredientHtml;
+                                }
+
+                            @endphp
                         </ul>
                     </div>
 
@@ -142,7 +149,10 @@
                             <!-- Calories -->
                             <div class="col my-4">
                                 <div class="row-md-6">
-                                    <h3>Calories <span class="float-end">1,125</span></h3>
+                                    {{-- {{$recipeData['calories']}} --}}
+                                    <h3>Calories <span
+                                            class="float-end">{{ round(round($recipeData['calories']) / $recipeData['yield']) }}</span>
+                                    </h3>
                                 </div>
                                 <div class="row-md-6">
                                     <div class="progress" style="height: 1em">
@@ -155,7 +165,7 @@
                             </div>
 
                             <!-- Fat -->
-                            <div class="col my-4">
+                            {{-- <div class="col my-4">
                                 <div class="row">
                                     <div class="col-md-6">
                                         <p>Total Fat 26g</p>
@@ -196,7 +206,66 @@
                                     </div>
                                 </div>
 
+                            </div> --}}
+
+                            <div class="col my-4">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <p>{{ $recipeData['totalNutrients']['FAT']['label'] }}
+                                            {{ number_format($recipeData['totalNutrients']['FAT']['quantity'], 2) }}{{ $recipeData['totalNutrients']['FAT']['unit'] }}
+                                        </p>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p>{{ number_format($recipeData['totalDaily']['FAT']['quantity'], 2) }}{{ $recipeData['totalDaily']['FAT']['unit'] }}
+                                        </p>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p class="ms-3">{{ $recipeData['totalNutrients']['FASAT']['label'] }}
+                                            {{ number_format($recipeData['totalNutrients']['FASAT']['quantity'], 2) }}{{ $recipeData['totalNutrients']['FASAT']['unit'] }}
+                                        </p>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p>{{ number_format($recipeData['totalDaily']['FASAT']['quantity'], 2) }}{{ $recipeData['totalDaily']['FASAT']['unit'] }}
+                                        </p>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p>{{ $recipeData['totalNutrients']['NA']['label'] }}
+                                            {{ number_format($recipeData['totalNutrients']['NA']['quantity'], 2) }}{{ $recipeData['totalNutrients']['NA']['unit'] }}
+                                        </p>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p>{{ number_format($recipeData['totalDaily']['NA']['quantity'], 2) }}{{ $recipeData['totalDaily']['NA']['unit'] }}
+                                        </p>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p>{{ $recipeData['totalNutrients']['CHOCDF']['label'] }}
+                                            {{ number_format($recipeData['totalNutrients']['CHOCDF']['quantity'], 2) }}{{ $recipeData['totalNutrients']['CHOCDF']['unit'] }}
+                                        </p>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p>{{ number_format($recipeData['totalDaily']['CHOCDF']['quantity'], 2) }}{{ $recipeData['totalDaily']['CHOCDF']['unit'] }}
+                                        </p>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p class="ms-3">{{ $recipeData['totalNutrients']['SUGAR']['label'] }}
+                                            {{ number_format($recipeData['totalNutrients']['SUGAR']['quantity'], 2) }}{{ $recipeData['totalNutrients']['SUGAR']['unit'] }}
+                                        </p>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p></p>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p>{{ $recipeData['totalNutrients']['PROCNT']['label'] }}
+                                            {{ number_format($recipeData['totalNutrients']['PROCNT']['quantity'], 2) }}{{ $recipeData['totalNutrients']['PROCNT']['unit'] }}
+                                        </p>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p>{{ number_format($recipeData['totalDaily']['PROCNT']['quantity'], 2) }}{{ $recipeData['totalDaily']['PROCNT']['unit'] }}
+                                        </p>
+                                    </div>
+                                </div>
                             </div>
+
 
                             <!-- Daily Value -->
                             <div class="col my-4">
@@ -237,8 +306,9 @@
                         <form class="w-100">
                             <div class="mb-3">
                                 {{-- <label for="exampleInputReview1" class="form-label">Write Your Review</label> --}}
-                                <input placeholder="Write Your Review..." type="review" class="form-control"
-                                    id="exampleInputReview1" aria-describedby="reviewHelp">
+
+                                <textarea placeholder="Write Your Review..." type="review" class="form-control" id="exampleInputReview1"
+                                    aria-describedby="reviewHelp"></textarea>
                                 {{-- <div id="reviewHelp" class="form-text"></div> --}}
                             </div>
 
@@ -357,32 +427,38 @@
 
                 <div class="col">
                     <div class="row bg-light p-5 rounded-top">
-                        <div class=" d-inline-flex w-100">
+                        <div class=" d-flex flex-column flex-lg-row w-100 align-items-center">
                             <div>
                                 <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=1170&amp;q=80"
-                                    class="img-fluid rounded" style="width: 10em;max-width: 10em;height: 10em;" alt="Image">
+                                    class="img-fluid rounded" style="width: 10em;max-width: 10em;height: 10em;"
+                                    alt="Image">
                             </div>
                             <div class="d-flex flex-column justify-content-center mx-4">
-                                <div class="fw-bold fs-2 mb-3">
-                                    Saved
+                                <div
+                                    class="fw-bold fs-2 mb-3 text-lg-start text-sm-center text-md-center text-center my-3 my-lg-2">
+                                    Saved&nbsp;<i class="fa-solid fa-circle-check"></i>
                                 </div>
-                                <p>
+                                <p
+                                    class="text-lg-start text-sm-center text-md-center text-center mb-3 mb-lg-2 w-lg-100 w-md-50 mx-auto">
                                     Recipe TitleRecipe TitleRecipe TitleRecipe TitleRecipe TitleRecipe TitleRecipe
                                     TitleRecipe Title
                                 </p>
                             </div>
-                            <div class="d-flex align-items-center">
+                            <div class="d-flex align-items-center cursor-pointer">
                                 <i class="fa-solid fa-bookmark fs-2"></i>
                             </div>
                         </div>
 
                     </div>
-                    <div class="row bg-white p-5 pt-1 rounded-bottom" style="max-height: 30vh; overflow: hidden; overflow-y: scroll">
-                        <div class="d-inline-flex w-100 justify-content-between p-0 fw-bold pt-4 pb-2 align-items-center bg-white" style="position: sticky;top: -1rem;">
+                    <div class="row bg-white p-5 pt-1 rounded-bottom"
+                        style="max-height: 30vh; overflow: hidden; overflow-y: scroll">
+                        <div class="d-inline-flex w-100 justify-content-between p-0 fw-bold pt-4 pb-2 align-items-center bg-white"
+                            style="position: sticky;top: -1rem;">
                             <div class="h-fit-content">
-                                Saved Collection
+                                Add to Collection
                             </div>
-                            <div type="button" class="btn btn-primary btn-sm h-fit-content cursor-pointer">New Collection</div>
+                            <div type="button" class="btn btn-primary btn-sm h-fit-content cursor-pointer">New Collection
+                            </div>
                         </div>
                         <div class="d-inline-flex w-100 justify-content-between p-0 py-2 align-items-center">
                             <div class="d-flex flex-row align-items-center">
@@ -468,6 +544,8 @@
             $("#showSaveModal").click(function() {
                 $("#collectionModal").modal("show");
             });
+
+
         });
     </script>
 @endsection

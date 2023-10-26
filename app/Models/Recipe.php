@@ -12,11 +12,13 @@ class Recipe extends Model
 
     protected $fillable = [
         'title',
+        'edamamId',
         'popularity_score'
     ];
 
     protected $casts = [
         'title' => 'string',
+        'edamamId' => 'string',
         'popularity_score' => 'integer'
     ];
 
