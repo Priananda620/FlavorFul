@@ -102,20 +102,20 @@ class UserController extends Controller
         }
 
         if (empty(User::where('email', $request->input('email'))->first()) && empty(User::where('username', $request->input('username'))->first())) {
-            $ip = $request->ip();
+            // $ip = $request->ip();
             
 
             $user = new User();
 
-            $user->last_ip = $ip;
+            // $user->last_ip = $ip;
             
-            if($ip !== "127.0.0.1"){
-                $ip_details = json_decode(file_get_contents("http://ipinfo.io/{$ip}/json"));
-                $country = $ip_details->country;
-                $user->country_code = $country;
-            }else{
-                $user->country_code = 'id';
-            }
+            // if($ip !== "127.0.0.1"){
+            //     $ip_details = json_decode(file_get_contents("http://ipinfo.io/{$ip}/json"));
+            //     $country = $ip_details->country;
+            //     $user->country_code = $country;
+            // }else{
+            //     $user->country_code = 'id';
+            // }
 
             $user->username = $request->input('username');
             $user->email = $request->input('email');

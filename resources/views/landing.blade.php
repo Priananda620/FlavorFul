@@ -305,9 +305,8 @@
           <h5>Quick Links</h5>
           <ul class="list-unstyled">
             <li><a href="#">Home</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Products</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="#">Explore</a></li>
+            <li><a href="#">Popular</a></li>
           </ul>
         </div>
         <div class="col-md-4">

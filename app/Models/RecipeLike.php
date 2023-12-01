@@ -12,12 +12,14 @@ class RecipeLike extends Model
 
     protected $fillable = [
         'recipe_id',
-        'user_id'
+        'user_id',
+        'like'
     ];
 
     protected $casts = [
         'recipe_id' => 'integer',
-        'user_id' => 'integer'
+        'user_id' => 'integer',
+        'like' => 'boolean'
     ];
 
     public function user(){

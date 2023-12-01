@@ -81,7 +81,7 @@
     </div> --}}
     <section style="margin-top: -5em">
 
-        <div class="container mt-5">
+        <div class="container mt-5" id="mealTypeCardsContainer">
             <div class="row my-5">
                 <h2 class="fw-bold my-4">
                     Breakfast
@@ -89,333 +89,16 @@
                 <div class="col">
                     <div class="overflow-auto hide-scrollbar1 hide-scrollbar2">
                         <div class="d-flex flex-row flex-nowrap gap-2">
-                            <div class="card mb-3 rounded col-3 w-sm-100 w-md-50 w-lg-30 w-100">
-                                <div class="col g-0">
-                                    <div class="row-md-4">
-                                        <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=1170&amp;q=80"
-                                            class="img-fluid rounded h-100" alt="Image">
-                                    </div>
-                                    <div class="row-md-8">
-                                        <div class="card-body d-flex flex-column justify-content-between h-100">
-                                            <h3 class="card-title fw-bold">Card Title</h3>
-                                            <div class="d-flex flex-row my-3">
-                                                <div class="flex-grow-1">
-                                                    <div class="d-flex flex-column">
-                                                        <div class="recipe-stars w-fit-content">
-                                                            <i class="fas fa-star"></i>
-                                                            <i class="fas fa-star"></i>
-                                                            <i class="fas fa-star"></i>
-                                                            <i class="fas fa-star"></i>
-                                                            <i class="far fa-star"></i>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="flex-grow-1">
-                                                    <div class="d-flex flex-column">
-                                                        <p class="m-0">
-                                                            <i class="fa-regular fa-clock"></i>
-                                                            <span>
-                                                                &lt; 10mins</span>
-                                                        </p>
-                                                    </div>
-                                                </div>
 
-                                            </div>
-                                            <div class="overflow-auto hide-scrollbar1 hide-scrollbar2">
-                                                <div class="d-flex flex-nowrap">
-                                                    <div class="me-2">
-                                                        <span class="badge bg-primary rounded-pill">Nut-Sensistive</span>
-                                                    </div>
-                                                    <div class="me-2">
-                                                        <span class="badge bg-secondary rounded-pill">Nut-Sensistive</span>
-                                                    </div>
-                                                    <div class="me-2">
-                                                        <span class="badge bg-success rounded-pill">Badge 3</span>
-                                                    </div>
-                                                    <div class="me-2">
-                                                        <span class="badge bg-primary rounded-pill">Badge 1</span>
-                                                    </div>
-                                                    <div class="me-2">
-                                                        <span class="badge bg-secondary rounded-pill">Badge 2</span>
-                                                    </div>
-                                                    <div class="me-2">
-                                                        <span class="badge bg-success rounded-pill">Badge 3</span>
-                                                    </div>
-                                                    <div class="me-2">
-                                                        <span class="badge bg-secondary rounded-pill">Badge 2</span>
-                                                    </div>
-                                                    <div class="me-2">
-                                                        <span class="badge bg-success rounded-pill">Badge 3</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card mb-3 rounded col-3 w-sm-100 w-md-50 w-lg-30 w-100">
-                                <div class="col g-0">
-                                    <div class="row-md-4">
-                                        <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=1170&amp;q=80"
-                                            class="img-fluid rounded h-100" alt="Image">
-                                    </div>
-                                    <div class="row-md-8">
-                                        <div class="card-body d-flex flex-column justify-content-between h-100">
-                                            <h3 class="card-title fw-bold">Card Title</h3>
-                                            <div class="d-flex flex-row my-3">
-                                                <div class="flex-grow-1">
-                                                    <div class="d-flex flex-column">
-                                                        <div class="recipe-stars w-fit-content">
-                                                            <i class="fas fa-star"></i>
-                                                            <i class="fas fa-star"></i>
-                                                            <i class="fas fa-star"></i>
-                                                            <i class="fas fa-star"></i>
-                                                            <i class="far fa-star"></i>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="flex-grow-1">
-                                                    <div class="d-flex flex-column">
-                                                        <p class="m-0">
-                                                            <i class="fa-regular fa-clock"></i>
-                                                            <span>
-                                                                &lt; 10mins</span>
-                                                        </p>
-                                                    </div>
-                                                </div>
 
-                                            </div>
-                                            <div class="overflow-auto hide-scrollbar1 hide-scrollbar2">
-                                                <div class="d-flex flex-nowrap">
-                                                    <div class="me-2">
-                                                        <span class="badge bg-primary rounded-pill">Nut-Sensistive</span>
-                                                    </div>
-                                                    <div class="me-2">
-                                                        <span class="badge bg-secondary rounded-pill">Nut-Sensistive</span>
-                                                    </div>
-                                                    <div class="me-2">
-                                                        <span class="badge bg-success rounded-pill">Badge 3</span>
-                                                    </div>
-                                                    <div class="me-2">
-                                                        <span class="badge bg-primary rounded-pill">Badge 1</span>
-                                                    </div>
-                                                    <div class="me-2">
-                                                        <span class="badge bg-secondary rounded-pill">Badge 2</span>
-                                                    </div>
-                                                    <div class="me-2">
-                                                        <span class="badge bg-success rounded-pill">Badge 3</span>
-                                                    </div>
-                                                    <div class="me-2">
-                                                        <span class="badge bg-secondary rounded-pill">Badge 2</span>
-                                                    </div>
-                                                    <div class="me-2">
-                                                        <span class="badge bg-success rounded-pill">Badge 3</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card mb-3 rounded col-3 w-sm-100 w-md-50 w-lg-30 w-100">
-                                <div class="col g-0">
-                                    <div class="row-md-4">
-                                        <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=1170&amp;q=80"
-                                            class="img-fluid rounded h-100" alt="Image">
-                                    </div>
-                                    <div class="row-md-8">
-                                        <div class="card-body d-flex flex-column justify-content-between h-100">
-                                            <h3 class="card-title fw-bold">Card Title</h3>
-                                            <div class="d-flex flex-row my-3">
-                                                <div class="flex-grow-1">
-                                                    <div class="d-flex flex-column">
-                                                        <div class="recipe-stars w-fit-content">
-                                                            <i class="fas fa-star"></i>
-                                                            <i class="fas fa-star"></i>
-                                                            <i class="fas fa-star"></i>
-                                                            <i class="fas fa-star"></i>
-                                                            <i class="far fa-star"></i>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="flex-grow-1">
-                                                    <div class="d-flex flex-column">
-                                                        <p class="m-0">
-                                                            <i class="fa-regular fa-clock"></i>
-                                                            <span>
-                                                                &lt; 10mins</span>
-                                                        </p>
-                                                    </div>
-                                                </div>
 
-                                            </div>
-                                            <div class="overflow-auto hide-scrollbar1 hide-scrollbar2">
-                                                <div class="d-flex flex-nowrap">
-                                                    <div class="me-2">
-                                                        <span class="badge bg-primary rounded-pill">Nut-Sensistive</span>
-                                                    </div>
-                                                    <div class="me-2">
-                                                        <span class="badge bg-secondary rounded-pill">Nut-Sensistive</span>
-                                                    </div>
-                                                    <div class="me-2">
-                                                        <span class="badge bg-success rounded-pill">Badge 3</span>
-                                                    </div>
-                                                    <div class="me-2">
-                                                        <span class="badge bg-primary rounded-pill">Badge 1</span>
-                                                    </div>
-                                                    <div class="me-2">
-                                                        <span class="badge bg-secondary rounded-pill">Badge 2</span>
-                                                    </div>
-                                                    <div class="me-2">
-                                                        <span class="badge bg-success rounded-pill">Badge 3</span>
-                                                    </div>
-                                                    <div class="me-2">
-                                                        <span class="badge bg-secondary rounded-pill">Badge 2</span>
-                                                    </div>
-                                                    <div class="me-2">
-                                                        <span class="badge bg-success rounded-pill">Badge 3</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card mb-3 rounded col-3 w-sm-100 w-md-50 w-lg-30 w-100">
-                                <div class="col g-0">
-                                    <div class="row-md-4">
-                                        <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=1170&amp;q=80"
-                                            class="img-fluid rounded h-100" alt="Image">
-                                    </div>
-                                    <div class="row-md-8">
-                                        <div class="card-body d-flex flex-column justify-content-between h-100">
-                                            <h3 class="card-title fw-bold">Card Title</h3>
-                                            <div class="d-flex flex-row my-3">
-                                                <div class="flex-grow-1">
-                                                    <div class="d-flex flex-column">
-                                                        <div class="recipe-stars w-fit-content">
-                                                            <i class="fas fa-star"></i>
-                                                            <i class="fas fa-star"></i>
-                                                            <i class="fas fa-star"></i>
-                                                            <i class="fas fa-star"></i>
-                                                            <i class="far fa-star"></i>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="flex-grow-1">
-                                                    <div class="d-flex flex-column">
-                                                        <p class="m-0">
-                                                            <i class="fa-regular fa-clock"></i>
-                                                            <span>
-                                                                &lt; 10mins</span>
-                                                        </p>
-                                                    </div>
-                                                </div>
-
-                                            </div>
-                                            <div class="overflow-auto hide-scrollbar1 hide-scrollbar2">
-                                                <div class="d-flex flex-nowrap">
-                                                    <div class="me-2">
-                                                        <span class="badge bg-primary rounded-pill">Nut-Sensistive</span>
-                                                    </div>
-                                                    <div class="me-2">
-                                                        <span class="badge bg-secondary rounded-pill">Nut-Sensistive</span>
-                                                    </div>
-                                                    <div class="me-2">
-                                                        <span class="badge bg-success rounded-pill">Badge 3</span>
-                                                    </div>
-                                                    <div class="me-2">
-                                                        <span class="badge bg-primary rounded-pill">Badge 1</span>
-                                                    </div>
-                                                    <div class="me-2">
-                                                        <span class="badge bg-secondary rounded-pill">Badge 2</span>
-                                                    </div>
-                                                    <div class="me-2">
-                                                        <span class="badge bg-success rounded-pill">Badge 3</span>
-                                                    </div>
-                                                    <div class="me-2">
-                                                        <span class="badge bg-secondary rounded-pill">Badge 2</span>
-                                                    </div>
-                                                    <div class="me-2">
-                                                        <span class="badge bg-success rounded-pill">Badge 3</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card mb-3 rounded col-3 w-sm-100 w-md-50 w-lg-30 w-100">
-                                <div class="col g-0">
-                                    <div class="row-md-4">
-                                        <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=1170&amp;q=80"
-                                            class="img-fluid rounded h-100" alt="Image">
-                                    </div>
-                                    <div class="row-md-8">
-                                        <div class="card-body d-flex flex-column justify-content-between h-100">
-                                            <h3 class="card-title fw-bold">Card Title</h3>
-                                            <div class="d-flex flex-row my-3">
-                                                <div class="flex-grow-1">
-                                                    <div class="d-flex flex-column">
-                                                        <div class="recipe-stars w-fit-content">
-                                                            <i class="fas fa-star"></i>
-                                                            <i class="fas fa-star"></i>
-                                                            <i class="fas fa-star"></i>
-                                                            <i class="fas fa-star"></i>
-                                                            <i class="far fa-star"></i>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="flex-grow-1">
-                                                    <div class="d-flex flex-column">
-                                                        <p class="m-0">
-                                                            <i class="fa-regular fa-clock"></i>
-                                                            <span>
-                                                                &lt; 10mins</span>
-                                                        </p>
-                                                    </div>
-                                                </div>
-
-                                            </div>
-                                            <div class="overflow-auto hide-scrollbar1 hide-scrollbar2">
-                                                <div class="d-flex flex-nowrap">
-                                                    <div class="me-2">
-                                                        <span class="badge bg-primary rounded-pill">Nut-Sensistive</span>
-                                                    </div>
-                                                    <div class="me-2">
-                                                        <span class="badge bg-secondary rounded-pill">Nut-Sensistive</span>
-                                                    </div>
-                                                    <div class="me-2">
-                                                        <span class="badge bg-success rounded-pill">Badge 3</span>
-                                                    </div>
-                                                    <div class="me-2">
-                                                        <span class="badge bg-primary rounded-pill">Badge 1</span>
-                                                    </div>
-                                                    <div class="me-2">
-                                                        <span class="badge bg-secondary rounded-pill">Badge 2</span>
-                                                    </div>
-                                                    <div class="me-2">
-                                                        <span class="badge bg-success rounded-pill">Badge 3</span>
-                                                    </div>
-                                                    <div class="me-2">
-                                                        <span class="badge bg-secondary rounded-pill">Badge 2</span>
-                                                    </div>
-                                                    <div class="me-2">
-                                                        <span class="badge bg-success rounded-pill">Badge 3</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="row my-5">
                 <h2 class="fw-bold my-4">
-                    Breakfast
+                    Brunch
                 </h2>
                 <div class="col">
                     <div class="overflow-auto hide-scrollbar1 hide-scrollbar2">
@@ -429,7 +112,7 @@
                                     <div class="row-md-8">
                                         <div class="card-body d-flex flex-column justify-content-between h-100">
                                             <h3 class="card-title fw-bold">Card Title</h3>
-                                            <div class="d-flex flex-row my-3">
+                                            <div class="d-flex flex-row my-3 mt-2">
                                                 <div class="flex-grow-1">
                                                     <div class="d-flex flex-column">
                                                         <div class="recipe-stars w-fit-content">
@@ -484,269 +167,14 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="card mb-3 rounded col-3 w-sm-100 w-md-50 w-lg-30 w-100">
-                                <div class="col g-0">
-                                    <div class="row-md-4">
-                                        <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=1170&amp;q=80"
-                                            class="img-fluid rounded h-100" alt="Image">
-                                    </div>
-                                    <div class="row-md-8">
-                                        <div class="card-body d-flex flex-column justify-content-between h-100">
-                                            <h3 class="card-title fw-bold">Card Title</h3>
-                                            <div class="d-flex flex-row my-3">
-                                                <div class="flex-grow-1">
-                                                    <div class="d-flex flex-column">
-                                                        <div class="recipe-stars w-fit-content">
-                                                            <i class="fas fa-star"></i>
-                                                            <i class="fas fa-star"></i>
-                                                            <i class="fas fa-star"></i>
-                                                            <i class="fas fa-star"></i>
-                                                            <i class="far fa-star"></i>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="flex-grow-1">
-                                                    <div class="d-flex flex-column">
-                                                        <p class="m-0">
-                                                            <i class="fa-regular fa-clock"></i>
-                                                            <span>
-                                                                &lt; 10mins</span>
-                                                        </p>
-                                                    </div>
-                                                </div>
 
-                                            </div>
-                                            <div class="overflow-auto hide-scrollbar1 hide-scrollbar2">
-                                                <div class="d-flex flex-nowrap">
-                                                    <div class="me-2">
-                                                        <span class="badge bg-primary rounded-pill">Nut-Sensistive</span>
-                                                    </div>
-                                                    <div class="me-2">
-                                                        <span class="badge bg-secondary rounded-pill">Nut-Sensistive</span>
-                                                    </div>
-                                                    <div class="me-2">
-                                                        <span class="badge bg-success rounded-pill">Badge 3</span>
-                                                    </div>
-                                                    <div class="me-2">
-                                                        <span class="badge bg-primary rounded-pill">Badge 1</span>
-                                                    </div>
-                                                    <div class="me-2">
-                                                        <span class="badge bg-secondary rounded-pill">Badge 2</span>
-                                                    </div>
-                                                    <div class="me-2">
-                                                        <span class="badge bg-success rounded-pill">Badge 3</span>
-                                                    </div>
-                                                    <div class="me-2">
-                                                        <span class="badge bg-secondary rounded-pill">Badge 2</span>
-                                                    </div>
-                                                    <div class="me-2">
-                                                        <span class="badge bg-success rounded-pill">Badge 3</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card mb-3 rounded col-3 w-sm-100 w-md-50 w-lg-30 w-100">
-                                <div class="col g-0">
-                                    <div class="row-md-4">
-                                        <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=1170&amp;q=80"
-                                            class="img-fluid rounded h-100" alt="Image">
-                                    </div>
-                                    <div class="row-md-8">
-                                        <div class="card-body d-flex flex-column justify-content-between h-100">
-                                            <h3 class="card-title fw-bold">Card Title</h3>
-                                            <div class="d-flex flex-row my-3">
-                                                <div class="flex-grow-1">
-                                                    <div class="d-flex flex-column">
-                                                        <div class="recipe-stars w-fit-content">
-                                                            <i class="fas fa-star"></i>
-                                                            <i class="fas fa-star"></i>
-                                                            <i class="fas fa-star"></i>
-                                                            <i class="fas fa-star"></i>
-                                                            <i class="far fa-star"></i>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="flex-grow-1">
-                                                    <div class="d-flex flex-column">
-                                                        <p class="m-0">
-                                                            <i class="fa-regular fa-clock"></i>
-                                                            <span>
-                                                                &lt; 10mins</span>
-                                                        </p>
-                                                    </div>
-                                                </div>
-
-                                            </div>
-                                            <div class="overflow-auto hide-scrollbar1 hide-scrollbar2">
-                                                <div class="d-flex flex-nowrap">
-                                                    <div class="me-2">
-                                                        <span class="badge bg-primary rounded-pill">Nut-Sensistive</span>
-                                                    </div>
-                                                    <div class="me-2">
-                                                        <span class="badge bg-secondary rounded-pill">Nut-Sensistive</span>
-                                                    </div>
-                                                    <div class="me-2">
-                                                        <span class="badge bg-success rounded-pill">Badge 3</span>
-                                                    </div>
-                                                    <div class="me-2">
-                                                        <span class="badge bg-primary rounded-pill">Badge 1</span>
-                                                    </div>
-                                                    <div class="me-2">
-                                                        <span class="badge bg-secondary rounded-pill">Badge 2</span>
-                                                    </div>
-                                                    <div class="me-2">
-                                                        <span class="badge bg-success rounded-pill">Badge 3</span>
-                                                    </div>
-                                                    <div class="me-2">
-                                                        <span class="badge bg-secondary rounded-pill">Badge 2</span>
-                                                    </div>
-                                                    <div class="me-2">
-                                                        <span class="badge bg-success rounded-pill">Badge 3</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card mb-3 rounded col-3 w-sm-100 w-md-50 w-lg-30 w-100">
-                                <div class="col g-0">
-                                    <div class="row-md-4">
-                                        <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=1170&amp;q=80"
-                                            class="img-fluid rounded h-100" alt="Image">
-                                    </div>
-                                    <div class="row-md-8">
-                                        <div class="card-body d-flex flex-column justify-content-between h-100">
-                                            <h3 class="card-title fw-bold">Card Title</h3>
-                                            <div class="d-flex flex-row my-3">
-                                                <div class="flex-grow-1">
-                                                    <div class="d-flex flex-column">
-                                                        <div class="recipe-stars w-fit-content">
-                                                            <i class="fas fa-star"></i>
-                                                            <i class="fas fa-star"></i>
-                                                            <i class="fas fa-star"></i>
-                                                            <i class="fas fa-star"></i>
-                                                            <i class="far fa-star"></i>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="flex-grow-1">
-                                                    <div class="d-flex flex-column">
-                                                        <p class="m-0">
-                                                            <i class="fa-regular fa-clock"></i>
-                                                            <span>
-                                                                &lt; 10mins</span>
-                                                        </p>
-                                                    </div>
-                                                </div>
-
-                                            </div>
-                                            <div class="overflow-auto hide-scrollbar1 hide-scrollbar2">
-                                                <div class="d-flex flex-nowrap">
-                                                    <div class="me-2">
-                                                        <span class="badge bg-primary rounded-pill">Nut-Sensistive</span>
-                                                    </div>
-                                                    <div class="me-2">
-                                                        <span class="badge bg-secondary rounded-pill">Nut-Sensistive</span>
-                                                    </div>
-                                                    <div class="me-2">
-                                                        <span class="badge bg-success rounded-pill">Badge 3</span>
-                                                    </div>
-                                                    <div class="me-2">
-                                                        <span class="badge bg-primary rounded-pill">Badge 1</span>
-                                                    </div>
-                                                    <div class="me-2">
-                                                        <span class="badge bg-secondary rounded-pill">Badge 2</span>
-                                                    </div>
-                                                    <div class="me-2">
-                                                        <span class="badge bg-success rounded-pill">Badge 3</span>
-                                                    </div>
-                                                    <div class="me-2">
-                                                        <span class="badge bg-secondary rounded-pill">Badge 2</span>
-                                                    </div>
-                                                    <div class="me-2">
-                                                        <span class="badge bg-success rounded-pill">Badge 3</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card mb-3 rounded col-3 w-sm-100 w-md-50 w-lg-30 w-100">
-                                <div class="col g-0">
-                                    <div class="row-md-4">
-                                        <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=1170&amp;q=80"
-                                            class="img-fluid rounded h-100" alt="Image">
-                                    </div>
-                                    <div class="row-md-8">
-                                        <div class="card-body d-flex flex-column justify-content-between h-100">
-                                            <h3 class="card-title fw-bold">Card Title</h3>
-                                            <div class="d-flex flex-row my-3">
-                                                <div class="flex-grow-1">
-                                                    <div class="d-flex flex-column">
-                                                        <div class="recipe-stars w-fit-content">
-                                                            <i class="fas fa-star"></i>
-                                                            <i class="fas fa-star"></i>
-                                                            <i class="fas fa-star"></i>
-                                                            <i class="fas fa-star"></i>
-                                                            <i class="far fa-star"></i>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="flex-grow-1">
-                                                    <div class="d-flex flex-column">
-                                                        <p class="m-0">
-                                                            <i class="fa-regular fa-clock"></i>
-                                                            <span>
-                                                                &lt; 10mins</span>
-                                                        </p>
-                                                    </div>
-                                                </div>
-
-                                            </div>
-                                            <div class="overflow-auto hide-scrollbar1 hide-scrollbar2">
-                                                <div class="d-flex flex-nowrap">
-                                                    <div class="me-2">
-                                                        <span class="badge bg-primary rounded-pill">Nut-Sensistive</span>
-                                                    </div>
-                                                    <div class="me-2">
-                                                        <span class="badge bg-secondary rounded-pill">Nut-Sensistive</span>
-                                                    </div>
-                                                    <div class="me-2">
-                                                        <span class="badge bg-success rounded-pill">Badge 3</span>
-                                                    </div>
-                                                    <div class="me-2">
-                                                        <span class="badge bg-primary rounded-pill">Badge 1</span>
-                                                    </div>
-                                                    <div class="me-2">
-                                                        <span class="badge bg-secondary rounded-pill">Badge 2</span>
-                                                    </div>
-                                                    <div class="me-2">
-                                                        <span class="badge bg-success rounded-pill">Badge 3</span>
-                                                    </div>
-                                                    <div class="me-2">
-                                                        <span class="badge bg-secondary rounded-pill">Badge 2</span>
-                                                    </div>
-                                                    <div class="me-2">
-                                                        <span class="badge bg-success rounded-pill">Badge 3</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="row my-5">
                 <h2 class="fw-bold my-4">
-                    Breakfast
+                    Lunch
                 </h2>
                 <div class="col">
                     <div class="overflow-auto hide-scrollbar1 hide-scrollbar2">
@@ -760,7 +188,7 @@
                                     <div class="row-md-8">
                                         <div class="card-body d-flex flex-column justify-content-between h-100">
                                             <h3 class="card-title fw-bold">Card Title</h3>
-                                            <div class="d-flex flex-row my-3">
+                                            <div class="d-flex flex-row my-3 mt-2">
                                                 <div class="flex-grow-1">
                                                     <div class="d-flex flex-column">
                                                         <div class="recipe-stars w-fit-content">
@@ -815,6 +243,18 @@
                                     </div>
                                 </div>
                             </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row my-5">
+                <h2 class="fw-bold my-4">
+                    Dinner
+                </h2>
+                <div class="col">
+                    <div class="overflow-auto hide-scrollbar1 hide-scrollbar2">
+                        <div class="d-flex flex-row flex-nowrap gap-2">
                             <div class="card mb-3 rounded col-3 w-sm-100 w-md-50 w-lg-30 w-100">
                                 <div class="col g-0">
                                     <div class="row-md-4">
@@ -824,7 +264,7 @@
                                     <div class="row-md-8">
                                         <div class="card-body d-flex flex-column justify-content-between h-100">
                                             <h3 class="card-title fw-bold">Card Title</h3>
-                                            <div class="d-flex flex-row my-3">
+                                            <div class="d-flex flex-row my-3 mt-2">
                                                 <div class="flex-grow-1">
                                                     <div class="d-flex flex-column">
                                                         <div class="recipe-stars w-fit-content">
@@ -879,6 +319,18 @@
                                     </div>
                                 </div>
                             </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row my-5">
+                <h2 class="fw-bold my-4">
+                    Snack
+                </h2>
+                <div class="col">
+                    <div class="overflow-auto hide-scrollbar1 hide-scrollbar2">
+                        <div class="d-flex flex-row flex-nowrap gap-2">
                             <div class="card mb-3 rounded col-3 w-sm-100 w-md-50 w-lg-30 w-100">
                                 <div class="col g-0">
                                     <div class="row-md-4">
@@ -888,7 +340,7 @@
                                     <div class="row-md-8">
                                         <div class="card-body d-flex flex-column justify-content-between h-100">
                                             <h3 class="card-title fw-bold">Card Title</h3>
-                                            <div class="d-flex flex-row my-3">
+                                            <div class="d-flex flex-row my-3 mt-2">
                                                 <div class="flex-grow-1">
                                                     <div class="d-flex flex-column">
                                                         <div class="recipe-stars w-fit-content">
@@ -943,6 +395,18 @@
                                     </div>
                                 </div>
                             </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row my-5">
+                <h2 class="fw-bold my-4">
+                    Tea Time
+                </h2>
+                <div class="col">
+                    <div class="overflow-auto hide-scrollbar1 hide-scrollbar2">
+                        <div class="d-flex flex-row flex-nowrap gap-2">
                             <div class="card mb-3 rounded col-3 w-sm-100 w-md-50 w-lg-30 w-100">
                                 <div class="col g-0">
                                     <div class="row-md-4">
@@ -952,7 +416,7 @@
                                     <div class="row-md-8">
                                         <div class="card-body d-flex flex-column justify-content-between h-100">
                                             <h3 class="card-title fw-bold">Card Title</h3>
-                                            <div class="d-flex flex-row my-3">
+                                            <div class="d-flex flex-row my-3 mt-2">
                                                 <div class="flex-grow-1">
                                                     <div class="d-flex flex-column">
                                                         <div class="recipe-stars w-fit-content">
@@ -1007,70 +471,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="card mb-3 rounded col-3 w-sm-100 w-md-50 w-lg-30 w-100">
-                                <div class="col g-0">
-                                    <div class="row-md-4">
-                                        <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=1170&amp;q=80"
-                                            class="img-fluid rounded h-100" alt="Image">
-                                    </div>
-                                    <div class="row-md-8">
-                                        <div class="card-body d-flex flex-column justify-content-between h-100">
-                                            <h3 class="card-title fw-bold">Card Title</h3>
-                                            <div class="d-flex flex-row my-3">
-                                                <div class="flex-grow-1">
-                                                    <div class="d-flex flex-column">
-                                                        <div class="recipe-stars w-fit-content">
-                                                            <i class="fas fa-star"></i>
-                                                            <i class="fas fa-star"></i>
-                                                            <i class="fas fa-star"></i>
-                                                            <i class="fas fa-star"></i>
-                                                            <i class="far fa-star"></i>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="flex-grow-1">
-                                                    <div class="d-flex flex-column">
-                                                        <p class="m-0">
-                                                            <i class="fa-regular fa-clock"></i>
-                                                            <span>
-                                                                &lt; 10mins</span>
-                                                        </p>
-                                                    </div>
-                                                </div>
 
-                                            </div>
-                                            <div class="overflow-auto hide-scrollbar1 hide-scrollbar2">
-                                                <div class="d-flex flex-nowrap">
-                                                    <div class="me-2">
-                                                        <span class="badge bg-primary rounded-pill">Nut-Sensistive</span>
-                                                    </div>
-                                                    <div class="me-2">
-                                                        <span class="badge bg-secondary rounded-pill">Nut-Sensistive</span>
-                                                    </div>
-                                                    <div class="me-2">
-                                                        <span class="badge bg-success rounded-pill">Badge 3</span>
-                                                    </div>
-                                                    <div class="me-2">
-                                                        <span class="badge bg-primary rounded-pill">Badge 1</span>
-                                                    </div>
-                                                    <div class="me-2">
-                                                        <span class="badge bg-secondary rounded-pill">Badge 2</span>
-                                                    </div>
-                                                    <div class="me-2">
-                                                        <span class="badge bg-success rounded-pill">Badge 3</span>
-                                                    </div>
-                                                    <div class="me-2">
-                                                        <span class="badge bg-secondary rounded-pill">Badge 2</span>
-                                                    </div>
-                                                    <div class="me-2">
-                                                        <span class="badge bg-success rounded-pill">Badge 3</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -1198,30 +599,228 @@
 
                 let displayed_ingredients = []
 
+                const fetchRecipesAjax = (requestData) => {
+                    return new Promise((resolve, reject) => {
+                        $.ajax({
+                            url: 'https://api.edamam.com/search',
+                            method: 'GET',
+                            data: requestData,
+
+                            success: function(response) {
+                                resolve(response);
+                            },
+                            error: function(jqXHR, textStatus, errorThrown) {
+                                console.error('AJAX request failed:', textStatus, errorThrown)
+                                reject(errorThrown);
+                            },
+                            complete: function() {
+                                console.log("dsdasdsadDONE")
+                            },
+                            beforeSend: function() {
+                                console.log('Sending request...')
+                            },
+                        });
+                    });
+                }
+
+                const loadRecipeCategories = async () => {
+                    const skeletonLoadEl = `<div class="card mb-3 rounded col-3 w-sm-100 w-md-50 w-lg-30 w-100">
+                                <div class="col g-0">
+                                    <div class="row-md-4">
+                                        <div class="skeleton-image h-100"></div>
+                                    </div>
+                                    <div class="row-md-8">
+                                        <div class="card-body d-flex flex-column justify-content-between h-100">
+                                            <div class="skeleton-title"></div>
+                                            <div class="d-flex">
+                                                <div class="flex-grow-1">
+                                                    <div class="skeleton-info"></div>
+                                                </div>
+                                                <div class="flex-grow-1">
+                                                    <div class="skeleton-info"></div>
+                                                </div>
+                                                <div class="flex-grow-1">
+                                                    <div class="skeleton-info"></div>
+                                                </div>
+                                            </div>
+                                            <div class="d-flex">
+                                                <div class="flex-grow-1 me-2">
+                                                    <div class="skeleton-info rounded-pill py-3"></div>
+                                                </div>
+                                                <div class="flex-grow-1 me-2">
+                                                    <div class="skeleton-info rounded-pill py-3"></div>
+                                                </div>
+                                                <div class="flex-grow-1">
+                                                    <div class="skeleton-info rounded-pill py-3"></div>
+                                                </div>
+                                            </div>
+                                            <div></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>`
+
+                    const cardLayout = `<div class="card rippleEffect mb-3 rounded col-3 w-sm-100 w-md-50 w-lg-30 w-100" style="height: ;">
+                                <div class="col g-0">
+                                    <div class="row-md-4" style="height:18em">
+                                        <img src="{imageUrl}"
+                                            class="img-fluid rounded h-100 w-100" alt="{recipeTitle2}">
+                                    </div>
+                                    <div class="row-md-8" style="height:;">
+                                        <div class="card-body d-flex flex-column justify-content-between h-100">
+                                            <h3 class="card-title fw-bold mb-0 line-clamp-2">{recipeTitle}</h3>
+                                            <div class="d-flex flex-row my-3 mt-2">
+                                                <div class="flex-grow-1">
+                                                    <div class="d-flex flex-column">
+                                                        <div class="recipe-stars w-fit-content">
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="far fa-star"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="flex-grow-1">
+                                                    <div class="d-flex flex-column">
+                                                        <p class="m-0">
+                                                            <i class="fa-regular fa-clock"></i>
+                                                            <span>
+                                                                &lt; {totalTime}mins</span>
+                                                        </p>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            <div class="overflow-auto hide-scrollbar1 hide-scrollbar2">
+                                                <div class="d-flex flex-nowrap">
+                                                    {cautions}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>`
+                    const container = $('#mealTypeCardsContainer')
+                    const mealTimeEachContainer = container.find('.row > .col > div > div')
+                    const mealTime = ['breakfast', 'brunch', 'lunch', 'dinner', 'snack', 'teatime']
+                    const requestData = {
+                        app_id: '18f6495e',
+                        app_key: '8bb396da11d4832a439ea25f315c827f',
+                        q: 'healthy',
+                        from: 0,
+                        to: 10,
+                        mealType: 'breakfast',
+                        imageSize: 'SMALL',
+                        time: '1+',
+                    };
+
+                    const promises = mealTime.map((time, index) => {
+                        const randFrom = Math.floor(Math.random() * (100 - 0 + 1)) + 0
+                        const to = randFrom + 10
+
+                        const requestDataForTime = {
+                            ...requestData,
+                            mealType: time,
+                            from: randFrom,
+                            to: to
+                        };
+
+                        const nthElement = mealTimeEachContainer.eq(index);
+                        nthElement.empty()
+
+                        nthElement.append(skeletonLoadEl)
+                        nthElement.append(skeletonLoadEl)
+                        nthElement.append(skeletonLoadEl)
+                        nthElement.append(skeletonLoadEl)
+
+
+                        return fetchRecipesAjax(requestDataForTime);
+                    });
+
+                    Promise.all(promises)
+                        .then(resultsArray => {
+                            resultsArray.forEach((results, index) => {
+                                console.log(results.hits[0].recipe.label + " " + results.hits[0]
+                                    .recipe
+                                    .mealType[0]);
+                                const nthElement = mealTimeEachContainer.eq(index);
+                                nthElement.empty()
+
+                                for (let i = 0; i < results.hits.length; i++) {
+                                    let recipe = results.hits[i].recipe;
+                                    let recipeTitle = recipe.label;
+                                    let recipeImage = recipe.image;
+                                    let totalTime = recipe.totalTime;
+                                    let serving = recipe.yield > 0 ? recipe.yield : 1;
+                                    let calories = Math.round(Math.round(recipe.calories) /
+                                        serving);
+                                    let cautions = recipe.cautions;
+                                    let cautionHTML = '';
+                                    cautions.forEach((caution) => {
+                                        console.log("Caution:", caution);
+                                        cautionHTML +=
+                                            `<div class="me-2"><span class="badge bg-primary rounded-pill">${caution}</span></div>`;
+                                    });
+
+
+                                    let temp = cardLayout
+
+                                    temp = temp.replace('{imageUrl}', recipeImage)
+                                    temp = temp.replace('{recipeTitle}', recipeTitle)
+                                    temp = temp.replace('{recipeTitle2}', recipeTitle)
+                                    temp = temp.replace('{totalTime}', totalTime)
+                                    // temp = temp.replace('{totalCalories}', calories)
+                                    temp = temp.replace('{cautions}', cautionHTML)
+
+                                    let $temp = $(temp)
+
+                                    let uri = recipe.uri;
+                                    const parts = uri.split("#recipe_");
+                                    let recipeId
+
+                                    if (parts.length === 2) {
+                                        recipeId = parts[1];
+                                    } else {
+                                        recipeId = "Pattern not found in the URL";
+                                    }
+                                    $temp.data('recipeId', recipeId)
+                                    // temp = temp.replace('{recipeId}', recipeId)
+                                    // temp = temp.replace('{totalDifficulties}', totalDifficulties)
+
+
+                                    nthElement.append($temp)
+                                }
+
+                            });
+
+                            console.log("All requests completed successfully.");
+                        }).catch(error => {
+                            console.error('Error fetching data:', error);
+                        });
+
+
+                }
+
+                loadRecipeCategories()
+
 
                 const loadIngr = function() {
                     const randFrom = Math.floor(Math.random() * (100 - 0 + 1)) + 0
                     const to = randFrom + 5
+                    const requestData = {
+                        app_id: '18f6495e',
+                        app_key: '8bb396da11d4832a439ea25f315c827f',
+                        q: 'healthy',
+                        from: randFrom,
+                        to: to,
+                        mealType: 'breakfast',
+                        imageSize: 'SMALL',
+                        time: '1+',
+                    };
 
-                    $.ajax({
-                        url: 'https://api.edamam.com/search',
-                        method: 'GET',
-                        data: (function() {
-                            let requestData = {
-                                app_id: '18f6495e',
-                                app_key: '8bb396da11d4832a439ea25f315c827f',
-                                q: 'healthy',
-                                from: randFrom,
-                                to: to,
-                                mealType: 'breakfast',
-                                imageSize: 'SMALL',
-                                time: '1+',
-                            };
-
-                            return requestData;
-                        })(),
-
-                        success: function(data) {
+                    fetchRecipesAjax(requestData)
+                        .then(data => {
                             console.log(data);
 
                             const suggestionContainer = $('#ingredient-suggestion')
@@ -1279,18 +878,13 @@
                             });
 
                             suggestionContainer.append($loadMoreIcon)
-
-                        },
-                        error: function(jqXHR, textStatus, errorThrown) {
-                            console.error('AJAX request failed:', textStatus, errorThrown);
-                        },
-                        complete: function() {
-                            console.log("dsdasdsadDONE")
-                        },
-                        beforeSend: function() {
-                            console.log('Sending request...')
-                        },
-                    });
+                        })
+                        .catch(error => {
+                            alert(error)
+                        })
+                        .finally(() => {
+                            console.log('DONEE PROMISE')
+                        });
                 }
                 loadIngr()
 
@@ -1361,7 +955,7 @@
                 });
 
                 $('#ingr-explore:not([disabled])').on('click', function() {
-                    let concatenatedUrl = 'home?'
+                    let concatenatedUrl = 'explore?'
                     $('#ingredient-suggestion > .ingr-selected').each(function() {
                         var element = $(this)
                         const foodText = element.data('foodText')
@@ -1372,6 +966,11 @@
 
                     window.location.href = concatenatedUrl
                 })
+
+                $('body').on('click', '.card', function(e) {
+                    window.location.href = 'recipe-details/' + $(this).data('recipeId');
+                    console.log('recipe-details/' + $(this).data('recipeId'));
+                });
             });
         </script>
     </section>

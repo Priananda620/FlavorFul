@@ -21,6 +21,7 @@ class User extends Authenticatable
         'username',
         'email',
         'password',
+        'avatarUrl'
     ];
 
     /**
@@ -43,6 +44,7 @@ class User extends Authenticatable
         'username' => 'string',
         'email' => 'string',
         'password' => 'string',
+        'avatarUrl' => 'string'
     ];
 
     public function recipe(){

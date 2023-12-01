@@ -18,6 +18,8 @@ return new class extends Migration
             $table->text('edamamId')->unique();
             $table->string('title')->unique();
             $table->integer('popularity_score');
+            $table->integer('view_count');
+            $table->text('image');
             $table->timestamps();
         });
     }

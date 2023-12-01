@@ -18,6 +18,7 @@ return new class extends Migration
             $table->foreignId('comment_id')->constrained();
             $table->foreignId('user_id')->constrained();
             $table->boolean('like')->default(1);
+            $table->timestamps();
         });
     }
 

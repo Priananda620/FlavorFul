@@ -11,11 +11,9 @@
 
                     </div>
 
-                    <h2 class="fw-bold mt-3 text-truncate position-relative pe-4 mx-auto mw-100" style="width: fit-content">
-                        azhar620&nbsp;
-                        <i class="fa-solid fa-bolt mb-1 orange position-absolute end-0" style="color:var(--yellow)"
-                            data-bs-toggle="tooltip" data-bs-placement="right" title="Bolt User"></i>
-
+                    <h2 class="fw-bold mt-3 text-truncate position-relative mx-auto mw-100" style="width: fit-content">
+                        azhar620
+                       
                     </h2>
 
                     <p class="text-muted-color">Joined 17 June 2023

@@ -475,7 +475,15 @@ img {
 
 
 
-
+.line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-height: 2.6em; /* Adjust according to your font size and line height */
+    min-height: 2.6em;
+  }
 
 /* Apply the classes at different breakpoints */
 @media (min-width: 576px) {
@@ -766,7 +774,7 @@ img {
     background: rgba(0, 0, 0, 0.1);
 }
 
-.rippleEffect > *{
+.rippleEffect>* {
     z-index: 1;
 }
 
@@ -811,11 +819,11 @@ img {
     }
 }
 
-#ingredient-suggestion > div.ingr-selected{
+#ingredient-suggestion>div.ingr-selected {
     position: relative;
 }
 
-#ingredient-suggestion > div.ingr-selected::after{
+#ingredient-suggestion>div.ingr-selected::after {
     position: absolute;
     top: 0;
     right: 5px;
@@ -823,4 +831,33 @@ img {
     content: "\f111";
     font-weight: 700;
     color: var(--fresh-green);
+}
+
+@keyframes likeAnimation {
+    0% {
+        opacity: 0;
+        transform: scale(0);
+      }
+      15% {
+        opacity: 0.9;
+        transform: scale(1.2);
+      }
+      30% {
+        transform: scale(0.95);
+      }
+      45%,
+      80% {
+        opacity: 0.9;
+        transform: scale(1);
+      }
+  }
+
+.likeAnimation {
+    animation-duration: 1000ms;
+    animation-name: likeAnimation;
+    animation-timing-function: ease-in-out;
+}
+
+div.is-invalid > .invalid-feedback {
+    display: unset !important;
 }

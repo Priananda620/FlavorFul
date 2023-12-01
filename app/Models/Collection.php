@@ -19,7 +19,7 @@ class Collection extends Model
         'user_id' => 'integer'
     ];
 
-    public function savedRecipe(){
+    public function savedrecipe(){
         return $this->hasMany(SavedRecipe::class);
     }
 }

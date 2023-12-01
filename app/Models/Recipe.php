@@ -13,13 +13,17 @@ class Recipe extends Model
     protected $fillable = [
         'title',
         'edamamId',
-        'popularity_score'
+        'popularity_score',
+        'image',
+        'view_count'
     ];
 
     protected $casts = [
         'title' => 'string',
         'edamamId' => 'string',
-        'popularity_score' => 'integer'
+        'popularity_score' => 'integer',
+        'image' => 'string',
+        'view_count' => 'integer'
     ];
 
     public function user(){
@@ -32,5 +36,9 @@ class Recipe extends Model
 
     public function recipeLike(){
         return $this->hasMany(RecipeLike::class);
+    }
+
+    public function savedRecipe(){
+        return $this->hasMany(SavedRecipe::class);
     }
 }

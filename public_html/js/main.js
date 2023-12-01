@@ -37,12 +37,47 @@ async function pushAlert(message, type = "secondary") {
     $alertDiv.remove();
 }
 
+function copyToClipboard(text) {
+    navigator.clipboard.writeText(text)
+        .then(() => {
+            console.log('Text successfully copied to clipboard');
+        })
+        .catch(err => {
+            console.error('Unable to copy text to clipboard', err);
+        });
+}
+
+function beforePopoverShow(event) {
+    console.log("Popover is about to be shown")
+
+    copyToClipboard(window.location.href);
+}
 
 
 
 
 $(document).ready(function () {
     $(".loading-overlay").attr("style", "display: none !important");
+
+    const popoverTriggerListCopy = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover-copy-link"]'))
+    const popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+    popoverTriggerListCopy.map(function (popoverTriggerEl) {
+
+        const popover = new bootstrap.Popover(popoverTriggerEl);
+
+        // Attach the event listener
+        popoverTriggerEl.addEventListener('show.bs.popover', beforePopoverShow);
+
+        return popover;
+
+    })
+
+    popoverTriggerList.map(function (popoverTriggerEl) {
+
+        var popover = new bootstrap.Popover(popoverTriggerEl);
+        return popover;
+
+    })
 
     const parallaxElements = document.querySelectorAll('.parallax');
 
@@ -159,8 +194,18 @@ $(document).ready(function () {
         selectedRating = rating;
 
         // Update the displayed rating
-        $('#selected-rating').text(selectedRating);
+        $('#rating_numeric').empty()
+        $('#rating_numeric').append(new Array(selectedRating + 1).join('<i class="fas fa-star"></i>'));
+        $('#rating_numeric').append(new Array((5 - selectedRating) + 1).join('<i class="far fa-star"></i>'));
     });
+
+    const textarea = document.querySelector("textarea");
+    textarea === null ?? textarea.addEventListener('input', autoResizeTextarea, false)
+
+    function autoResizeTextarea() {
+        this.style.height = 'auto';
+        this.style.height = this.scrollHeight + 'px';
+    }
 
 
     $(".toggle-popup-menu").on('click', function (e) {

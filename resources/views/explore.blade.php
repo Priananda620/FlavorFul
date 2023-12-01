@@ -287,7 +287,7 @@
             // Add a click event handler to the button
             // $(".card[recipeId]:not([recipeId=''])").on('click', function() {
             $('body').on('click', '.card[recipeId]:not([recipeId=""])', function(e) {
-                window.location.href = 'recipe-details/'+$(this).attr('recipeId');
+                window.location.href = 'recipe-details/' + $(this).attr('recipeId');
                 console.log("CLICK");
             });
 
@@ -416,11 +416,7 @@
                                             <div class="d-flex flex-column">
                                                 <h5>Difficulty</h5>
                                                 <div class="recipe-stars w-fit-content">
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="far fa-star"></i>
+                                                    {totalDifficulties}
                                                 </div>
                                             </div>
                                         </div>
@@ -560,6 +556,39 @@
                             let calories = Math.round(Math.round(recipe.calories) / serving);
                             let cautions = recipe.cautions;
 
+                            const maxCookingTime = 400; // Maximum cooking time in minutes
+                            const maxNumIngredients = 20; // Maximum number of ingredients
+
+                            // Normalize the values between 0 and 1
+                            const normalizedCookingTime = Math.min(totalTime>maxCookingTime?maxCookingTime:totalTime / maxCookingTime, 1);
+                            const normalizedNumIngredients = Math.min(recipe.ingredients.length>maxNumIngredients?maxNumIngredients:recipe.ingredients.length /
+                                maxNumIngredients, 1);
+
+                            // Set weights for each factor
+                            const cookingTimeWeight = 0.6;
+                            const numIngredientsWeight = 0.4;
+
+                            // Combine the factors to calculate difficulty
+                            let difficulty = (cookingTimeWeight * normalizedCookingTime +
+                                numIngredientsWeight * normalizedNumIngredients) * 5;
+
+                            // Ensure the difficulty is within the range of 1 to 5
+                            difficulty = Math.round(difficulty);
+
+                            // Ensure the difficulty is within the range of 1 to 5
+                            difficulty = Math.max(1, Math.min(difficulty, 5));
+
+                            const filledStars = new Array(Math.floor(difficulty + 1)).join(
+                                '<i class="fas fa-star"></i>');
+                            const emptyStars = new Array(Math.floor((5 - difficulty) + 1)).join(
+                                '<i class="far fa-star"></i>');
+
+                            // Combine filled and empty stars
+                            const difficultyStarsHtml = filledStars + emptyStars;
+
+
+                            let totalDifficulties = difficultyStarsHtml
+
                             let uri = recipe.uri;
                             const parts = uri.split("#recipe_");
                             let recipeId
@@ -593,6 +622,7 @@
                             temp = temp.replace('{totalCalories}', calories)
                             temp = temp.replace('{cautions}', cautionHTML)
                             temp = temp.replace('{recipeId}', recipeId)
+                            temp = temp.replace('{totalDifficulties}', totalDifficulties)
 
                             const $temp2 = $(temp)
                             $temp2.data('recipeId', recipeId)
@@ -771,8 +801,8 @@
 
 
 
-                clearTimeout(debounceTimer);
-                debounceTimer = setTimeout(fetchNewRecipes, debounceDelay);
+                // clearTimeout(debounceTimer);
+                // debounceTimer = setTimeout(fetchNewRecipes, debounceDelay);
             }
 
             //remove singular recipe
