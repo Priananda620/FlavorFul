@@ -2,6 +2,18 @@
 
 use Illuminate\Support\Str;
 
+if (env('APP_ENV', 'local') === 'local') {
+    $db_database = env('DB_DATABASE', 'forge');
+    $db_usr = env('DB_USERNAME', 'forge');
+    $db_pass = env('DB_PASSWORD', '');
+    $db_host = env('DB_HOST', '127.0.0.1');
+} else {
+    $db_database = 'id21459291_flavorful1';
+    $db_usr = 'id21459291_flavorful1';
+    $db_pass = '$Azhar8232000';
+    $db_host = 'localhost';
+}
+
 return [
 
     /*
@@ -46,11 +58,11 @@ return [
         'mysql' => [
             'driver' => 'mysql',
             'url' => env('DATABASE_URL'),
-            'host' => env('DB_HOST', '127.0.0.1'),
+            'host' => $db_host,
             'port' => env('DB_PORT', '3306'),
-            'database' => env('DB_DATABASE', 'forge'),
-            'username' => env('DB_USERNAME', 'forge'),
-            'password' => env('DB_PASSWORD', ''),
+            'database' => $db_database,
+            'username' => $db_usr,
+            'password' => $db_pass,
             'unix_socket' => env('DB_SOCKET', ''),
             'charset' => 'utf8mb4',
             'collation' => 'utf8mb4_unicode_ci',

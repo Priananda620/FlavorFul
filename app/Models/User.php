@@ -18,9 +18,10 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
+        'username',
         'email',
         'password',
+        'avatarUrl'
     ];
 
     /**
@@ -40,5 +41,29 @@ class User extends Authenticatable
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
+        'username' => 'string',
+        'email' => 'string',
+        'password' => 'string',
+        'avatarUrl' => 'string'
     ];
+
+    public function recipe(){
+        return $this->hasMany(Recipe::class);
+    }
+
+    public function savedRecipe(){
+        return $this->hasMany(SavedRecipe::class);
+    }
+
+    public function recipeLike(){
+        return $this->hasMany(RecipeLike::class);
+    }
+
+    public function comment(){
+        return $this->hasMany(Comment::class);
+    }
+
+    public function commentLike(){
+        return $this->hasMany(CommentLike::class);
+    }
 }
