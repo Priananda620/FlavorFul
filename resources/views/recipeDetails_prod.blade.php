@@ -16,11 +16,10 @@
 
             <div class="cursor-pointer mx-2" id="share-recipe">
                 <i class="fa-solid fa-share-nodes" data-bs-toggle="popover-copy-link" data-bs-trigger="focus"
-                    title="Copied To Clipboard" data-bs-content="Link this recipe has been copied to clipboard"
+                    title="Copied To Clipboard" data-bs-content="Link to this recipe has been copied to clipboard"
                     data-bs-placement="top" tabindex="0" role="button"></i>
                 {{-- <a  class="btn btn-lg btn-danger" >Dismissible popover</a> --}}
             </div>
-
         </div>
     </section>
 

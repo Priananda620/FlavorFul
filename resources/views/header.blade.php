@@ -34,23 +34,24 @@
                             <div class="toggle-popup-menu p-3 cursor-pointer">
                                 {{-- <i class="fas fa-cross fs-1"></i> --}}
                                 {{-- <i class="fa-solid fa-mosque fs-1"></i> --}}
-                                <i class="fa-solid fa-star-and-crescent fs-1"></i>
+                                {{-- <i class="fa-solid fa-star-and-crescent fs-1"></i> --}}
+                                <i class="fa-regular fa-circle-xmark fs-1"></i>
                             </div>
 
                         </div>
                         <ul
                             class="w-100 w-md-75 w-lg-50 mx-auto h-100 px-lg-5 text-decoration-none list-unstyled d-flex flex-column align-items-center justify-content-center">
                             <li class="p-1 my-3 w-100">
-                                <a
+                                <a href="{{url('/home')}}"
                                     class="btn btn-outline-warning border border-4 text-white px-5 py-2 w-100 fw-bold fs-1">Home</a>
                             </li>
                             <li class="p-1 my-3 w-100">
-                                <a
+                                <a href="{{url('/explore')}}"
                                     class="btn btn-outline-warning border border-4 text-white px-5 py-2 w-100 fw-bold fs-1">Explore</a>
                             </li>
                             <li class="p-1 my-3 w-100">
-                                <a
-                                    class="btn btn-outline-warning border border-4 text-white px-5 py-2 w-100 fw-bold fs-1">Recipe</a>
+                                <a href="{{url('/popular')}}"
+                                    class="btn btn-outline-warning border border-4 text-white px-5 py-2 w-100 fw-bold fs-1">Popular</a>
                             </li>
                         </ul>
                     </div>

@@ -210,7 +210,7 @@ class CollectionController extends Controller
                         // $limitedRecipes->each(function ($recipe) use (&$collectionImages) {
                         //     $collectionImages[] = $recipe->title; // Replace 'image' with your actual image column name.
                         // });
-                
+
 
                         // $collectionImages = array_merge($collectionImages, $limitedRecipes->toArray());
 
@@ -230,6 +230,20 @@ class CollectionController extends Controller
                     ->skip($offset)
                     ->take($limit)
                     ->get();
+
+                $collections = $collections->map(function ($collection) {
+
+                    $collectionImages = [];
+                    $collection->savedrecipe->map(function ($savedRecipe) use (&$collectionImages) {
+
+                        $limitedRecipes = $savedRecipe->recipe;
+                        $collectionImages[] = $limitedRecipes->image;
+                    });
+
+                    $collection->collectionImages = $collectionImages;
+
+                    return $collection;
+                });
             }
 
             $totalCollections = Collection::where('user_id', Auth::user()->id)->count();

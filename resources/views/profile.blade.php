@@ -13,7 +13,7 @@
 
                     <h2 class="fw-bold mt-3 text-truncate position-relative mx-auto mw-100" style="width: fit-content">
                         azhar620
-                       
+
                     </h2>
 
                     <p class="text-muted-color">Joined 17 June 2023
@@ -339,36 +339,54 @@
                         <div class="row p-3 rounded">
                             <!-- Left child container -->
 
-                            <div class="container">
+                            <div class="container" id="profile-collection-container">
                                 <div class="row">
-                                    <div class="col p-4">
+
+                                    <div class="col p-4 rounded rippleEffect ">
                                         <div class="d-flex flex-row">
-                                            <img class="w-50 rounded-top-left border-end border-2 border-bottom" src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=170&amp;q=80" alt="Image 2">
-                                            <img class="w-50 rounded-top-right border-start border-2 border-bottom" src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=170&amp;q=80" alt="Image 2">
+                                            <img class="w-50 rounded-top-left border-end border-2 border-bottom"
+                                                src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=170&amp;q=80"
+                                                alt="Image 2">
+                                            <img class="w-50 rounded-top-right border-start border-2 border-bottom"
+                                                src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=170&amp;q=80"
+                                                alt="Image 2">
                                         </div>
                                         <div class="d-flex flex-row">
-                                            <img class="w-50 rounded-bottom-left border-end border-2 border-top" src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=170&amp;q=80" alt="Image 2">
-                                            <img class="w-50 rounded-bottom-right border-start border-2 border-top" src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=170&amp;q=80" alt="Image 2">
+                                            <img class="w-50 rounded-bottom-left border-end border-2 border-top"
+                                                src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=170&amp;q=80"
+                                                alt="Image 2">
+                                            <img class="w-50 rounded-bottom-right border-start border-2 border-top"
+                                                src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=170&amp;q=80"
+                                                alt="Image 2">
                                         </div>
                                         <div class="fs-4 fw-bold mt-3">Food</div>
                                     </div>
-                                    <div class="col p-4">
+
+                                    <div class="col p-4 rounded rippleEffect ">
                                         <div class="image-2-grid">
-                                            <img class="w-100 rounded" src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=170&amp;q=80" alt="Image 2">
+                                            <img class="w-100 rounded"
+                                                src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=170&amp;q=80"
+                                                alt="Image 2">
                                         </div>
                                         <div class="fs-4 fw-bold mt-3">Food</div>
                                     </div>
+
                                 </div>
                                 <div class="row">
-                                    <div class="col p-4">
+
+                                    <div class="col p-4 rounded rippleEffect ">
                                         <div class="image-2-grid">
-                                            <img class="w-100 rounded" src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=170&amp;q=80" alt="Image 3">
+                                            <img class="w-100 rounded"
+                                                src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=170&amp;q=80"
+                                                alt="Image 3">
                                         </div>
                                         <div class="fs-4 fw-bold mt-3">Food</div>
                                     </div>
-                                    <div class="col p-4">
+
+                                    <div class="col p-4 rounded rippleEffect ">
                                         <div class="image-2-grid">
-                                            <img class="w-100 rounded"src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=170&amp;q=80" alt="Image 4">
+                                            <img class="w-100 rounded"src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=170&amp;q=80"
+                                                alt="Image 4">
                                         </div>
                                         <div class="fs-4 fw-bold mt-3">Food</div>
                                     </div>
@@ -745,4 +763,138 @@
 
         </div>
     </div>
+
+    <script>
+        $(document).ready(() => {
+            const requestHeaders = {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json',
+                'Authorization': 'Bearer ' + $.cookie('api_plain_token')
+            };
+
+            // const rowDiv = $('<div>', {
+            //     'class': 'row'
+            // })
+
+
+            const getCollectionHandler = (() => {
+                const collectionContainer = $('#profile-collection-container')
+
+                $.ajax({
+                    url: window.location.origin + "/api/" + 'get/collections',
+                    type: 'GET',
+                    data: {
+                        offset: 0,
+                        limit: 1000,
+                    },
+                    headers: requestHeaders,
+                    success: function(response) {
+                        console.log(response);
+                        collectionContainer.empty()
+
+                        const bgColor = '#f6f6f6';
+                        const svg =
+                            `<svg xmlns='http://www.w3.org/2000/svg' width='${170}' height='${170}'><rect width='100%' height='100%' fill='${bgColor}' /></svg>`;
+                        const dataURI = 'data:image/svg+xml,' + encodeURIComponent(svg);
+
+                        const $row = $('<div>', {
+                            'class': 'row'
+                        });
+
+
+                        let $rowEl;
+                        response.collections.forEach((collection, index) => {
+                            console.log(index);
+                            if (index % 2 === 0) {
+                                $rowEl = $('<div>', {
+                                    'class': 'row'
+                                });
+                                console.log("ROWWWWWWWWWWWWWWWWWWWW");
+                            }
+
+                            let $div = $('<div>', {
+                                'class': 'col p-4 rounded rippleEffect',
+                                'html': $('<div>', {
+                                    'class': 'd-flex flex-row',
+                                    'html': [
+                                        $('<img>', {
+                                            'class': 'w-50 rounded-top-left border-end border-2 border-bottom',
+                                            'src': collection
+                                                .collectionImages[
+                                                    0] ?
+                                                collection
+                                                .collectionImages[
+                                                    0] :
+                                                dataURI,
+                                            'alt': 'Image 2'
+                                        }),
+                                        $('<img>', {
+                                            'class': 'w-50 rounded-top-right border-start border-2 border-bottom',
+                                            'src': collection
+                                                .collectionImages[
+                                                    1] ?
+                                                collection
+                                                .collectionImages[
+                                                    1] :
+                                                dataURI,
+                                            'alt': 'Image 2'
+                                        })
+                                    ]
+                                }),
+                                'append': [
+                                    $('<div>', {
+                                        'class': 'd-flex flex-row',
+                                        'html': [
+                                            $('<img>', {
+                                                'class': 'w-50 rounded-bottom-left border-end border-2 border-top',
+                                                'src': collection
+                                                    .collectionImages[
+                                                        2] ?
+                                                    collection
+                                                    .collectionImages[
+                                                        2] :
+                                                    dataURI,
+                                                'alt': 'Image 2'
+                                            }),
+                                            $('<img>', {
+                                                'class': 'w-50 rounded-bottom-right border-start border-2 border-top',
+                                                'src': collection
+                                                    .collectionImages[
+                                                        3] ?
+                                                    collection
+                                                    .collectionImages[
+                                                        3] :
+                                                    dataURI,
+                                                'alt': 'Image 2'
+                                            })
+                                        ]
+                                    }),
+                                    $('<div>', {
+                                        'class': 'fs-4 fw-bold mt-3',
+                                        'text': collection.name
+                                    })
+                                ]
+                            });
+
+                            $rowEl.append($div);
+
+                            if (index % 2 !== 0 || index === response.collections.length - 1) {
+                                collectionContainer.append($rowEl);
+                            }
+                        });
+
+                    },
+                    error: function(xhr, status, error) {
+                        alert(error)
+                    },
+                    beforeSend: function() {
+
+                    },
+                    complete: function() {
+                        // collectionContainer.empty()
+                    }
+                });
+            })()
+        })
+    </script>
 @endsection

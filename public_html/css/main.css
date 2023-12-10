@@ -293,6 +293,9 @@ a {
 
 .active:not(.tab-pane) {
     color: white !important;
+}
+
+#popup-menu{
     background: var(--green-flavor) !important;
 }
 
@@ -320,9 +323,6 @@ a {
 .selected-recipe:hover {
     padding-right: 2em !important;
 }
-
-
-
 
 .skeleton-card {
     background-color: #f5f5f5;
@@ -734,6 +734,10 @@ img {
     /* Adjust the radius as needed */
     border-bottom-right-radius: .75rem !important;
     /* Adjust the radius as needed */
+}
+
+#profile-collection-container img{
+    max-height: 7rem;
 }
 
 @media (min-width: 992px) {

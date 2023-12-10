@@ -207,10 +207,10 @@ $(document).ready(function () {
         this.style.height = this.scrollHeight + 'px';
     }
 
-
+    const menu_body = $('#popup-menu')
     $(".toggle-popup-menu").on('click', function (e) {
         console.log("fdsfdfds")
-        const menu_body = $('#popup-menu')
+        
 
         if (menu_body.hasClass('active')) {
             menu_body.removeClass("active")
@@ -237,6 +237,11 @@ $(document).ready(function () {
             headerMenu.addClass("d-none")
             headerSearch.addClass("d-none")
             toggleMenu.removeClass("d-none")
+
+            menu_body.removeClass("active")
+            setTimeout(function () {
+                menu_body.addClass("d-none")
+            }, 500);
         } else {
             headerMenu.removeClass("d-none")
             headerSearch.removeClass("d-none")
