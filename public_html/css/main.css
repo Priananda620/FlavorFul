@@ -19,7 +19,7 @@
 }
 
 html {
-    font-size: 15px !important;
+    font-size: 13px !important;
     color: #16421F;
 }
 
@@ -738,6 +738,30 @@ img {
 
 #profile-collection-container img{
     max-height: 7rem;
+}
+
+.min-vh-50{
+    min-height: 50vh !important;
+}
+
+.min-vh-70{
+    min-height: 70vh !important;
+}
+
+#current-user-saved-recipe img{
+    min-height: 8em;
+}
+
+.hamburger-menu {
+    cursor: pointer;
+}
+
+.dot {
+    width: 20px;
+    height: 20px;
+    background-color: #333;
+    border-radius: 50%;
+    margin-bottom: 5px;
 }
 
 @media (min-width: 992px) {

@@ -2,12 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Collection;
 use App\Models\Comment;
 use App\Models\User;
 use App\Models\Recipe;
 use App\Models\RecipeLike;
+use App\Models\SavedRecipe;
 use Carbon\Carbon;
 use GuzzleHttp\Client;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -148,6 +151,45 @@ class RecipeController extends Controller
             ]);
         } catch (\Throwable $th) {
             throw $th;
+        }
+    }
+
+    public function getRecipeCollection(Request $request){
+        try {  
+            $validatedData = $request->validate([
+                'collectionId' => 'exists:collections,id'
+            ]);
+
+            $collection = Collection::where('id', $request->input('collectionId'))->first();
+            if($collection->user_id != auth()->user()->id){
+                $response = [
+                    'message' => 'Unauthorized action.',
+                    'error' => 'You are not allowed to perform this action on the specified collection.',
+                ];
+            
+                return response()->json($response, JsonResponse::HTTP_UNAUTHORIZED);
+            }
+            
+            // $recipes = SavedRecipe::with('recipe')->withCount('recipeLike')->withCount('savedRecipe')->with('comment')->where('collection_id', $collection->id)->get()->pluck('recipe');
+            
+            $recipeIds = SavedRecipe::where('collection_id', $collection->id)->get()->pluck('recipe_id');
+
+            $recipes = Recipe::whereIn('id', $recipeIds)->withCount('recipeLike')->withCount('savedRecipe')->with('comment')->orderBy('popularity_score', 'desc')->get();
+
+
+
+            return response()->json([
+                'total' => $recipes->count(),
+                'recipes' => $recipes
+            ]);
+
+        } catch (\Throwable $th) {
+            throw $th;
+        } catch (ValidationException $exception) {
+            return response()->json([
+                'message' => 'The given data was invalid.',
+                'errors' => $exception->errors(),
+            ], 422);
         }
     }
 

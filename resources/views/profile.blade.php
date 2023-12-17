@@ -393,12 +393,73 @@
                                 </div>
                             </div>
 
-                            <div class="d-flex flex-row align-items-center mb-3">
-                                <div class="input-group">
-                                    <input type="text" class="form-control" placeholder="Search Your Saved Recipe..."
-                                        aria-label="Search Your Saved Recipe..." aria-describedby="search">
-                                    <button class="btn btn-danger" type="button" id="search"><i
-                                            class="fa-solid fa-magnifying-glass"></i></button>
+                            <div style="display: none;" id="collection-recipe-search">
+                                <div class="d-flex flex-column align-items-center mb-3">
+                                    <div class="w-100 my-2 d-inline-flex">
+                                        <button class="btn btn-secondary my-auto" id="back-collection">
+                                            <i class="fas fa-arrow-left"></i>
+                                        </button>
+                                        <p class="my-auto mx-2 fs-4">
+                                            Return
+                                        </p>
+                                        <div class="badge bg-secondary ms-auto my-auto d-inline-flex align-items-center"
+                                            style="padding-top: .5rem !important;padding-bottom: .5rem !important;">
+                                            <i class="fa-solid fa-bookmark fa-xl me-2"></i>
+                                            <h1 class="fs-4 fw-bold m-0">
+
+                                            </h1>
+                                        </div>
+                                        <div class="container p-0 m-0 mx-2 w-auto position-relative">
+                                            <div class="d-flex align-items-center">
+                                                <button class="hamburger-menu btn" data-bs-toggle="collapse"
+                                                    data-bs-target="#menuContent" aria-controls="menuContent"
+                                                    aria-expanded="false" aria-label="Toggle menu">
+                                                    <i class="fa-solid fa-ellipsis-vertical fs-1"></i>
+                                                </button>
+                                            </div>
+
+                                            <div class="collapse position-absolute z-5 end-0" style="z-index: 100;"
+                                                id="menuContent">
+                                                <div class="card card-body">
+                                                    <p class="p-2 m-0 cursor-pointer rippleEffect" data-bs-toggle="modal"
+                                                        data-bs-target="#deleteConfirmationModal">Delete Collection</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" id="searchInput"
+                                            placeholder="Search Your Saved Recipe..."
+                                            aria-label="Search Your Saved Recipe..." aria-describedby="search">
+                                        <button class="btn btn-danger" type="button"><i
+                                                class="fa-solid fa-magnifying-glass"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="container">
+
+                                <!-- Delete Confirmation Modal -->
+                                <div class="modal fade" id="deleteConfirmationModal" tabindex="-1"
+                                    aria-labelledby="deleteConfirmationModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog d-flex align-items-center w-100 h-100">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="deleteConfirmationModalLabel">Delete
+                                                    Collection</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                Are you sure you want to delete this collection?
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-bs-dismiss="modal">Cancel</button>
+                                                <button type="button" class="btn btn-danger">Delete</button>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             {{-- <div class="row row-cols-1 row-cols-md-2 row-cols-lg-2 g-3" id="profileQuestionCardResults">
@@ -413,7 +474,7 @@
                                 <div class="skeleton-row p-4 skeleton"></div>
                                 <div class="skeleton-row p-4 skeleton"></div>
                             </div> --}}
-                            <div class="container">
+                            <div class="container" id="collection-recipes" style="display: none;">
                                 <div class="row row-cols-1 row-cols-md-2 g-4">
                                     <div class="col">
                                         <div class="card rounded skeleton-card">
@@ -772,9 +833,126 @@
                 'Authorization': 'Bearer ' + $.cookie('api_plain_token')
             };
 
-            // const rowDiv = $('<div>', {
-            //     'class': 'row'
-            // })
+            $('#searchInput').on('input', function() {
+                const searchQuery = $(this).val().toLowerCase();
+                $('#collection-recipes > h3').remove()
+                let isFound = false
+                $('#collection-recipes .card').each(function() {
+                    const cardText = $(this).text().toLowerCase();
+                    const isVisible = cardText.includes(searchQuery);
+                    $(this).parent().toggle(isVisible);
+                    if(!isFound && isVisible){
+                        isFound = isVisible
+                    }
+                });
+
+                if(!isFound && $('#collection-recipes .card').length){
+                    $('#collection-recipes').append(`<h3 class="m-0 text-center mt-5 mb-4 w-100">Recipe Not Found</h3>`)
+                }
+            });
+
+            $('body').on('click', '.collection-items', async function() {
+                let search = $('#collection-recipe-search')
+                let recipe = $('#collection-recipes')
+                let collection = $('#profile-collection-container')
+
+                const parentElement = collection.parent();
+
+                parentElement.data('collectionState', $(this).find('.collection-data').data(
+                    'collectionId'))
+                console.log(parentElement.data('collectionState'))
+
+                parentElement.css('min-height', parentElement.outerHeight() + 'px');
+
+                search.find('h1').html($(this).find('.collection-data').data('collectionName'))
+
+                collection.fadeOut(200);
+
+                setTimeout(() => {
+                    search.fadeIn(200);
+                    recipe.fadeIn(200);
+                }, 500);
+
+                await delay(500)
+
+                parentElement.css('min-height', '');
+
+                getRecipeHandler(parentElement.data('collectionState'))
+
+                // parent.attr('collectionid', $(this).attr('collectionid'))
+
+                // console.log($(this).attr('collectionid'))
+
+            })
+
+
+            const skeleton = `<div class="col">
+                                        <div class="card rounded skeleton-card">
+                                            <div class="col g-0">
+                                                <div class="row-md-4">
+                                                    <div class="skeleton-image h-100"></div>
+                                                </div>
+                                                <div class="row-md-8">
+                                                    <div class="card-body d-flex flex-column justify-content-between h-100">
+                                                        <div class="skeleton-title"></div>
+                                                        <div class="d-flex">
+                                                            <div class="flex-grow-1">
+                                                                <div class="skeleton-info"></div>
+                                                            </div>
+                                                            <div class="flex-grow-1">
+                                                                <div class="skeleton-info"></div>
+                                                            </div>
+                                                            <div class="flex-grow-1">
+                                                                <div class="skeleton-info"></div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="d-flex">
+                                                            <div class="flex-grow-1 me-2">
+                                                                <div class="skeleton-info rounded-pill py-3"></div>
+                                                            </div>
+                                                            <div class="flex-grow-1 me-2">
+                                                                <div class="skeleton-info rounded-pill py-3"></div>
+                                                            </div>
+                                                            <div class="flex-grow-1">
+                                                                <div class="skeleton-info rounded-pill py-3"></div>
+                                                            </div>
+                                                        </div>
+                                                        <div></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>`
+
+            $('body').on('click', '#back-collection', async function() {
+                let search = $('#collection-recipe-search')
+                let recipe = $('#collection-recipes')
+                let collection = $('#profile-collection-container')
+
+                const parentElement = collection.parent();
+                parentElement.css('min-height', parentElement.outerHeight() + 'px');
+
+                search.fadeOut(200);
+                recipe.fadeOut(200);
+                setTimeout(() => {
+                    collection.fadeIn(200);
+                }, 500);
+
+                await delay(500)
+
+                parentElement.css('min-height', '');
+
+                const recipeContainer = $('#collection-recipes > .row')
+
+                recipeContainer.empty()
+                recipeContainer.append(skeleton)
+                recipeContainer.append(skeleton)
+            })
+
+            $('body').on('click', '.card', function(e) {
+                window.location.href = 'recipe-details/' + $(this).data('recipeId').split("recipe_")[1];
+                console.log("CLICK");
+            });
 
 
             const getCollectionHandler = (() => {
@@ -794,7 +972,14 @@
 
                         const bgColor = '#f6f6f6';
                         const svg =
-                            `<svg xmlns='http://www.w3.org/2000/svg' width='${170}' height='${170}'><rect width='100%' height='100%' fill='${bgColor}' /></svg>`;
+                            `<svg xmlns="http://www.w3.org/2000/svg" width="170" height="170" viewBox="0 0 512 512">
+    <rect width="100%" height="100%" fill="${bgColor}" />
+    <g width="100%" height="100%" >
+        <path style="transform: scale(.3) translate(120%, 120%)" fill="#fff" d="M32 0C19.1 0 7.4 7.8 2.4 19.8s-2.2 25.7 6.9 34.9L224 269.3V448H160c-17.7 0-32 14.3-32 32s14.3 32 32 32h96 96c17.7 0 32-14.3 32-32s-14.3-32-32-32H288V269.3L502.6 54.6c9.2-9.2 11.9-22.9 6.9-34.9S492.9 0 480 0H32zM256 210.7L109.3 64H402.7L256 210.7z"/>
+    </g>
+</svg>
+
+                        `;
                         const dataURI = 'data:image/svg+xml,' + encodeURIComponent(svg);
 
                         const $row = $('<div>', {
@@ -804,7 +989,7 @@
 
                         let $rowEl;
                         response.collections.forEach((collection, index) => {
-                            console.log(index);
+                            // console.log(index);
                             if (index % 2 === 0) {
                                 $rowEl = $('<div>', {
                                     'class': 'row'
@@ -812,8 +997,17 @@
                                 console.log("ROWWWWWWWWWWWWWWWWWWWW");
                             }
 
+                            let collectionData = $('<div>', {
+                                'class': 'fs-5 fw-bold mt-3 collection-data',
+                                'text': collection.name
+                            })
+
+                            collectionData.data('collectionName', collection.name)
+                            collectionData.data('collectionId', collection.id)
+
                             let $div = $('<div>', {
-                                'class': 'col p-4 rounded rippleEffect',
+                                'class': 'col p-4 rounded rippleEffect collection-items',
+                                'collectionId': collection.id,
                                 'html': $('<div>', {
                                     'class': 'd-flex flex-row',
                                     'html': [
@@ -869,16 +1063,14 @@
                                             })
                                         ]
                                     }),
-                                    $('<div>', {
-                                        'class': 'fs-4 fw-bold mt-3',
-                                        'text': collection.name
-                                    })
+                                    collectionData
                                 ]
                             });
 
                             $rowEl.append($div);
 
-                            if (index % 2 !== 0 || index === response.collections.length - 1) {
+                            if (index % 2 !== 0 || index === response.collections
+                                .length - 1) {
                                 collectionContainer.append($rowEl);
                             }
                         });
@@ -895,6 +1087,147 @@
                     }
                 });
             })()
+
+
+
+            const getRecipeHandler = (collectionId) => {
+                const recipeContainer = $('#collection-recipes > .row')
+
+                let cardTemp = `
+            <div class="card mb-3 rounded p-0 rippleEffect">
+                            <div class="col g-0">
+                                <div class="row-md-4">
+                                    <img src="{image}"
+                                        class="img-fluid rounded h-100 w-100" alt="{label}">
+                                </div>
+                                <div class="row-md-8">
+                                    <div class="card-body d-flex flex-column justify-content-between h-100">
+                                        <h3 class="card-title fw-bold line-clamp-2">{label}</h3>
+                                        <div class="d-inline-flex mb-3" id="avg-rating">
+
+                                            <div class="recipe-stars w-fit-content">
+                                                {stars}
+                                                <span class="ms-1">{rating}</span>
+                                            </div>
+
+                                            <div class="ms-2">({totalReview} Review)</div>
+                                        </div>
+                                        <div class="d-flex flex-row my-3">
+                                            <div class="flex-grow-1">
+                                                <div class="d-flex flex-row">
+                                                    <div class="me-2">
+                                                        <span class="badge bg-success rounded-pill fs-6">
+                                                            <i class="fa-heart fa-solid me-2"></i><span
+                                                                class="pe-2">{totalLike}</span>
+                                                            <i class="fa-bookmark fa-solid ps-2 border-start border-2 border-secondary me-2"></i><span>{totalSaved}</span>
+                                                        </span>
+                                                    </div>
+                                                    <div class="me-2">
+                                                        <span class="badge bg-success rounded-pill fs-6">
+                                                            <span class="me-2">{totalView}</span><i class="fa-solid fa-eye"></i>
+                                                        </span>
+                                                    </div>
+                                                    <div class="me-2">
+                                                        <span class="badge bg-success rounded-pill fs-6">
+                                                            <span class="me-2">{totalScore}</span><i
+                                                                class="fa-solid fa-fire-flame-curved"></i>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="flex-grow-1">
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+            `
+
+
+                $.ajax({
+                    url: window.location.origin + "/api/" + 'get/collection/recipes',
+                    type: 'GET',
+                    data: {
+                        collectionId: collectionId,
+                    },
+                    headers: requestHeaders,
+                    success: async function(response) {
+                        console.log(response);
+                        await delay(1000)
+                        recipeContainer.empty()
+
+
+
+                        if (response.recipes.length === 0) {
+                            recipeContainer.append(
+                                `<h3 class="m-0 text-center mt-5 mb-4 w-100">Collection Empty</h3>`
+                            )
+                        }
+
+                        response.recipes.forEach((recipe, index) => {
+                            const recipeTitle = recipe.title;
+                            const recipeImage = recipe.image;
+                            const recipePopularityScore = recipe.popularity_score;
+                            const recipeViewCount = recipe.view_count;
+                            const recipe_like_count = recipe.recipe_like_count;
+                            const saved_recipe_count = recipe.saved_recipe_count;
+                            const totalReview = recipe.comment.length;
+
+                            const totalRating = recipe.comment.reduce((sum, comment) =>
+                                sum +
+                                comment.rating, 0);
+                            const avgRating = (totalRating / totalReview).toFixed(1);
+
+                            ////////////////////////
+                            let temp = cardTemp
+                            ////////////////////////
+
+                            temp = temp.replace('{image}', recipeImage)
+                            temp = temp.replaceAll('{label}', recipeTitle)
+                            temp = temp.replace('{totalScore}', recipePopularityScore)
+                            temp = temp.replace('{totalView}', recipeViewCount)
+                            temp = temp.replace('{totalLike}', recipe_like_count)
+                            temp = temp.replace('{totalSaved}', saved_recipe_count)
+                            temp = temp.replace('{totalReview}', totalReview)
+                            temp = temp.replace('{rating}', !isNaN(avgRating) ? avgRating :
+                                '0.0')
+
+                            const starsSolid = new Array((Math.round(avgRating) > 0 ? (Math
+                                .round(avgRating)) : 0) + 1).join(
+                                '<i class="fas fa-star"></i>')
+                            const starsHollow = new Array((Math.round(avgRating) > 0 ? (5 -
+                                Math.round(avgRating)) : 5) + 1).join(
+                                '<i class="far fa-star"></i>')
+
+                            temp = temp.replace('{stars}', starsSolid + starsHollow)
+
+                            let $temp = $(temp)
+                            $temp.data('recipeId', recipe.edamamId)
+
+
+                            let $cardContainer = $('<div>', {
+                                'class': 'col'
+                            }).append($temp);
+
+                            recipeContainer.append($cardContainer)
+                        });
+
+                    },
+                    error: function(xhr, status, error) {
+                        alert(error)
+                    },
+                    beforeSend: function() {
+                        recipeContainer.empty()
+                        recipeContainer.append(skeleton)
+                        recipeContainer.append(skeleton)
+                    },
+                    complete: function() {}
+                });
+            }
         })
     </script>
 @endsection

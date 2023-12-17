@@ -35,6 +35,8 @@ Route::middleware('auth:sanctum')->group(function () {
 
     Route::get('/get/popular_recipe', [RecipeController::class, 'getPopular']);
 
+    Route::get('/get/collection/recipes', [RecipeController::class, 'getRecipeCollection']);
+
     Route::post('/create/collections', [CollectionController::class, 'create']);
 
     Route::post('/add/recipe', [RecipeController::class, 'addRecipe']);
