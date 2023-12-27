@@ -63,7 +63,7 @@
                     </div>
 
                     <div>
-                        <ul class="list-unstyled">
+                        <ul class="list-unstyled" id="instructions">
                             <li class="d-flex align-items-center my-3">
                                 <div class="rounded-circle bg-primary text-white p-2 me-2 bullet-number text-center">1</div>
                                 <div style="width: 70%;">chicken</div>
@@ -920,7 +920,7 @@
 
                                 bookmarkIcon.removeAttr(
                                     'data-bs-toggle data-bs-placement data-bs-trigger data-bs-content'
-                                    );
+                                );
                                 bookmarkIcon.popover('disable')
                             }
                         }
@@ -1488,12 +1488,40 @@
                                             ingrParent.append(ingredientHtml)
                                         });
 
+                                        ///////////////////////////////////////////////
+                                        const instructionWrapper = $('#instructions')
+
+                                        instructionWrapper.empty()
+
+                                        const instructionItem = `<li class="d-flex align-items-center my-3">
+                                            <div class="rounded-circle bg-primary text-white p-2 me-2 bullet-number text-center">{index}</div>
+                                            <div style="width: 70%;">{instructionItem}</div>
+                                        </li>`
+
+                                        let temp = ''
+
+                                        recipeData.instructionLines.forEach(function(instruction, index) {
+                                            var temp = instructionItem
+                                                .replace('{index}', index + 1)
+                                                .replace('{instructionItem}',
+                                                    instruction);
+
+                                            instructionWrapper.append(temp)
+                                            console.log(instruction)
+                                        });
+                                        /////////////////////////////////////////////////////
+
                                         await getComments(recipeId)
 
                                         setTimeout(function() {
                                             $(".loading-overlay").attr("style",
                                                 "display: none !important");
                                         }, 2000);
+
+                                        // getInstructions(recipeData.label, recipeData
+                                        //     .ingredientLines)
+
+
                                     })
                                     .catch(error => {
                                         console.error('Error:', error);
@@ -1509,13 +1537,67 @@
                                     });
                             }
 
-                        }else{
+                        } else {
                             alert('recipe not found')
                             window.location.href = '/home'
                         }
                     },
                     error: function(error) {
                         console.log(error);
+                    }
+                });
+            }
+
+
+            function getInstructions(recipeName, ingredients) {
+                ingredients = ingredients.join(', ');
+                const queryText =
+                    `Recipe instructions in json.\n\nRecipe: ${recipeName}.\nIngredients: ${ingredients}\n\nWrite the instructions in JSON format. Per step per objects inside key "Instructions". Write the instructions in a good words. Avoid words like "enjoy". The instructions must only be command on how to cook/prepare the food/drinks. Response in JSON only. Write JSON in one line only. JSON format: '{"Instructions": [{"steps": "--steps here"},{"steps": "--steps here"},...]}`;
+
+                $.ajax({
+                    url: 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=XXX',
+                    type: 'POST',
+                    contentType: 'application/json',
+                    data: JSON.stringify({
+                        "contents": [{
+                            "parts": [{
+                                "text": queryText
+                            }]
+                        }]
+                    }),
+                    success: function(response) {
+                        const text = response.candidates[0].content.parts[0].text;
+                        const instructionsObject = JSON.parse(text);
+                        console.log(JSON.stringify(instructionsObject));
+
+                        const instructionWrapper = $('#instructions')
+
+                        instructionWrapper.empty()
+
+                        const instructionItem = `<li class="d-flex align-items-center my-3">
+                                <div class="rounded-circle bg-primary text-white p-2 me-2 bullet-number text-center">{index}</div>
+                                <div style="width: 70%;">{instructionItem}</div>
+                            </li>`
+
+                        let temp = ''
+
+                        instructionsObject.Instructions.forEach(function(instruction, index) {
+                            var temp = instructionItem
+                                .replace('{index}', index + 1)
+                                .replace('{instructionItem}', instruction.steps);
+
+                            instructionWrapper.append(temp)
+                            console.log(instruction.steps)
+                        });
+                    },
+                    error: function(error) {
+                        console.error(error);
+                    },
+                    complete: function() {
+
+                    },
+                    beforeSend: function() {
+
                     }
                 });
             }

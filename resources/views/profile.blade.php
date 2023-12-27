@@ -41,7 +41,7 @@
                 <span class="badge bg-light text-dark me-1 mt-1">0 potential false</span>
             </div> --}}
 
-                <ul class="nav flex-row justify-content-between mb-4 fs-3">
+                {{-- <ul class="nav flex-row justify-content-between mb-4 fs-3">
                     <li class="nav-item bg-lifted ">
                         <a target="_blank" rel="noopener noreferrer" class="nav-link px-3 rounded-pill"
                             href="https://www.facebook.com/azhar620"><i class="fa-brands fa-facebook-f azhar620"></i></a>
@@ -58,7 +58,7 @@
                         <a target="_blank" rel="noopener noreferrer" class="nav-link px-3 rounded-pill"><i
                                 class="fa-brands fa-linkedin unfocus-text"></i></a>
                     </li>
-                </ul>
+                </ul> --}}
 
             </div>
 
@@ -136,7 +136,7 @@
                                                 <div class="col-lg-9 col-md-8">azhar620</div>
                                             </div>
 
-                                            <div class="row">
+                                            {{-- <div class="row">
                                                 <div class="col-lg-3 col-md-4 label">Job</div>
                                                 <div class="col-lg-9 col-md-8">{<span id="threadList-totalData"
                                                         class="badge bg-secondary">empty</span>}</div>
@@ -155,7 +155,7 @@
                                             <div class="row">
                                                 <div class="col-lg-3 col-md-4 label">Phone</div>
                                                 <div class="col-lg-9 col-md-8">(62)87875587801</div>
-                                            </div>
+                                            </div> --}}
 
                                             <div class="row">
                                                 <div class="col-lg-3 col-md-4 label">Email</div>
@@ -200,85 +200,12 @@
                                                     </div>
                                                 </div>
 
-
-
-                                                <div class="row mb-3">
-                                                    <label for="Job"
-                                                        class="col-md-4 col-lg-3 col-form-label">Job</label>
-                                                    <div class="col-md-8 col-lg-9">
-                                                        <input name="job" type="text" class="mt-0"
-                                                            id="Job" value="">
-                                                    </div>
-                                                </div>
-
-                                                <div class="row mb-3">
-                                                    <label for="Country"
-                                                        class="col-md-4 col-lg-3 col-form-label">Country</label>
-                                                    <div class="col-md-8 col-lg-9">
-                                                        <input type="text" class="mt-0" id="Country"
-                                                            disabled="" name="country" value="id">
-                                                    </div>
-                                                </div>
-
-                                                <div class="row mb-3">
-                                                    <label for="Phone"
-                                                        class="col-md-4 col-lg-3 col-form-label">Phone</label>
-                                                    <div class="col-md-8 col-lg-9">
-                                                        <div class="input-group">
-                                                            <span class="input-group-text">+62</span>
-                                                            <input id="Phone" name="phone" type="text"
-                                                                style="border: none;color: var(--display-font-color);"
-                                                                class="form-control w-auto mt-0"
-                                                                placeholder="Phone number" value="87875587801">
-                                                        </div>
-                                                    </div>
-                                                </div>
-
                                                 <div class="row mb-3">
                                                     <label for="Email"
                                                         class="col-md-4 col-lg-3 col-form-label">Email</label>
                                                     <div class="col-md-8 col-lg-9">
                                                         <input name="email" type="email" class="mt-0"
                                                             id="Email" value="prianandaazhar2001@gmail.com">
-                                                    </div>
-                                                </div>
-
-                                                <div class="row mb-3">
-                                                    <label for="Twitter" class="col-md-4 col-lg-3 col-form-label">Twitter
-                                                        Username</label>
-                                                    <div class="col-md-8 col-lg-9">
-                                                        <input name="twitter_username" type="text" class="mt-0"
-                                                            id="Twitter" value="">
-                                                    </div>
-                                                </div>
-
-                                                <div class="row mb-3">
-                                                    <label for="Facebook"
-                                                        class="col-md-4 col-lg-3 col-form-label">Facebook
-                                                        Username</label>
-                                                    <div class="col-md-8 col-lg-9">
-                                                        <input name="facebook_username" type="text" class="mt-0"
-                                                            id="Facebook" value="azhar620">
-                                                    </div>
-                                                </div>
-
-                                                <div class="row mb-3">
-                                                    <label for="Instagram"
-                                                        class="col-md-4 col-lg-3 col-form-label">Instagram
-                                                        Username</label>
-                                                    <div class="col-md-8 col-lg-9">
-                                                        <input name="instagram_username" type="text" class="mt-0"
-                                                            id="Instagram" value="azhar620">
-                                                    </div>
-                                                </div>
-
-                                                <div class="row mb-3">
-                                                    <label for="Linkedin"
-                                                        class="col-md-4 col-lg-3 col-form-label">Linkedin
-                                                        Username</label>
-                                                    <div class="col-md-8 col-lg-9">
-                                                        <input name="linkedin_username" type="text" class="mt-0"
-                                                            id="Linkedin" value="">
                                                     </div>
                                                 </div>
 
@@ -973,12 +900,11 @@
                         const bgColor = '#f6f6f6';
                         const svg =
                             `<svg xmlns="http://www.w3.org/2000/svg" width="170" height="170" viewBox="0 0 512 512">
-    <rect width="100%" height="100%" fill="${bgColor}" />
-    <g width="100%" height="100%" >
-        <path style="transform: scale(.3) translate(120%, 120%)" fill="#fff" d="M32 0C19.1 0 7.4 7.8 2.4 19.8s-2.2 25.7 6.9 34.9L224 269.3V448H160c-17.7 0-32 14.3-32 32s14.3 32 32 32h96 96c17.7 0 32-14.3 32-32s-14.3-32-32-32H288V269.3L502.6 54.6c9.2-9.2 11.9-22.9 6.9-34.9S492.9 0 480 0H32zM256 210.7L109.3 64H402.7L256 210.7z"/>
-    </g>
-</svg>
-
+                                <rect width="100%" height="100%" fill="${bgColor}" />
+                                <g width="100%" height="100%" >
+                                    <path style="transform: scale(.3) translate(120%, 120%)" fill="#fff" d="M32 0C19.1 0 7.4 7.8 2.4 19.8s-2.2 25.7 6.9 34.9L224 269.3V448H160c-17.7 0-32 14.3-32 32s14.3 32 32 32h96 96c17.7 0 32-14.3 32-32s-14.3-32-32-32H288V269.3L502.6 54.6c9.2-9.2 11.9-22.9 6.9-34.9S492.9 0 480 0H32zM256 210.7L109.3 64H402.7L256 210.7z"/>
+                                </g>
+                            </svg>
                         `;
                         const dataURI = 'data:image/svg+xml,' + encodeURIComponent(svg);
 
@@ -988,14 +914,15 @@
 
 
                         let $rowEl;
-                        response.collections.forEach((collection, index) => {
-                            // console.log(index);
-                            if (index % 2 === 0) {
-                                $rowEl = $('<div>', {
+                        $rowEl = $('<div>', {
                                     'class': 'row'
                                 });
-                                console.log("ROWWWWWWWWWWWWWWWWWWWW");
-                            }
+                        response.collections.forEach((collection, index) => {
+                            // console.log(index);
+                            // if (index % 3 === 0) {
+                                
+                            //     console.log("ROWWWWWWWWWWWWWWWWWWWW");
+                            // }
 
                             let collectionData = $('<div>', {
                                 'class': 'fs-5 fw-bold mt-3 collection-data',
@@ -1006,10 +933,11 @@
                             collectionData.data('collectionId', collection.id)
 
                             let $div = $('<div>', {
-                                'class': 'col p-4 rounded rippleEffect collection-items',
+                                'class': 'col-sm-6 col-lg-4 p-4 rounded rippleEffect collection-items d-flex justify-content-center flex-column align-items-center',
                                 'collectionId': collection.id,
                                 'html': $('<div>', {
                                     'class': 'd-flex flex-row',
+                                    'style': 'width: 230px; height: 125px;',
                                     'html': [
                                         $('<img>', {
                                             'class': 'w-50 rounded-top-left border-end border-2 border-bottom',
@@ -1038,6 +966,7 @@
                                 'append': [
                                     $('<div>', {
                                         'class': 'd-flex flex-row',
+                                        'style': 'width: 230px; height: 125px;',
                                         'html': [
                                             $('<img>', {
                                                 'class': 'w-50 rounded-bottom-left border-end border-2 border-top',
@@ -1069,11 +998,12 @@
 
                             $rowEl.append($div);
 
-                            if (index % 2 !== 0 || index === response.collections
-                                .length - 1) {
-                                collectionContainer.append($rowEl);
-                            }
+                            // if (index % 3 !== 0 || index === response.collections
+                            //     .length - 1) {
+                            //         collectionContainer.append($rowEl);
+                            // }
                         });
+                        collectionContainer.append($rowEl);
 
                     },
                     error: function(xhr, status, error) {

@@ -736,9 +736,14 @@ img {
     /* Adjust the radius as needed */
 }
 
-#profile-collection-container img{
-    max-height: 7rem;
+/* #profile-collection-container img{
+    min-height: 170px;
 }
+
+
+#current-user-saved-recipe img{
+    min-height: 170px;
+} */
 
 .min-vh-50{
     min-height: 50vh !important;
@@ -746,10 +751,6 @@ img {
 
 .min-vh-70{
     min-height: 70vh !important;
-}
-
-#current-user-saved-recipe img{
-    min-height: 8em;
 }
 
 .hamburger-menu {

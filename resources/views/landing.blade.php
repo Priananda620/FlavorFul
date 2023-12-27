@@ -36,28 +36,28 @@
                         <div class="column">
                             <div class="row-md-4 my-3">
                                 <div class="d-flex align-items-center">
-                                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Cat_August_2010-4.jpg/272px-Cat_August_2010-4.jpg"
+                                    <img src="{{ asset('assets/illustration/food-plate-avatar/1-min.png') }}"
                                         alt="Avatar" class="rounded-circle avatar me-3">
 
-                                    <div class="d-flex flex-column">
-                                        <span class="fw-bold fs-5 mb-2">John Doe</span>
-                                        <span class="text-light fs-6">Web Developer</span>
+                                    <div class="d-flex flex-column w-100">
+                                        <span class="fw-bold fs-5 mb-2 text-start">Nutritional Analysis</span>
+                                        <span class="text-light fs-6 text-start">Provides Comprehensive Nutritional Analysis for Every Recipe</span>
 
                                     </div>
-                                    <i class="fa-solid fa-angle-up fa-angle-right ms-auto"></i>
+                                    <i class="fa-solid fa-circle-check fs-2"></i>
                                 </div>
                             </div>
 
                             <div class="row-md-4 my-3">
                                 <div class="d-flex align-items-center">
-                                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Cat_August_2010-4.jpg/272px-Cat_August_2010-4.jpg"
+                                    <img src="{{ asset('assets/illustration/food-plate-avatar/2-min.png') }}"
                                         alt="Avatar" class="rounded-circle avatar me-3">
-                                    <div class="d-flex flex-column">
-                                        <span class="fw-bold fs-5 mb-2">Jane Smith</span>
-                                        <span class="text-light fs-6">Graphic Designer</span>
+                                    <div class="d-flex flex-column w-100">
+                                        <span class="fw-bold fs-5 mb-2 text-start">Meal Recommendations</span>
+                                        <span class="text-light fs-6 text-start">Produces Personalized Meal Recommendations</span>
 
                                     </div>
-                                    <i class="fa-solid fa-angle-up fa-angle-right ms-auto"></i>
+                                    <i class="fa-solid fa-circle-check fs-2"></i>
                                 </div>
                             </div>
 
@@ -75,23 +75,33 @@
                         <div class="column">
                             <div class="row-md-4 mb-4">
                                 <div class="d-flex align-items-center">
-                                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Cat_August_2010-4.jpg/272px-Cat_August_2010-4.jpg"
+                                    <img src="{{ asset('assets/illustration/food-plate-avatar/3-min.png') }}"
                                         alt="Avatar" class="rounded-circle avatar me-3">
 
-                                    <div class="d-flex flex-column">
-                                        <span class="fw-bold fs-5 mb-2">John Doe</span>
-                                        <span class="text-secondary fs-6">Web Developer</span>
+                                    <div class="d-flex flex-column w-100">
+                                        <span class="fw-bold fs-5 mb-2 text-start">Personalized Suggestions</span>
+                                        <span class="text-secondary fs-6 text-start">Obtain personalized suggestions based on your individual requirements and interests</span>
                                     </div>
                                 </div>
                             </div>
 
                             <div class="row-md-4 mb-4">
                                 <div class="d-flex align-items-center">
-                                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Cat_August_2010-4.jpg/272px-Cat_August_2010-4.jpg"
+                                    <img src="{{ asset('assets/illustration/food-plate-avatar/4-min.png') }}"
                                         alt="Avatar" class="rounded-circle avatar me-3">
                                     <div class="d-flex flex-column">
-                                        <span class="fw-bold fs-5 mb-2">Jane Smith</span>
-                                        <span class="text-secondary fs-6">Graphic Designer</span>
+                                        <span class="fw-bold fs-5 mb-2 text-start">Nutritional Compositions</span>
+                                        <span class="text-secondary fs-6 text-start">Find out more about the nutritional composition of items, portion sizes, and overall meal planning</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row-md-4 mb-4">
+                                <div class="d-flex align-items-center">
+                                    <img src="{{ asset('assets/illustration/food-plate-avatar/5-min.png') }}"
+                                        alt="Avatar" class="rounded-circle avatar me-3">
+                                    <div class="d-flex flex-column w-100">
+                                        <span class="fw-bold fs-5 mb-2 text-start">Dietary Preferences</span>
+                                        <span class="text-secondary fs-6 text-start">Personalize your dietary preferences</span>
                                     </div>
                                 </div>
                             </div>
@@ -113,14 +123,14 @@
             <div class="text-secondary">Provide rceipe based on your dietry preference</div>
         </div>
         <div class="container" id="popular-container">
-            <div class="row mt-4 justify-content-around">
+            <div class="row mt-4 justify-content-center">
 
                 {{-- <div class="col-md-6 col-lg-3 mb-4">
                     <div
                         class="recipe-card position-relative rounded shadow-sm d-grid align-items-start h-100 align-content-start">
                         {{-- <div class="position-absolute p-2 rounded-pill cursor-pointer heart-recipe">
                         <i class="fa-solid fa-heart text-white fs-3"></i>
-                    </div> --}}
+                    </div>
                 <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=1170&amp;q=80"
                     alt="Recipe Image" class="recipe-image">
                 <div class="recipe-details d-flex justify-content-start flex-column flex-wrap w-100 p-4">
@@ -165,7 +175,7 @@
                 <div class="col-md-6 col-lg-3 mb-4 text-center">
                     <div class="recipe-card position-relative rounded shadow-sm p-4">
 
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Cat_August_2010-4.jpg/272px-Cat_August_2010-4.jpg"
+                        <img src="{{ asset('assets/illustration/food-plate-avatar/breakfasr-min.png') }}"
                             alt="Avatar" class="rounded-circle avatar" style="width: 10em: height: 10em">
                         <div class="recipe-details d-flex justify-content-start flex-column flex-wrap w-100">
 
@@ -173,7 +183,7 @@
                             <h2 class="recipe-title m-0 mt-3 mb-4">breakfast</h2>
 
                             <button class="btn btn-primary w-fit-content m-auto mt-3 px-5">
-                                Select
+                                Explore
                             </button>
                         </div>
                     </div>
@@ -182,7 +192,7 @@
                 <div class="col-md-6 col-lg-3 mb-4 text-center">
                     <div class="recipe-card position-relative rounded shadow-sm p-4">
 
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Cat_August_2010-4.jpg/272px-Cat_August_2010-4.jpg"
+                        <img src="{{ asset('assets/illustration/food-plate-avatar/lunch-min.png') }}"
                             alt="Avatar" class="rounded-circle avatar" style="width: 10em: height: 10em">
                         <div class="recipe-details d-flex justify-content-start flex-column flex-wrap w-100">
 
@@ -190,7 +200,7 @@
                             <h2 class="recipe-title m-0 mt-3 mb-4">lunch</h2>
 
                             <button class="btn btn-primary w-fit-content m-auto mt-3 px-5">
-                                Select
+                                Explore
                             </button>
                         </div>
                     </div>
@@ -199,7 +209,7 @@
                 <div class="col-md-6 col-lg-3 mb-4 text-center">
                     <div class="recipe-card position-relative rounded shadow-sm p-4">
 
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Cat_August_2010-4.jpg/272px-Cat_August_2010-4.jpg"
+                        <img src="{{ asset('assets/illustration/food-plate-avatar/brunch-min.png') }}"
                             alt="Avatar" class="rounded-circle avatar" style="width: 10em: height: 10em">
                         <div class="recipe-details d-flex justify-content-start flex-column flex-wrap w-100">
 
@@ -207,7 +217,7 @@
                             <h2 class="recipe-title m-0 mt-3 mb-4">brunch</h2>
 
                             <button class="btn btn-primary w-fit-content m-auto mt-3 px-5">
-                                Select
+                                Explore
                             </button>
                         </div>
                     </div>
@@ -216,7 +226,7 @@
                 <div class="col-md-6 col-lg-3 mb-4 text-center">
                     <div class="recipe-card position-relative rounded shadow-sm p-4">
 
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Cat_August_2010-4.jpg/272px-Cat_August_2010-4.jpg"
+                        <img src="{{ asset('assets/illustration/food-plate-avatar/dinner-min.png') }}"
                             alt="Avatar" class="rounded-circle avatar" style="width: 10em: height: 10em">
                         <div class="recipe-details d-flex justify-content-start flex-column flex-wrap w-100">
 
@@ -224,7 +234,7 @@
                             <h2 class="recipe-title m-0 mt-3 mb-4">dinner</h2>
 
                             <button class="btn btn-primary w-fit-content m-auto mt-3 px-5">
-                                Select
+                                Explore
                             </button>
                         </div>
                     </div>
@@ -240,25 +250,23 @@
             <div class="row">
                 <div class="col-md-4">
                     <h5>About Us</h5>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla fringilla tristique sapien eu
-                        consequat.</p>
+                    <p>Discover a world of flavour at Flavorful! Unleash your culinary creativity with our diverse and easy-to-follow recipes. Join us in the joy of cooking and make every meal a delicious adventure. Happy cooking!</p>
                 </div>
                 <div class="col-md-4">
                     <h5>Quick Links</h5>
                     <ul class="list-unstyled">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Explore</a></li>
-                        <li><a href="#">Popular</a></li>
+                        <li><a href="{{url('/home')}}">Home</a></li>
+                        <li><a href="{{url('/explore')}}">Explore</a></li>
+                        <li><a href="{{url('/popular')}}">Popular</a></li>
                     </ul>
                 </div>
                 <div class="col-md-4">
-                    <h5>Contact Us</h5>
-                    <address>
-                        1234 Street Name, City<br>
-                        Country, Postal Code<br>
-                        Phone: (123) 456-7890<br>
-                        Email: info@example.com
-                    </address>
+                    <div class="logo">
+                        <a href="{{ url('/') }}">
+                            {!! file_get_contents('assets/logo.svg') !!}
+                        </a>
+            
+                    </div>
                 </div>
             </div>
             <hr>
@@ -285,7 +293,7 @@
             });
 
             let cardTemp = `
-            <div class="card mb-3 rounded col-3 rippleEffect p-0">
+            <div class="col-md-6 col-lg-3 mb-4">
                             <div class="col g-0">
                                 <div class="row-md-4">
                                     <img src="{image}"
@@ -338,7 +346,7 @@
                         </div>
             `
 
-            let skeletonCard = `<div class="card mb-3 rounded col-3 w-sm-100 w-md-50 w-lg-30 w-100">
+            let skeletonCard = `<div class="col-md-6 col-lg-3 mb-4">
                                 <div class="col g-0">
                                     <div class="row-md-4">
                                         <div class="skeleton-image h-100"></div>
@@ -392,9 +400,12 @@
                         popularContainer.empty()
                         popularContainer.empty()
 
-                        $('h2.fw-bold').append(' (' + (response.total - 2) + ')')
 
                         const max = response.total > 4 ? 4 : response.total
+
+                        $('html body section div.text-center.container.mb-5 h2.fw-bold').append(' (' + (max) + ')')
+
+                        
 
                         for (let i = 0; i < max; i++) {
                             const recipe = response.recipes[i];

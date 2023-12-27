@@ -42,15 +42,15 @@
                         <ul
                             class="w-100 w-md-75 w-lg-50 mx-auto h-100 px-lg-5 text-decoration-none list-unstyled d-flex flex-column align-items-center justify-content-center">
                             <li class="p-1 my-3 w-100">
-                                <a href="{{url('/home')}}"
+                                <a href="{{ url('/home') }}"
                                     class="btn btn-outline-warning border border-4 text-white px-5 py-2 w-100 fw-bold fs-1">Home</a>
                             </li>
                             <li class="p-1 my-3 w-100">
-                                <a href="{{url('/explore')}}"
+                                <a href="{{ url('/explore') }}"
                                     class="btn btn-outline-warning border border-4 text-white px-5 py-2 w-100 fw-bold fs-1">Explore</a>
                             </li>
                             <li class="p-1 my-3 w-100">
-                                <a href="{{url('/popular')}}"
+                                <a href="{{ url('/popular') }}"
                                     class="btn btn-outline-warning border border-4 text-white px-5 py-2 w-100 fw-bold fs-1">Popular</a>
                             </li>
                         </ul>
@@ -60,12 +60,17 @@
                     <i class="fa-solid fa-bars fs-3 fw-bold cursor-pointer p-1"></i>
                 </div>
                 <ul id="header-list-menu" class="list-unstyled d-flex mb-0 me-3">
-                    <li class="me-3"><a href="{{url('/home')}}">Home</a></li>
-                    <li class="me-3"><a href="{{url('/explore')}}">Explore</a></li>
-                    <li class="me-3"><a href="{{url('/popular')}}">Popular</a></li>
+                    <li class="me-3"><a href="{{ url('/home') }}">Home</a></li>
+                    <li class="me-3"><a href="{{ url('/explore') }}">Explore</a></li>
+                    <li class="me-3"><a href="{{ url('/popular') }}">Popular</a></li>
                 </ul>
-                <div class="search-input">
-                    <input type="text" class="form-control" placeholder="Search...">
+                <div class="search-input dropdown">
+                    <input type="text" name="header-search" class="form-control" placeholder="Search...">
+                    <ul class="dropdown-menu w-100"
+                        style="position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate3d(0px, 32px, 0px);"
+                        aria-labelledby="dropdownMenuButton1">
+
+                    </ul>
                 </div>
             @endif
 
@@ -99,4 +104,124 @@
         </nav>
 
     </div>
+
+    <script>
+        $(document).ready(() => {
+            console.log("DSDDDSlLLLL")
+
+            $('input[name="header-search"]').on('focus', function() {
+                $('header .dropdown-menu').addClass('active show')
+                if (!$('.dropdown-item[href]:not([href=""])').length) {
+                    $('header .dropdown-menu').empty()
+                    $('header .dropdown-menu').append(`<a class="dropdown-item px-2">
+                                <div class="py-2 d-flex align-items-center">
+                                    <p class="text-dark text-wrap py-1 w-100 text-center">Type something...</p>
+                                </div>
+                        </a>`)
+                }
+            })
+
+            $('input[name="header-search"]').on('focusout', function() {
+                setTimeout(() => {
+                    $('header .dropdown-menu').removeClass('active show')
+                    if (!$('.dropdown-item[href]:not([href=""])').length) {
+                        $('header .dropdown-menu').empty()
+                    }
+                }, 1000)
+
+            })
+
+            $('input[name="header-search"]').on('input', function() {
+
+                clearTimeout(debounceTimer);
+                const inputQ = $(this).val()
+                console.log(inputQ)
+
+                if (inputQ.length) {
+
+                    $('header .dropdown-menu').empty()
+                    debounceTimer = setTimeout(async () => {
+                        $.ajax({
+                            url: 'https://api.edamam.com/search',
+                            method: 'GET',
+                            data: (function() {
+                                let requestData = {
+                                    app_id: '18f6495e',
+                                    app_key: '8bb396da11d4832a439ea25f315c827f',
+                                    q: inputQ,
+                                    from: 0,
+                                    to: 3,
+                                    imageSize: 'SMALL',
+                                    time: '1+',
+                                };
+
+                                return requestData;
+                            })(),
+
+                            success: function(data) {
+                                console.log(data);
+
+                                $('header .dropdown-menu').addClass('active show')
+
+                                const itemTemp = `<a class="dropdown-item px-2" href="{url}">
+                            <div class="d-inline-flex flex-wrap">
+                                <div class="p-2" style="width: 40%">
+                                    <img style="width: 100%; min-width: 4rem"
+                                        src="{image}">
+                                </div>
+                                <div class="py-2 d-flex align-items-center" style="width: 60%">
+                                    <p class="text-dark text-wrap py-1">{recipeName}</p>
+                                </div>
+                            </div>
+                        </a>`
+                                $('header .dropdown-menu').empty()
+
+                                if (!data.hits.length) {
+                                    $('header .dropdown-menu').empty()
+                                    $('header .dropdown-menu').append(`<a class="dropdown-item px-2">
+                                <div class="py-2 d-flex align-items-center">
+                                    <p class="text-dark text-wrap py-1 w-100 text-center">No Match...</p>
+                                </div>
+                        </a>`)
+                                }
+
+                                data.hits.forEach(object => {
+                                    const recipe = object.recipe
+                                    let tmp = itemTemp.replace('{url}',
+                                            window.location.origin +
+                                            '/recipe-details/' + recipe.uri
+                                            .split('#')[1].split('_')[1])
+                                        .replace('{image}', recipe.image)
+                                        .replace('{recipeName}', recipe
+                                            .label)
+                                    console.log(recipe.label)
+
+                                    $('header .dropdown-menu').append(tmp)
+                                });
+
+                            },
+                            error: function(jqXHR, textStatus, errorThrown) {
+                                console.error('AJAX request failed:', textStatus,
+                                    errorThrown);
+                            },
+                            complete: function() {
+                                console.log("dsdasdsadDONE")
+                            },
+                            beforeSend: function() {
+                                $('header .dropdown-menu').removeClass(
+                                    'active show')
+                            },
+                        });
+                    }, 700)
+                } else {
+                    $('header .dropdown-menu').empty()
+                    $('header .dropdown-menu').append(`<a class="dropdown-item px-2">
+                                <div class="py-2 d-flex align-items-center">
+                                    <p class="text-dark text-wrap py-1 w-100 text-center">Type something...</p>
+                                </div>
+                        </a>`)
+                }
+            })
+        })
+    </script>
 </header>

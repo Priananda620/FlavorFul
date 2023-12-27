@@ -7,7 +7,7 @@
                 <h4 class="fw-bold">
                     Input Ingredients
                 </h4>
-                <div class="d-flex flex-column position-sticky" style="top: 5em;">
+                <div class="d-flex flex-column position-sticky" style="top: 5em;z-index:10000">
                     <!-- Search Filter -->
                     <div class="p-3 px-0">
                         <!-- Search input goes here -->
