@@ -108,10 +108,10 @@
     <script>
         $(document).ready(() => {
             console.log("DSDDDSlLLLL")
-
+            $('header .dropdown-menu').empty()
             $('input[name="header-search"]').on('focus', function() {
                 $('header .dropdown-menu').addClass('active show')
-                if (!$('.dropdown-item[href]:not([href=""])').length) {
+                if (!$('header .dropdown-item[href]:not([href=""])').length) {
                     $('header .dropdown-menu').empty()
                     $('header .dropdown-menu').append(`<a class="dropdown-item px-2">
                                 <div class="py-2 d-flex align-items-center">
@@ -124,7 +124,7 @@
             $('input[name="header-search"]').on('focusout', function() {
                 setTimeout(() => {
                     $('header .dropdown-menu').removeClass('active show')
-                    if (!$('.dropdown-item[href]:not([href=""])').length) {
+                    if (!$('header .dropdown-item[href]:not([href=""])').length) {
                         $('header .dropdown-menu').empty()
                     }
                 }, 1000)
