@@ -93,7 +93,7 @@
             `
 
             let cardWide = `
-            <div class="card mb-3 rounded col-3 w-100 p-1 rippleEffect">
+            <div class="card mb-3 rounded col-md-6 col-lg-6 p-1 rippleEffect">
                 <div class="col g-0">
                     <div class="row-md-4">
                         <img src="{image}"
@@ -250,7 +250,7 @@
                         popularContainer.eq(0).empty()
                         popularContainer.eq(1).empty()
 
-                        $('h2.fw-bold').append(' ('+(response.total-2)+')')
+                        $('h2.fw-bold').append(' ('+(response.total-4)+')')
                         
                         for (let i = 0; i < response.total; i++) {
                             const recipe = response.recipes[i];
@@ -267,7 +267,7 @@
                             const avgRating = (totalRating / totalReview).toFixed(1);
 
                             let temp
-                            if(i<2){
+                            if(i<4){
                                 temp = cardWide
                             }else{
                                 temp = cardTemp
@@ -292,8 +292,13 @@
                             let $temp = $(temp)
                             $temp.data('recipeId', recipe.edamamId)
 
-                            if(i<2){
-                                popularContainer.eq(i).append($temp)
+                            if(i<4){
+                                if(i<2){
+                                    popularContainer.eq(0).append($temp)
+                                }else{
+                                    popularContainer.eq(1).append($temp)
+                                }
+                                
                             }else{
                                 popularContainer.eq(2).find('> .col > div > .d-flex').append($temp)
                             }

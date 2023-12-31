@@ -21,17 +21,6 @@ class ForgotPasswordController extends Controller
             'email' => 'required|email',
         ]);
 
-        // $status = Password::sendResetLink($request->only('email'));
-
-        // $status = Password::sendResetLink(
-        //     $request->only('email'),
-        //     function ($user, $token) use ($request) {
-        //         Mail::send('emails.forgot-password', ['resetUrl' => $this->resetUrl($token)], function ($message) use ($request) {
-        //             $message->to($request->email)->subject('Reset Your Password');
-        //         });
-        //     }
-        // );
-
         $status = Password::sendResetLink(
             $request->only('email'),
             function ($user, $token) use ($request) {
