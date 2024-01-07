@@ -67,7 +67,7 @@
                 <div class="search-input dropdown">
                     <input type="text" name="header-search" class="form-control" placeholder="Search...">
                     <ul class="dropdown-menu w-100"
-                        style="position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate3d(0px, 32px, 0px);"
+                        style="position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate3d(0px, 32px, 0px);max-height: 50vh;overflow: scroll;"
                         aria-labelledby="dropdownMenuButton1">
 
                     </ul>
@@ -79,7 +79,7 @@
             @auth()
                 <div class="position-relative cursor-pointer">
                     {{-- {{auth()->user()->username}} --}}
-                    <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=1170&amp;q=80"
+                    <img src="{{ asset('assets/userAvatars/' . auth()->user()->avatarUrl) }}"
                         alt="User Avatar" class="rounded-circle ms-3" width="50" height="50" id="avatar">
                     <div class="position-absolute end-0 rounded" id="avatar-menu"
                         style="display: none; width: 10em;transform: translateY(.8em);z-index: 1">
@@ -150,7 +150,7 @@
                                     app_key: '8bb396da11d4832a439ea25f315c827f',
                                     q: inputQ,
                                     from: 0,
-                                    to: 3,
+                                    to: 20,
                                     imageSize: 'SMALL',
                                     time: '1+',
                                 };

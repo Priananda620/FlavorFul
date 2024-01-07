@@ -543,7 +543,30 @@
                             currentRecipeMaxIdx = to
                         }
 
+                        (() => {
+                            let currentUrl = new URL(window.location.href);
 
+                            if(mealType){
+                                currentUrl.searchParams.set('mealType', mealType);
+                            }
+
+                            if(calorieRange.min !== null && calorieRange.max){
+                                currentUrl.searchParams.set('calorieRange', `${calorieRange.min} - ${calorieRange.max} kcal `);
+                            }
+
+                            if(health){
+                                currentUrl.searchParams.set('health', health);
+                            }
+                            
+                            $('#mealTypeDropdown').html(mealType ? mealType.charAt(0).toUpperCase() + mealType.slice(1) + ' ' : 'Category ')
+
+                            $('#calorieRangeDropdown').html(calorieRange.min !== null && calorieRange.max !== null ? `${calorieRange.min} - ${calorieRange.max} kcal ` : 'Calorie Range ')
+
+                            $('#healthDropdown').html(health ? health+' ' : 'Dietary Restriction ')
+
+
+                            history.pushState({}, '', currentUrl.toString());
+                        })()
 
                         let cautionHTML = '';
 
@@ -767,10 +790,25 @@
                 selectedIngredients = [];
 
                 for (const [key, value] of urlParams.entries()) {
-                    selectedIngredients.push({
-                        text: key, // Use the parameter key as the text
-                        edamamId: value, // Use the parameter value as the edamamId
-                    });
+                    if(key !== "health" && key !== "calorieRange" && key !== "mealType"){
+                        selectedIngredients.push({
+                            text: key, // Use the parameter key as the text
+                            edamamId: value, // Use the parameter value as the edamamId
+                        });
+                    }
+
+                    if(key === "health"){
+                        $('[aria-labelledby="healthDropdown"]').data('selected', value)
+                    }
+
+                    if(key === "calorieRange"){
+                        $('[aria-labelledby="calorieRangeDropdown"]').data('selected', value)
+                    }
+
+                    if(key === "mealType"){
+                        $('[aria-labelledby="mealTypeDropdown"]').data('selected', value)
+                    }
+
                 }
                 // updateSelectedRecipe();
 

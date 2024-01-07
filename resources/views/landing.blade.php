@@ -182,9 +182,9 @@
 
                             <h2 class="recipe-title m-0 mt-3 mb-4">breakfast</h2>
 
-                            <button class="btn btn-primary w-fit-content m-auto mt-3 px-5">
+                            <a href="/explore?mealType=breakfast" class="text-light btn btn-primary w-fit-content m-auto mt-3 px-5">
                                 Explore
-                            </button>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -199,9 +199,9 @@
 
                             <h2 class="recipe-title m-0 mt-3 mb-4">lunch</h2>
 
-                            <button class="btn btn-primary w-fit-content m-auto mt-3 px-5">
+                            <a href="/explore?mealType=lunch" class="text-light btn btn-primary w-fit-content m-auto mt-3 px-5">
                                 Explore
-                            </button>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -216,9 +216,9 @@
 
                             <h2 class="recipe-title m-0 mt-3 mb-4">brunch</h2>
 
-                            <button class="btn btn-primary w-fit-content m-auto mt-3 px-5">
+                            <a  href="/explore?mealType=brunch" class="text-light btn btn-primary w-fit-content m-auto mt-3 px-5">
                                 Explore
-                            </button>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -233,9 +233,9 @@
 
                             <h2 class="recipe-title m-0 mt-3 mb-4">dinner</h2>
 
-                            <button class="btn btn-primary w-fit-content m-auto mt-3 px-5">
+                            <a  href="/explore?mealType=dinner"  class="text-light btn btn-primary w-fit-content m-auto mt-3 px-5">
                                 Explore
-                            </button>
+                            </a>
                         </div>
                     </div>
                 </div>

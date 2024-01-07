@@ -63,30 +63,42 @@
                     </div>
 
                     <div>
-                        <ul class="list-unstyled" id="instructions">
+                        <ul class="list-unstyled" id="instructions" style="line-height: 1.3rem;text-align: justify;">
                             <li class="d-flex align-items-center my-3">
                                 <div class="rounded-circle bg-primary text-white p-2 me-2 bullet-number text-center">1</div>
-                                <div style="width: 70%;">chicken</div>
+                                <div style="width: 70%;"><div class="spinner-grow my-2"
+                                    style="width: 1rem; height: 1rem;animation-timing-function: cubic-bezier(.22,.61,.36,1) !important;"
+                                    role="status">
+                                    <span class="visually-hidden">Loading...</span>
+                                </div>
+                                <div class="spinner-grow mx-2 my-2"
+                                    style="width: 1rem; height: 1rem;animation-delay: .1s;animation-timing-function: cubic-bezier(.22,.61,.36,1) !important;"
+                                    role="status">
+                                    <span class="visually-hidden">Loading...</span>
+                                </div>
+                                <div class="spinner-grow my-2"
+                                    style="width: 1rem; height: 1rem;animation-delay: .2s;animation-timing-function: cubic-bezier(.22,.61,.36,1) !important;"
+                                    role="status">
+                                    <span class="visually-hidden">Loading...</span>
+                                </div></div>
                             </li>
                             <li class="d-flex align-items-center my-3">
                                 <div class="rounded-circle bg-primary text-white p-2 me-2 bullet-number text-center">2</div>
-                                <div style="width: 70%;">chicken</div>
-                            </li>
-                            <li class="d-flex align-items-center my-3">
-                                <div class="rounded-circle bg-primary text-white p-2 me-2 bullet-number text-center">3</div>
-                                <div style="width: 70%;">chicken</div>
-                            </li>
-                            <li class="d-flex align-items-center my-3">
-                                <div class="rounded-circle bg-primary text-white p-2 me-2 bullet-number text-center">1</div>
-                                <div style="width: 70%;">chicken</div>
-                            </li>
-                            <li class="d-flex align-items-center my-3">
-                                <div class="rounded-circle bg-primary text-white p-2 me-2 bullet-number text-center">2</div>
-                                <div style="width: 70%;">chicken</div>
-                            </li>
-                            <li class="d-flex align-items-center my-3">
-                                <div class="rounded-circle bg-primary text-white p-2 me-2 bullet-number text-center">3</div>
-                                <div style="width: 70%;">chicken</div>
+                                <div style="width: 70%;"><div class="spinner-grow my-2"
+                                    style="width: 1rem; height: 1rem;animation-timing-function: cubic-bezier(.22,.61,.36,1) !important;"
+                                    role="status">
+                                    <span class="visually-hidden">Loading...</span>
+                                </div>
+                                <div class="spinner-grow mx-2 my-2"
+                                    style="width: 1rem; height: 1rem;animation-delay: .1s;animation-timing-function: cubic-bezier(.22,.61,.36,1) !important;"
+                                    role="status">
+                                    <span class="visually-hidden">Loading...</span>
+                                </div>
+                                <div class="spinner-grow my-2"
+                                    style="width: 1rem; height: 1rem;animation-delay: .2s;animation-timing-function: cubic-bezier(.22,.61,.36,1) !important;"
+                                    role="status">
+                                    <span class="visually-hidden">Loading...</span>
+                                </div></div>
                             </li>
                         </ul>
                     </div>
@@ -1489,26 +1501,32 @@
                                         });
 
                                         ///////////////////////////////////////////////
-                                        const instructionWrapper = $('#instructions')
+                                        if (recipeData.instructionLines) {
+                                            const instructionWrapper = $('#instructions')
 
-                                        instructionWrapper.empty()
+                                            instructionWrapper.empty()
 
-                                        const instructionItem = `<li class="d-flex align-items-center my-3">
-                                            <div class="rounded-circle bg-primary text-white p-2 me-2 bullet-number text-center">{index}</div>
-                                            <div style="width: 70%;">{instructionItem}</div>
-                                        </li>`
+                                            const instructionItem = `<li class="d-flex align-items-center my-3">
+                                                <div class="rounded-circle bg-primary text-white p-2 me-2 bullet-number text-center">{index}</div>
+                                                <div style="width: 70%;">{instructionItem}</div>
+                                            </li>`
 
-                                        let temp = ''
+                                            let temp = ''
 
-                                        recipeData.instructionLines.forEach(function(instruction, index) {
-                                            var temp = instructionItem
-                                                .replace('{index}', index + 1)
-                                                .replace('{instructionItem}',
-                                                    instruction);
+                                            recipeData.instructionLines.forEach(function(
+                                                instruction, index) {
+                                                var temp = instructionItem
+                                                    .replace('{index}', index + 1)
+                                                    .replace('{instructionItem}',
+                                                        instruction);
 
-                                            instructionWrapper.append(temp)
-                                            console.log(instruction)
-                                        });
+                                                instructionWrapper.append(temp)
+                                                console.log(instruction)
+                                            });
+                                        } else {
+                                            await getInstructions(recipeData.label, recipeData
+                                                .ingredientLines)
+                                        }
                                         /////////////////////////////////////////////////////
 
                                         await getComments(recipeId)
@@ -1518,8 +1536,7 @@
                                                 "display: none !important");
                                         }, 2000);
 
-                                        // getInstructions(recipeData.label, recipeData
-                                        //     .ingredientLines)
+
 
 
                                     })
@@ -1550,56 +1567,62 @@
 
 
             function getInstructions(recipeName, ingredients) {
-                ingredients = ingredients.join(', ');
-                const queryText =
-                    `Recipe instructions in json.\n\nRecipe: ${recipeName}.\nIngredients: ${ingredients}\n\nWrite the instructions in JSON format. Per step per objects inside key "Instructions". Write the instructions in a good words. Avoid words like "enjoy". The instructions must only be command on how to cook/prepare the food/drinks. Response in JSON only. Write JSON in one line only. JSON format: '{"Instructions": [{"steps": "--steps here"},{"steps": "--steps here"},...]}`;
+                return new Promise((resolve, reject) => {
+                    ingredients = ingredients.join(', ');
+                    const queryText =
+                        `Recipe instructions in json.\n\nRecipe: ${recipeName}.\nIngredients: ${ingredients}\n\nWrite the instructions in JSON format. Per step per objects inside key "Instructions". Write the instructions in a good words, also please put what ingredients in each steps if possible (not a must). Avoid multiple steps in one step object (like do A and then do B), A and B must be on separate step. Avoid words like "enjoy". The instructions must only be command on how to cook/prepare the food/drinks. Response in JSON only. Write JSON in one line only. JSON format: '{"Instructions": [{"steps": "--steps here"},{"steps": "--steps here"},...]}`;
 
-                $.ajax({
-                    url: 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=XXX',
-                    type: 'POST',
-                    contentType: 'application/json',
-                    data: JSON.stringify({
-                        "contents": [{
-                            "parts": [{
-                                "text": queryText
+                    $.ajax({
+                        url: 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=AIzaSyDqkwSD0DlteP9j4i4Q3NB_dt_zfFrsaak',
+                        type: 'POST',
+                        contentType: 'application/json',
+                        data: JSON.stringify({
+                            "contents": [{
+                                "parts": [{
+                                    "text": queryText
+                                }]
                             }]
-                        }]
-                    }),
-                    success: function(response) {
-                        const text = response.candidates[0].content.parts[0].text;
-                        const instructionsObject = JSON.parse(text);
-                        console.log(JSON.stringify(instructionsObject));
+                        }),
+                        success: function(response) {
+                            const text = response.candidates[0].content.parts[0].text;
+                            const instructionsObject = JSON.parse(text);
+                            console.log(JSON.stringify(instructionsObject));
 
-                        const instructionWrapper = $('#instructions')
+                            const instructionWrapper = $('#instructions')
 
-                        instructionWrapper.empty()
+                            instructionWrapper.empty()
 
-                        const instructionItem = `<li class="d-flex align-items-center my-3">
+                            const instructionItem = `<li class="d-flex align-items-center my-3">
                                 <div class="rounded-circle bg-primary text-white p-2 me-2 bullet-number text-center">{index}</div>
                                 <div style="width: 70%;">{instructionItem}</div>
                             </li>`
 
-                        let temp = ''
+                            let temp = ''
 
-                        instructionsObject.Instructions.forEach(function(instruction, index) {
-                            var temp = instructionItem
-                                .replace('{index}', index + 1)
-                                .replace('{instructionItem}', instruction.steps);
+                            instructionsObject.Instructions.forEach(function(instruction,
+                            index) {
+                                var temp = instructionItem
+                                    .replace('{index}', index + 1)
+                                    .replace('{instructionItem}', instruction.steps);
 
-                            instructionWrapper.append(temp)
-                            console.log(instruction.steps)
-                        });
-                    },
-                    error: function(error) {
-                        console.error(error);
-                    },
-                    complete: function() {
+                                instructionWrapper.append(temp)
+                                console.log(instruction.steps)
+                            });
 
-                    },
-                    beforeSend: function() {
+                            resolve(response);
+                        },
+                        error: function(error) {
+                            console.error(error);
+                            reject(error);
+                        },
+                        complete: function() {
 
-                    }
-                });
+                        },
+                        beforeSend: function() {
+
+                        }
+                    });
+                })
             }
 
 

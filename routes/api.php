@@ -52,4 +52,8 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::post('/toggle/recipe-like', [RecipeController::class, 'toggleRecipeLike']);
 
     Route::post('/toggle/saved-recipe', [SavedRecipeController::class, 'add']);
+
+    Route::post('/change-password', [UserController::class, 'changePassword']);
+
+    Route::post('/update-profile', [UserController::class, 'updateProfile']);
 });

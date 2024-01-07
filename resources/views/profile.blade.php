@@ -7,16 +7,16 @@
                 <div class="text-center">
                     <div class="d-flex justify-content-center">
                         <img alt="User Avatar" class="rounded-circle ms-3" width="100" height="100"
-                            src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=1170&amp;q=80">
+                            src="{{ asset('assets/userAvatars/' . auth()->user()->avatarUrl) }}">
 
                     </div>
 
                     <h2 class="fw-bold mt-3 text-truncate position-relative mx-auto mw-100" style="width: fit-content">
-                        azhar620
+                        {{$user->username}}
 
                     </h2>
 
-                    <p class="text-muted-color">Joined 17 June 2023
+                    <p class="text-muted-color">Joined {{ $user->created_at->format('M Y')}}
                     </p>
                 </div>
 
@@ -133,7 +133,7 @@
 
                                             <div class="row">
                                                 <div class="col-lg-3 col-md-4 label ">Username</div>
-                                                <div class="col-lg-9 col-md-8">azhar620</div>
+                                                <div class="col-lg-9 col-md-8">{{ $user->username }}</div>
                                             </div>
 
                                             {{-- <div class="row">
@@ -159,7 +159,7 @@
 
                                             <div class="row">
                                                 <div class="col-lg-3 col-md-4 label">Email</div>
-                                                <div class="col-lg-9 col-md-8">prianandaazhar2001@gmail.com</div>
+                                                <div class="col-lg-9 col-md-8">{{ $user->email }}</div>
                                             </div>
 
                                         </div>
@@ -167,24 +167,27 @@
                                         <div class="tab-pane fade profile-edit pt-3" id="profile-edit" role="tabpanel">
 
                                             <!-- Profile Edit Form -->
-                                            <form id="profile_update_data">
+                                            <form id="profile_update_data" method="POST" enctype="multipart/form-data">
+                                                <div class="alert alert-danger mb-4 d-none" role="alert">
+                                                    Validation Error
+                                                </div>
                                                 <div class="row mb-3">
                                                     <label for="profileImage"
                                                         class="col-md-4 col-lg-3 col-form-label">Profile
                                                         Image</label>
                                                     <div class="col-md-8 col-lg-9">
-                                                        <img id="upload-avatar-preview" class="w-50"
-                                                            src="http://127.0.0.1:8000/storage/assets/user_images/3a204c21-29ff-4b59-851b-832372ae7f5b_azhar620.png"
+                                                        <img id="upload-avatar-preview" class="w-50 rounded"
+                                                            src="{{ asset('assets/userAvatars/' . auth()->user()->avatarUrl) }}"
                                                             alt="Profile">
                                                         <div class="pt-2">
 
 
                                                             <input style="display: none" id="user-pic-update"
                                                                 type="file" name="user_profile_img">
-                                                            <a id="upload-avatar-btn" class="btn bg-lifted-1 btn-sm"
+                                                            <a id="upload-avatar-btn"
+                                                                class="btn btn-secondary text-light rounded-pill btn-sm"
                                                                 title="Upload new profile image">
-
-
+                                                                upload
                                                                 <i class="fa-solid fa-images"></i>
                                                             </a>
                                                         </div>
@@ -195,8 +198,8 @@
                                                     <label for="username"
                                                         class="col-md-4 col-lg-3 col-form-label">Username</label>
                                                     <div class="col-md-8 col-lg-9">
-                                                        <input name="username" type="text" class=""
-                                                            id="username" value="azhar620">
+                                                        <input name="username" type="text" class="form-control"
+                                                            id="username" value="{{ $user->username }}">
                                                     </div>
                                                 </div>
 
@@ -204,8 +207,8 @@
                                                     <label for="Email"
                                                         class="col-md-4 col-lg-3 col-form-label">Email</label>
                                                     <div class="col-md-8 col-lg-9">
-                                                        <input name="email" type="email" class="mt-0"
-                                                            id="Email" value="prianandaazhar2001@gmail.com">
+                                                        <input name="email" type="email" class="form-control"
+                                                            id="Email" value="{{ $user->email }}">
                                                     </div>
                                                 </div>
 
@@ -221,27 +224,32 @@
                                         <div class="tab-pane fade pt-3" id="profile-change-password" role="tabpanel">
                                             <!-- Change Password Form -->
                                             <form id="profile-change-password-form">
-
+                                                <div class="alert alert-danger mb-4 d-none" role="alert">
+                                                    Validation Error
+                                                </div>
                                                 <div class="row mb-3">
                                                     <div>
-                                                        <label for="current_password">Current Password</label>
-                                                        <input name="current_password" type="password" class=""
-                                                            id="current_password">
+                                                        <label for="current_password" class="form-label">Current
+                                                            Password</label>
+                                                        <input name="current_password" type="password"
+                                                            class="form-control" id="current_password"
+                                                            autocomplete="off">
                                                     </div>
                                                 </div>
 
                                                 <div class="row mb-3">
                                                     <div>
-                                                        <label for="new_password">New Password</label>
-                                                        <input name="new_password" type="password" class=""
+                                                        <label for="new_password" class="form-label">New Password</label>
+                                                        <input name="new_password" type="password" class="form-control"
                                                             id="new_password">
                                                     </div>
                                                 </div>
 
                                                 <div class="row mb-3">
                                                     <div>
-                                                        <label for="new_password_2">Re-enter New Password</label>
-                                                        <input name="new_password_2" type="password" class=""
+                                                        <label for="new_password_2" class="form-label">Re-enter New
+                                                            Password</label>
+                                                        <input name="new_password_2" type="password" class="form-control"
                                                             id="new_password_2">
                                                     </div>
                                                 </div>
@@ -768,13 +776,14 @@
                     const cardText = $(this).text().toLowerCase();
                     const isVisible = cardText.includes(searchQuery);
                     $(this).parent().toggle(isVisible);
-                    if(!isFound && isVisible){
+                    if (!isFound && isVisible) {
                         isFound = isVisible
                     }
                 });
 
-                if(!isFound && $('#collection-recipes .card').length){
-                    $('#collection-recipes').append(`<h3 class="m-0 text-center mt-5 mb-4 w-100">Recipe Not Found</h3>`)
+                if (!isFound && $('#collection-recipes .card').length) {
+                    $('#collection-recipes').append(
+                        `<h3 class="m-0 text-center mt-5 mb-4 w-100">Recipe Not Found</h3>`)
                 }
             });
 
@@ -876,7 +885,7 @@
                 recipeContainer.append(skeleton)
             })
 
-            $('body').on('click', '.card', function(e) {
+            $('body').on('click', '#collection-recipes .card', function(e) {
                 window.location.href = 'recipe-details/' + $(this).data('recipeId').split("recipe_")[1];
                 console.log("CLICK");
             });
@@ -915,12 +924,12 @@
 
                         let $rowEl;
                         $rowEl = $('<div>', {
-                                    'class': 'row'
-                                });
+                            'class': 'row'
+                        });
                         response.collections.forEach((collection, index) => {
                             // console.log(index);
                             // if (index % 3 === 0) {
-                                
+
                             //     console.log("ROWWWWWWWWWWWWWWWWWWWW");
                             // }
 
@@ -948,7 +957,13 @@
                                                 .collectionImages[
                                                     0] :
                                                 dataURI,
-                                            'alt': 'Image 2'
+                                            'alt': collection
+                                                .savedrecipe[
+                                                    0] ?
+                                                collection
+                                                .savedrecipe[0]
+                                                .recipe.title :
+                                                ''
                                         }),
                                         $('<img>', {
                                             'class': 'w-50 rounded-top-right border-start border-2 border-bottom',
@@ -959,7 +974,13 @@
                                                 .collectionImages[
                                                     1] :
                                                 dataURI,
-                                            'alt': 'Image 2'
+                                            'alt': collection
+                                                .savedrecipe[
+                                                    1] ?
+                                                collection
+                                                .savedrecipe[1]
+                                                .recipe.title :
+                                                ''
                                         })
                                     ]
                                 }),
@@ -977,7 +998,14 @@
                                                     .collectionImages[
                                                         2] :
                                                     dataURI,
-                                                'alt': 'Image 2'
+                                                'alt': collection
+                                                    .savedrecipe[
+                                                        2] ?
+                                                    collection
+                                                    .savedrecipe[
+                                                        2]
+                                                    .recipe
+                                                    .title : ''
                                             }),
                                             $('<img>', {
                                                 'class': 'w-50 rounded-bottom-right border-start border-2 border-top',
@@ -988,7 +1016,14 @@
                                                     .collectionImages[
                                                         3] :
                                                     dataURI,
-                                                'alt': 'Image 2'
+                                                'alt': collection
+                                                    .savedrecipe[
+                                                        3] ?
+                                                    collection
+                                                    .savedrecipe[
+                                                        3]
+                                                    .recipe
+                                                    .title : ''
                                             })
                                         ]
                                     }),
@@ -1158,6 +1193,140 @@
                     complete: function() {}
                 });
             }
+
+            const avatarInput = $('#user-pic-update');
+            const avatarPreview = $('#upload-avatar-preview');
+
+            $('#upload-avatar-btn').on('click', function() {
+                avatarInput.trigger('click');
+            })
+
+            avatarInput.on('change', function(event) {
+                if (event.target.files && event.target.files[0]) {
+                    const reader = new FileReader();
+
+                    reader.onload = function(event) {
+                        avatarPreview.attr('src', event.target.result);
+                    };
+
+                    reader.readAsDataURL(event.target.files[0]);
+                }
+            });
+
+            $('form#profile_update_data').on('submit', function(e) {
+                e.preventDefault()
+                const alert = $(this).find('.alert')
+                alert.addClass('d-none')
+
+                const formData = new FormData($(this)[0]);
+
+                console.log(formData.get('username'))
+                console.log(formData.get('email'))
+
+                const headers = {
+                    'Accept': 'application/json',
+                    'Authorization': requestHeaders['Authorization']
+                };
+
+                $.ajax({
+                    url: window.location.origin + "/api/" + 'update-profile',
+                    type: 'POST',
+                    processData: false,
+                    contentType: false,
+                    data: formData,
+                    headers: headers,
+                    success: function(response) {
+                        alert.removeClass('alert-danger')
+                        alert.addClass('alert-success')
+                        alert.removeClass('d-none')
+                        alert.html('Profile Successfully Updated')
+
+                    },
+                    error: function(xhr, status, error) {
+
+
+                        if (xhr.responseJSON && xhr.responseJSON.errors) {
+                            var errors = xhr.responseJSON.errors;
+
+                            $.each(errors, function(field, messages) {
+                                $.each(messages, function(index, message) {
+                                    alert.removeClass('alert-success')
+                                    alert.addClass('alert-danger')
+                                    alert.removeClass('d-none')
+                                    alert.html(message)
+                                });
+                            });
+                        } else {
+                            console.log('Unexpected error: ' + error);
+                        }
+                    },
+                    beforeSend: function() {
+                        alert.addClass('d-none')
+                    },
+                    complete: function() {}
+                });
+            })
+
+            $('form#profile-change-password-form').on('submit', function(e) {
+                e.preventDefault()
+                const alert = $(this).find('.alert')
+                alert.addClass('d-none')
+
+                const currPass = $(this).find('input[name="current_password"]').val()
+                const newPass = $(this).find('input[name="new_password"]').val()
+                const newPass2 = $(this).find('input[name="new_password_2"]').val()
+
+                if (currPass.length === 0 || newPass.length === 0 || newPass2.length === 0) {
+                    alert.removeClass('d-none')
+
+                    return
+                }
+
+                console.log(currPass)
+                console.log(newPass)
+                console.log(newPass2)
+
+                $.ajax({
+                    url: window.location.origin + "/api/" + 'change-password',
+                    type: 'POST',
+                    data: JSON.stringify({
+                        current_password: currPass,
+                        new_password: newPass,
+                        new_password_2: newPass2
+                    }),
+                    headers: requestHeaders,
+                    success: function(response) {
+                        alert.removeClass('alert-danger')
+                        alert.addClass('alert-success')
+                        alert.removeClass('d-none')
+                        alert.html('Password Successfully Changed')
+
+                    },
+                    error: function(xhr, status, error) {
+
+
+                        if (xhr.responseJSON && xhr.responseJSON.errors) {
+                            var errors = xhr.responseJSON.errors;
+
+                            $.each(errors, function(field, messages) {
+                                $.each(messages, function(index, message) {
+                                    alert.removeClass('alert-success')
+                                    alert.addClass('alert-danger')
+                                    alert.removeClass('d-none')
+                                    alert.html(message)
+                                });
+                            });
+                        } else {
+                            console.log('Unexpected error: ' + error);
+                        }
+                    },
+                    beforeSend: function() {
+                        alert.addClass('d-none')
+                    },
+                    complete: function() {}
+                });
+            })
+
         })
     </script>
 @endsection
