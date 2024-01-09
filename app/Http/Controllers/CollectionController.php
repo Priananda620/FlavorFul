@@ -68,6 +68,45 @@ class CollectionController extends Controller
             ], 422);
         }
     }
+
+
+    function delete(Request $request)
+    {
+        try {
+            $validatedData = $request->validate([
+                'collectionId' => 'required|exists:collections,id'
+                // unique:collections,name
+            ]);
+
+            $collection = Collection::find($validatedData['collectionId']);
+
+            if (!$collection) {
+                return response()->json([
+                    'message' => 'The given data was invalid'
+                ], 422);
+            }
+
+            if($collection->user_id != Auth::user()->id) {
+                return response()->json([
+                    'message' => 'The given data was invalid'
+                ], 422);
+            }
+
+            $collection->delete();
+
+            return response()->json([
+                'status' => 'deleted',
+            ]);
+        } catch (\Throwable $th) {
+            throw $th;
+        } catch (ValidationException $exception) {
+            return response()->json([
+                'message' => 'The given data was invalid.',
+                'errors' => $exception->errors(),
+            ], 422);
+        }
+    }
+
     function add(Request $request)
     {
         try {
